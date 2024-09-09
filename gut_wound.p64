@@ -4,7 +4,7 @@ version 2
 :: gfx/
 :: gfx/0.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjEwIixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNCIscmV2aXNpb249ODA3NF1dbHo0ANQoAABV0AAA8h97WzBdPXtibXA9cHh1
+OS0wOSAyMjoxNzozOSIscmV2aXNpb249ODA3Nl1dbHo0ANQoAABV0AAA8h97WzBdPXtibXA9cHh1
 AEMgEBAE8PAsZmxhZ3M9MCxwYW5feD0tNS45Mjg1NzE0BgABFwCFeT0tMi45MTAWAKozLHpvb209
 OX0sTwBCfzF-IQQA8gsfIQEvER8hbzEvIT8wHyFPMQ8QDyAPMH8hPwoAMzEPMCMAkR8xDxAfIC8x
 HykAEQ8fADA-MY8KACIgLy0ABCsAABMAFx9AAAMxACEgDxQAkS8xfyEPMS8gPwgAOw8QT0UAG39A
@@ -191,7 +191,7 @@ LQp9BwAHZggeDpIBD4oBTQ9_CZIPGAEKBZ0IAA4NjwIuAqAiICJQFAFjT4BOLU6jCU0OtgMPFAFP
 UG09N319
 :: gfx/1.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA3LTA4IDIxOjI3OjMwIixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNCIscmV2aXNpb249OTc3XV1sejQAxBUAAJ9gAADzFHtbMF09e2JtcD1weHUA
+OS0wOSAyMjoxNzozOSIscmV2aXNpb249OTc5XV1sejQAxBUAAJ9gAADzFHtbMF09e2JtcD1weHUA
 QyAQEATw8CxmbGFncz0wLHBhbl94CADKeT0wLHpvb209N30sMQB2-zoAHzEfOgQAFz8MAAAEAD--
 OsBTADnyAA86DzH-OgAPMe86DzHfOggADxEAFC8POooAHAUOAR8xMQAU-wf-GyD-ISD-MAHfMR8w
 XzEfIV8x-zACDQAGEwFfAB8yXwARuRISBP82A-8hAB82BQDwAA82DyX-MAAfJQ8w3zEPMAgAAmAA
@@ -292,7 +292,7 @@ K5MBG4qPATIqLiqRAQFxAQ6TAQ_LAUwPJQ2SAAQAIx5gCgAUkAgASA8QLQwcDgApDZ8AASwBoCEg
 IVAVAWJPgE4rTkgNTh4uDQEPFQFPUG09N319
 :: gfx/2.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA3LTA4IDIxOjI3OjQ0Iixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNCIscmV2aXNpb249OTcwXV1sejQAxBUAAJ9gAADzFHtbMF09e2JtcD1weHUA
+OS0wOSAyMjoxNzozOSIscmV2aXNpb249OTcyXV1sejQAxBUAAJ9gAADzFHtbMF09e2JtcD1weHUA
 QyAQEATw8CxmbGFncz0wLHBhbl94CADKeT0wLHpvb209N30sMQB2-zoAHzEfOgQAFz8MAAAEAD--
 OsBTADnyAA86DzH-OgAPMe86DzHfOggADxEAFC8POooAHAUOAR8xMQAU-wf-GyD-ISD-MAHfMR8w
 XzEfIV8x-zACDQAGEwFfAB8yXwARuRISBP82A-8hAB82BQDwAA82DyX-MAAfJQ8w3zEPMAgAAmAA
@@ -393,7 +393,7 @@ K5MBG4qPATIqLiqRAQFxAQ6TAQ_LAUwPJQ2SAAQAIx5gCgAUkAgASA8QLQwcDgApDZ8AASwBoCEg
 IVAVAWJPgE4rTkgNTh4uDQEPFQFPUG09N319
 :: gfx/3.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA3LTA4IDIxOjI3OjUxIixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNCIscmV2aXNpb249MTA0NF1dbHo0ANUHAACKRQAA9Ch7WzBdPXtibXA9cHh1
+OS0wOSAyMjoxNzozOSIscmV2aXNpb249MTA0Nl1dbHo0ANUHAACKRQAA9Ch7WzBdPXtibXA9cHh1
 AEMgEBAEQK4gHp8PDhAOvQ4ADs0OAA4dDxwNDB0MDQwtHj0MPQw9Hi0MEAAR3QIAMT0MDQIAEC0t
 AAUMAABBAPMKIA6dDkAeXR5wXkAsZmxhZ3M9MCxwYW5feAgAz3k9MCx6b29tPTd9LIYAGzUtDx_I
 ALMNGx6tKx6dOx6NS4wANQsMK4wA-wULDDsOAA5New4QDi2LDiAemw5Aro0AIPACbw8vHw4QDn8P
@@ -431,11 +431,11 @@ AL8gLyEPETAfIQ8RQG0BHw8yAP---28OEwcPMgD---------T18SBPD-ETMACx42ZAAPMQD-QQ_J
 ATJXLTcuNzIBAARAAIMuMjYxOTA0NwYADvozD08A--------------------q1BtPTd9fQ==
 :: gfx/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjA5Iixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNSJdXQ==
+OS0wOSAyMjoxNzo0MCJdXQ==
 :: map/
 :: map/0.map
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjEwIixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNCIscmV2aXNpb249NzQyMF1dbHo0AFYNAAB2QAAA8Ah7e2JtcD11c2VyZGF0
+OS0wOSAyMjoxNzozOSIscmV2aXNpb249NzQyM11dbHo0AFYNAAB2QAAA8Ah7e2JtcD11c2VyZGF0
 YSgiaTE2Iiw2NAMA_wIiMDAxYjAwMTQwMDMzMDAzNAQAXzUwMDIwHAAIUjEwMDFkRAAjNDYEABcw
 DABSNzAwOTcMABM5FABiMTUwMDEzDAAIMAAfYhQAACY0NzgAJjk3PAAvMTQEADQDvACrODEwMDNi
 MDAzYwQAX2QwMDI4HAAIFzlEAEA2MDA47ADyCjgwMDkwMDA5MTAwNGYwMDlmMDA0ZTAwOWUIAA8w
@@ -498,7 +498,7 @@ BC9iYQQABwQ8AC8yNgQA5fQOIiksaGlkZGVuPWZhbHNlLHBhbl94PS0yODMuODMBABE2FwBweT0t
 MTY1LuQqAgEAsjEsdGlsZV9oPTE2CgAQdwoAgHpvb209MX19
 :: map/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjA5Iixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNSJdXQ==
+OS0wOSAyMjoxNzo0MCJdXQ==
 :: pal/
 :: pal/0.pal
 b64$LS1bW3BvZCx0ZXN0X2N1YmVfY29sb3JzPXtbMF09ezE1LDMxLDR9LHszMSw0LDIwfSx7NCwy
@@ -506,8 +506,8 @@ MCwyMX0sezEwLDksMjV9LHs5LDI1LDI0fSx7OCwyNCwyfSx7MjYsMTEsMjd9LHsxMSwyNywzfSx7
 MjcsMywxOX0sezI4LDE3LDE5fSx7MjgsMTIsMTZ9LHsxMiwxNiwxfSx7NiwyOSwxM30sezI5LDEz
 LDE4fSx7MTMsMTgsMX0sezcsMjMsMTR9LHsyMywxNCwxM30sezE0LDMwLDE4fSx7Nyw2LDIyfSx7
 NiwyMiw1fSx7MjIsNSwyMX0sezEsMSwxfSx7MSwxLDF9LHsxLDEsMX19LGhpZGRlbl90b2dnbGVz
-PXtbMF09ZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2V9LHJldmlzaW9uPTE1NTgsb2twYWxfdmVyc2lv
-bj0iMC4wLjQiLG1vZGlmaWVkPSIyMDI0LTA5LTA5IDIyOjA4OjE0Iixsb2NrZWQ9e1swXT10cnVl
+PXtbMF09ZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2V9LHJldmlzaW9uPTE1NjAsb2twYWxfdmVyc2lv
+bj0iMC4wLjQiLG1vZGlmaWVkPSIyMDI0LTA5LTA5IDIyOjE3OjM5Iixsb2NrZWQ9e1swXT10cnVl
 LGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZh
 bHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNl
 LGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZhbHNlLGZh
@@ -530,11 +530,11 @@ AAwBAEA4NDQ3LwDwDjVhOGJkZTAwMjcyYTMyMDA1NTkyN2YwMGZmZDE4cABWZWFkYTXoAARoAAzo
 AA8BAE0EYAEE8AAPAQBWcDEwMTAxIik=
 :: pal/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA2LTI4IDE4OjA5OjQwIixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNSJdXQ==
+OS0wOSAyMjoxNzo0MCJdXQ==
 :: sfx/
 :: sfx/0.sfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjEwIixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNCIscmV2aXNpb249NjExOV1dbHo0AA0BAADTFwAA-yxweHUAAygAAAQABA9A
+OS0wOSAyMjoxNzo0MCIscmV2aXNpb249NjEyMV1dbHo0AA0BAADTFwAA-yxweHUAAygAAAQABA9A
 EAIOAAGgASACoA4ADxAADfDKAQIDBAUGBwAP-5AICQoLDwwPDQ8ODw8AD--w-wEA6-8n0gEQBg8g
 EAEgASAB8AACEAIMEAEgDyEgATAPQPDDDygP--DGD-gKD-8PgA-3Dw0B8AkBEAYMMAAcIg9AMQCD
 D2-gAhACDz0zAE-wxw9CYgAdDzAA------9FH-8BAKz-Q8gPQAACQA8bDx5vNT82D04PUR9UH1Yf
@@ -542,9 +542,9 @@ Vw9WHz9vOQ8f--8QAAGigBFiAf4QDz0PP19AXz8PPg89TzwfOx86LzlfOA85HgH_CvBwD0AADxBA
 -rAKAP-------------------3xQ-rDw-zk=
 :: sfx/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjA5Iixtb2RpZmllZD0iMjAyNC0w
-OS0wOSAyMjowODoxNSJdXQ==
+OS0wOSAyMjoxNzo0MCJdXQ==
 :: character.lua
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-09-09 22:08:14",revision=6996]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-09-09 22:17:39",revision=6998]]
 include './types.lua'
 include './util.lua'
 
@@ -871,7 +871,7 @@ function draw_blood_splatter()
 	end
 end
 :: containers.lua
---[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-09-09 22:08:14",revision=2496]]
+--[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-09-09 22:17:39",revision=2498]]
 include './types.lua'
 include './util.lua'
 
@@ -931,7 +931,7 @@ function init_containers()
 	})
 end
 :: context_menu.lua
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-09-09 22:08:14",revision=2113]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-09-09 22:17:39",revision=2115]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -1008,7 +1008,7 @@ function execute_context_menu_option(c, a)
 	end
 end
 :: inventory.lua
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-09-09 22:08:14",revision=6131]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-09-09 22:17:39",revision=6133]]
 include './types.lua'
 include './util.lua'
 include './items.lua'
@@ -1227,7 +1227,7 @@ inv_sprites={
 	open=(gfx_offset.gfx_3+5)
 }
 :: items.lua
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-09-09 22:08:14",revision=4548]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-09-09 22:17:39",revision=4550]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -1493,7 +1493,7 @@ f0kA3PCCrn65XfuqerdUb7Oae6zmOHUGb2iuFvdk-WvXXVhz17aSc0PRtTJRQ4dNp9ros2vojgAY
 KEG3Qje3R4fmwg5HqgD06T5CBAAA0J-8P9u4AY7hbkBGAAAAEHRFWHRMb2RlUE5HADIwMTEwMjIx
 41m2wQAAAABJRU5ErkJggg==
 :: main.lua
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-09-09 22:08:14",revision=7171]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-09-09 22:17:39",revision=7173]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -1601,7 +1601,7 @@ function debug()
 			.. " cpu2: " .. stat(2), _c_x-475, _c_y+258, 31)
 end
 :: moodles.lua
---[[pod_format="raw",created="2024-05-07 21:40:35",modified="2024-09-09 22:08:14",revision=6053]]
+--[[pod_format="raw",created="2024-05-07 21:40:35",modified="2024-09-09 22:17:39",revision=6055]]
 include './types.lua'
 include './util.lua'
 
@@ -1780,7 +1780,7 @@ moodle_sprites={
 	thirst_4 = (gfx_offset.gfx_3+19),
 }
 :: rooms.lua
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-09-09 22:08:14",revision=1435]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-09-09 22:17:39",revision=1437]]
 include './types.lua'
 include './util.lua'
 
@@ -1856,7 +1856,7 @@ function init_rooms()
 	})
 end
 :: static_interactable.lua
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2024-09-09 22:08:14",revision=5607]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2024-09-09 22:17:39",revision=5609]]
 include './types.lua'
 include './util.lua'
 include './containers.lua'
@@ -1922,7 +1922,7 @@ function redraw_tiles(c)
 	_redraw_list={}
 end
 :: types.lua
---[[pod_format="raw",created="2024-05-06 22:22:02",modified="2024-09-09 22:08:14",revision=5944]]
+--[[pod_format="raw",created="2024-05-06 22:22:02",modified="2024-09-09 22:17:39",revision=5946]]
 class={
 	new=
 		function(self,tbl)
@@ -1973,7 +1973,7 @@ direction={
 	right = 4
 }
 :: util.lua
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-09-09 22:08:14",revision=6272]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-09-09 22:17:39",revision=6274]]
 
 --object, start frame,
 --num frames, speed, flip
@@ -2131,19 +2131,19 @@ gfx_offset={
 	gfx_3=768
 }
 :: .info.pod
-b64$LS1bW3BvZCxub3Rlcz0iVmVyeSBtdWNoIFdJUCwgSG9waW5nIHRvIGZpbmlzaCB0aGlzIHll
-YXIuIixhdXRob3I9IkJhdWxlcnMiLGNyZWF0ZWQ9IjIwMjQtMDUtMDMgMTM6NDg6NDciLGljb249
-dXNlcmRhdGEoInU4IiwxNiwxNiwiMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2
-MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
-MDAwMDAwMDAwMDYwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjBkMDAwMDBkMDAwMDAw
-MDAwMDAwMDAwMDAwMDAwMDBkMDYwNjBkMDAwZDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwMDBkMDYw
-ZDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwZDA2MDAwMDBkMDAwMDAwMDAwMDAwMDAwMDAw
-MDAwZDAwMDYwNjBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDYwMDBkMDAwMDAwMDAw
-MDAwMDAwMDAwMDAwMDBkMDAwNjBkMDAwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDYwNjBk
-MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwMDBkMDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
-MDBkMDAwMDA2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjAwMDAwMDAwMDAwMDAw
-MDAwMDAwMDAwMDAwMDAwMDAwMDAiKSxtb2RpZmllZD0iMjAyNC0wOS0wOSAyMjowODoxNSIscnVu
-dGltZT05LHRpdGxlPSJHdXQgV291bmQgKFdvcmtpbmcgVGl0bGUpIix2ZXJzaW9uPSIwLjAuOCIs
+b64$LS1bW3BvZCx2ZXJzaW9uPSIwLjAuOCIsYXV0aG9yPSJCYXVsZXJzIixydW50aW1lPTksaWNv
+bj11c2VyZGF0YSgidTgiLDE2LDE2LCIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDAwNjAwMGQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MGQwMDAwMGQwMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMGQwNjA2MGQwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMGQwMDAwMGQw
+NjBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGQwMDBkMDYwMDAwMGQwMDAwMDAwMDAwMDAwMDAw
+MDAwMDBkMDAwNjA2MGQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGQwNjAwMGQwMDAwMDAw
+MDAwMDAwMDAwMDAwMDAwMGQwMDA2MGQwMDAwMGQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGQwNjA2
+MGQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMGQwMDAwMGQwNjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDAwMGQwMDAwMDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIpLHRpdGxlPSJHdXQgV291bmQgKFdvcmtpbmcgVGl0bGUp
+Iixub3Rlcz0iVmVyeSBtdWNoIFdJUCwgSG9waW5nIHRvIGZpbmlzaCB0aGlzIHllYXIuIixtb2Rp
+ZmllZD0iMjAyNC0wOS0wOSAyMjoxNzo0MCIsY3JlYXRlZD0iMjAyNC0wNS0wMyAxMzo0ODo0NyIs
 d29ya3NwYWNlcz17e2xvY2F0aW9uPSJtYWluLmx1YSMxMDMiLHdvcmtzcGFjZV9pbmRleD0xfSx7
 bG9jYXRpb249ImNoYXJhY3Rlci5sdWEjMzIyIix3b3Jrc3BhY2VfaW5kZXg9MX0se2xvY2F0aW9u
 PSJzdGF0aWNfaW50ZXJhY3RhYmxlLmx1YSM0MyIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2NhdGlv

@@ -4,7 +4,7 @@ version 2
 :: gfx/
 :: gfx/0.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjEwIixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSIscmV2aXNpb249ODQ5Nl1dbHo0AC8sAABs3wAA8R57WzBdPXtibXA9cHh1
+OS0yMCAxNTo1NDo1MSIscmV2aXNpb249ODUyOF1dbHo0AC8sAABs3wAA8R57WzBdPXtibXA9cHh1
 AEMgEBAE8PAsZmxhZ3M9MSxwYW5feD0yLjA3MTQyODUGABE2FgB2eT0tMC43MRkAqjMsem9vbT04
 fSxOAEJ-MX8hBADyCx8hAS8RHyFvMS8hPzAfIU8xDxAPIA8wfyE-CgAzMQ8wIwCRHzEPEB8gLzEf
 KQARDx8AMD8xjwoAIiAvLQAEKwAAEwAXH0AAAzEAISAPFACRLzF-IQ8xLyA-CAA7DxBPRQAbf0AA
@@ -206,7 +206,7 @@ QD4rLi0KfQcAB2YIHg6SAQ_KAU0PfgmSDxgBCgWdCAAODY8CLgKgIiAiUBQBY0_ATi1OowlNDrYD
 DxQBT1BtPTd9fQ==
 :: gfx/1.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA3LTA4IDIxOjI3OjMwIixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSIscmV2aXNpb249MTI3M11dbHo0AMQVAACfYAAA8xR7WzBdPXtibXA9cHh1
+OS0yMCAxNTo1NDo1MSIscmV2aXNpb249MTMwNV1dbHo0AMQVAACfYAAA8xR7WzBdPXtibXA9cHh1
 AEMgEBAE8PAsZmxhZ3M9MCxwYW5feAgAynk9MCx6b29tPTd9LDEAdv86AB8xHzoEABc-DAAABAA-
 -zrAUwA58gAPOg8x-zoADzHvOg8x3zoIAA8RABQvDzqKABwFDgEfMTEAFP8H-xsg-yEg-zAB3zEf
 MF8xHyFfMf8wAg0ABhMBXwAfMl8AEbkSEgT-NgP-IQAfNgUA8AAPNg8l-zAAHyUPMN8xDzAIAAJg
@@ -307,7 +307,7 @@ LiuTARuKjwEyKi4qkQEBcQEOkwEPiwFMDyUNkgAEACMeYAoAFJAIAEgPEC0MHA4AKQ2fAAEsAaAh
 ICFQFQFiT4BOK05IDU4eLg0BDxUBT1BtPTd9fQ==
 :: gfx/2.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA3LTA4IDIxOjI3OjQ0Iixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSIscmV2aXNpb249MTI2Nl1dbHo0AMQVAACfYAAA8xR7WzBdPXtibXA9cHh1
+OS0yMCAxNTo1NDo1MSIscmV2aXNpb249MTI5OF1dbHo0AMQVAACfYAAA8xR7WzBdPXtibXA9cHh1
 AEMgEBAE8PAsZmxhZ3M9MCxwYW5feAgAynk9MCx6b29tPTd9LDEAdv86AB8xHzoEABc-DAAABAA-
 -zrAUwA58gAPOg8x-zoADzHvOg8x3zoIAA8RABQvDzqKABwFDgEfMTEAFP8H-xsg-yEg-zAB3zEf
 MF8xHyFfMf8wAg0ABhMBXwAfMl8AEbkSEgT-NgP-IQAfNgUA8AAPNg8l-zAAHyUPMN8xDzAIAAJg
@@ -408,7 +408,7 @@ LiuTARuKjwEyKi4qkQEBcQEOkwEPiwFMDyUNkgAEACMeYAoAFJAIAEgPEC0MHA4AKQ2fAAEsAaAh
 ICFQFQFiT4BOK05IDU4eLg0BDxUBT1BtPTd9fQ==
 :: gfx/3.gfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA3LTA4IDIxOjI3OjUxIixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSIscmV2aXNpb249MTQ1OF1dbHo0ABwKAADTRwAA9Ch7WzBdPXtibXA9cHh1
+OS0yMCAxNTo1NDo1MSIscmV2aXNpb249MTQ5MF1dbHo0ABwKAADTRwAA9Ch7WzBdPXtibXA9cHh1
 AEMgEBAEQK4gHp8PDhAOvQ4ADs0OAA4dDxwNDB0MDQwtHj0MPQw9Hi0MEAAR3QIAMT0MDQIAEC0t
 AAUMAABBAPMKIA6dDkAeXR5wXkAsZmxhZ3M9MCxwYW5feAgAz3k9MCx6b29tPTd9LIYAGzUtDx_I
 ALMNGx6tKx6dOx6NS4wANQsMK4wA-wULDDsOAA5New4QDi2LDiAemw5Aro0AIPACbw8vHw4QDn8P
@@ -457,11 +457,11 @@ AAseNmQADzEA-0EPiQEyVy03LjcyAQAEQACDLjI2MTkwNDcGAA5DNg9PAP------------------
 -6tQbT03fX0=
 :: gfx/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjA5Iixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSJdXQ==
+OS0yMCAxNTo1NDo1MSJdXQ==
 :: map/
 :: map/0.map
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjEwIixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSIscmV2aXNpb249Nzg0MV1dbHo0AKANAAB2QAAA8Ah7e2JtcD11c2VyZGF0
+OS0yMCAxNTo1NDo1MSIscmV2aXNpb249Nzg3M11dbHo0AKANAAB2QAAA8Ah7e2JtcD11c2VyZGF0
 YSgiaTE2Iiw2NAMA_wIiMDAxYjAwMTQwMDMzMDAzNAQAXzUwMDIwHAAIUjEwMDFkRAAjNDYEABcw
 DABSNzAwOTcMABM5FABiMTUwMDEzDAAIMAAfYhQAACY0NzgAJjk3PAAvMTQEADQDvACrODEwMDNi
 MDAzYwQAX2QwMDI4HAAIFzlEAEA2MDA47ADyCjgwMDkwMDA5MTAwNGYwMDlmMDA0ZTAwOWUIAA8w
@@ -525,31 +525,31 @@ OAQAIwWEAB9kBAAjBUAADwQABC9iYQQABwQ8AC8yNgQA5fMPIiksaGlkZGVuPWZhbHNlLHBhbl94
 PS0xOTYuNTgzAQARNhcAhXk9LTQxNi4wAQCyMSx0aWxlX2g9MTYKABB3CgCAem9vbT0xfX0=
 :: map/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjA5Iixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSJdXQ==
+OS0yMCAxNTo1NDo1MSJdXQ==
 :: pal/
 :: pal/0.pal
-b64$LS1bW3BvZCx3aGl0ZXN0X2NvbG9yPTcsY3JlYXRlZD0iMjAyNC0wNi0yOCAxODowOTo0MCIs
-bG9ja2VkPXtbMF09dHJ1ZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxz
+b64$LS1bW3BvZCx3aGl0ZXN0X2NvbG9yPTcsbW9kaWZpZWQ9IjIwMjQtMDktMjAgMTU6NTQ6NTEi
+LGJsYWNrZXN0X2NvbG9yPTAsbG9ja2VkPXtbMF09dHJ1ZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxz
 ZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxm
 YWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxz
 ZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxm
 YWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxz
 ZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxm
-YWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZX0sYmxh
-Y2tlc3RfY29sb3I9MCxtb2RpZmllZD0iMjAyNC0wOS0xOSAyMjoyNjo1MSIsaGlkZGVuX3RvZ2ds
-ZXM9e1swXT1mYWxzZSxmYWxzZSxmYWxzZSxmYWxzZX0sb2twYWxfdmVyc2lvbj0iMC4wLjQiLGJn
-X2NvbG9yPTAsaGlkZGVuPXtbMF09ZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2Us
+YWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxzZSxmYWxz
+ZSxmYWxzZSxmYWxzZX0saGlkZGVuPXtbMF09ZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2Us
 ZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFs
 c2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2Us
 ZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFs
 c2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2Us
 ZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFs
 c2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2UsZmFsc2Us
-ZmFsc2V9LHJldmlzaW9uPTE4NjEsdGVzdF9jdWJlX2NvbG9ycz17WzBdPXsxNSwzMSw0fSx7MzEs
-NCwyMH0sezQsMjAsMjF9LHsxMCw5LDI1fSx7OSwyNSwyNH0sezgsMjQsMn0sezI2LDExLDI3fSx7
-MTEsMjcsM30sezI3LDMsMTl9LHsyOCwxNywxOX0sezI4LDEyLDE2fSx7MTIsMTYsMX0sezYsMjks
-MTN9LHsyOSwxMywxOH0sezEzLDE4LDF9LHs3LDIzLDE0fSx7MjMsMTQsMTN9LHsxNCwzMCwxOH0s
-ezcsNiwyMn0sezYsMjIsNX0sezIyLDUsMjF9LHsxLDEsMX0sezEsMSwxfSx7MSwxLDF9fV1dbHo0
+ZmFsc2UsZmFsc2V9LG9rcGFsX3ZlcnNpb249IjAuMC40IixiZ19jb2xvcj0wLHRlc3RfY3ViZV9j
+b2xvcnM9e1swXT17MTUsMzEsNH0sezMxLDQsMjB9LHs0LDIwLDIxfSx7MTAsOSwyNX0sezksMjUs
+MjR9LHs4LDI0LDJ9LHsyNiwxMSwyN30sezExLDI3LDN9LHsyNywzLDE5fSx7MjgsMTcsMTl9LHsy
+OCwxMiwxNn0sezEyLDE2LDF9LHs2LDI5LDEzfSx7MjksMTMsMTh9LHsxMywxOCwxfSx7NywyMywx
+NH0sezIzLDE0LDEzfSx7MTQsMzAsMTh9LHs3LDYsMjJ9LHs2LDIyLDV9LHsyMiw1LDIxfSx7MSwx
+LDF9LHsxLDEsMX0sezEsMSwxfX0scmV2aXNpb249MTg5MyxoaWRkZW5fdG9nZ2xlcz17WzBdPWZh
+bHNlLGZhbHNlLGZhbHNlLGZhbHNlfSxjcmVhdGVkPSIyMDI0LTA2LTI4IDE4OjA5OjQwIl1dbHo0
 AOsAAAAVAgAA9QV1c2VyZGF0YSgiaTMyIiw2NCwiMAEA9hdkYWVkNjEwMDc2Y2MzZDAwMjA0MjU0
 MDA3MzQ1NmIwMDc0YjBjZigAfTIxNTJhNTABAGZiODljZTkgAAAIAKA1YTAwZWViMjRhQAChZDRj
 OTAwZGM2Mj8AUWYyNzMzWADwAjNlYjAwY2M2MTE0MDA5OTcxgAB9OWRjNDg5MAEABCgADAEAQDg0
@@ -557,11 +557,11 @@ NDcvAPAONWE4YmRlMDAyNzJhMzIwMDU1OTI3ZjAwZmZkMThwAFZlYWRhNegABGgABOgADwEAVQRg
 AQTwAA8BAFZwMTAxMDEiKQ==
 :: pal/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA2LTI4IDE4OjA5OjQwIixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSJdXQ==
+OS0yMCAxNTo1NDo1MSJdXQ==
 :: sfx/
 :: sfx/0.sfx
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjEwIixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSIscmV2aXNpb249NjQxN11dbHo0AA0BAADTFwAA-yxweHUAAygAAAQABA9A
+OS0yMCAxNTo1NDo1MSIscmV2aXNpb249NjQ0OV1dbHo0AA0BAADTFwAA-yxweHUAAygAAAQABA9A
 EAIOAAGgASACoA4ADxAADfDKAQIDBAUGBwAP-5AICQoLDwwPDQ8ODw8AD--w-wEA6-8n0gEQBg8g
 EAEgASAB8AACEAIMEAEgDyEgATAPQPDDDygP--DGD-gKD-8PgA-3Dw0B8AkBEAYMMAAcIg9AMQCD
 D2-gAhACDz0zAE-wxw9CYgAdDzAA------9FH-8BAKz-Q8gPQAACQA8bDx5vNT82D04PUR9UH1Yf
@@ -569,9 +569,9 @@ Vw9WHz9vOQ8f--8QAAGigBFiAf4QDz0PP19AXz8PPg89TzwfOx86LzlfOA85HgH_CvBwD0AADxBA
 -rAKAP-------------------3xQ-rDw-zk=
 :: sfx/.info.pod
 b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI0LTA1LTAzIDEzOjI2OjA5Iixtb2RpZmllZD0iMjAyNC0w
-OS0xOSAyMjoyNjo1MSJdXQ==
+OS0yMCAxNTo1NDo1MSJdXQ==
 :: character.lua
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-09-19 22:26:51",revision=7336]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-09-20 15:54:51",revision=7374]]
 include './types.lua'
 include './util.lua'
 
@@ -898,7 +898,7 @@ function draw_blood_splatter()
 	end
 end
 :: containers.lua
---[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-09-19 22:26:51",revision=2900]]
+--[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-09-20 15:54:51",revision=2933]]
 include './types.lua'
 include './util.lua'
 
@@ -1048,7 +1048,7 @@ function init_containers()
 	})
 end
 :: context_menu.lua
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-09-19 22:26:51",revision=2442]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-09-20 15:54:51",revision=2475]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -1128,7 +1128,7 @@ function execute_context_menu_option(c, a)
 	end
 end
 :: inventory.lua
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-09-19 22:26:51",revision=6465]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-09-20 15:54:51",revision=6522]]
 include './types.lua'
 include './util.lua'
 include './items.lua'
@@ -1195,13 +1195,12 @@ function display_inventory_contents(c_i)
 	local current_y = flr(c_i.c_i_starting_y+13)
 	print("Inventory", c_i.inv_starting_x+11, current_y-11, 23)
 	c_i.total_weight = 0
-	local max_items = 5
-	local restrict_inv = max_items < count(c_i.contents)
 	local current_count = 1
+	local current_max = _scroll_y+_max_items
 	for i, c in ipairs(c_i.contents) do
-		if current_count > max_items then
+		if current_count > current_max then
 			break
-		end
+		elseif current_count > _scroll_y then
 		local m_is_on = false
 		c.starting_x = c_i.inv_starting_x
 		c.starting_y = current_y
@@ -1224,6 +1223,8 @@ function display_inventory_contents(c_i)
 			if _m_r_b then
 				update_context_menu(c.item)
 			end
+		end
+		
 		end
 		current_count += 1
 	end
@@ -1303,6 +1304,18 @@ function show_inventory(c_i)
 		spr(inv_sprites.closed,_c_x-360,c_i.c_i_starting_y)
 		spr(inv_sprites.closed,(_c_x-240)+1,c_i.c_i_starting_y)
 	end	
+	if c_i.oo_ui == false then
+		if _m_x < _c_x-240 then
+			c_i.m_in_inv = true
+			c_i.m_in_cont = false
+		elseif _m_x > _c_x-240 then
+			c_i.m_in_cont = true
+			c_i.m_in_inv = false
+		end
+	else
+			c_i.m_in_cont = false
+			c_i.m_in_inv = false
+	end
 	if not ((_m_y) < (c_i.c_i_starting_y+c_i.max_height)) and 
 		((_m_l_b == true
 		and c_i.oo_ui == true)
@@ -1354,7 +1367,7 @@ inv_sprites={
 	open=(gfx_offset.gfx_3+5)
 }
 :: items.lua
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-09-19 22:26:51",revision=4991]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-09-20 15:54:51",revision=5024]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -1963,7 +1976,7 @@ AKBrTYxIPAOQgW0wupqXIr_mdssMfb8OnRUye97OLp8lE9vCCY8HtE_nl89qIjs9ruEnOa52f7-8
 C3TDSCQSqRkUGpxKZwse_WdKColEIjWP2gAgnS1QIkgkEqnZ9P8D5RN5nQA_aZgAAAAQdEVYdExv
 ZGVQTkcAMjAxMTAyMjHjWbbBAAAAAElFTkSuQmCC
 :: main.lua
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-09-19 22:26:51",revision=7510]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-09-20 15:54:51",revision=7565]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -1980,15 +1993,15 @@ function _init()
 	poke4(0x5000, get(fetch(pwd().."/pal/0.pal")))
 	poke(0x4000,get(fetch"/system/fonts/lil_mono.font"))
 	_w_w, _w_h = 480,270
-	_m_x, _m_y, _m_b, _m_w_x, _m_w_y = 0,0,0,0,0
+	_m_x, _m_y, _m_b, _m_w_x, _m_w_y, _scroll_y = 0,0,0,0,0,0
 	_c_x = 0
 	_c_y = 0
 	_tile_size = 16
 	_buffer_time = 0.3
+	_max_items = 5
 	_mlb_last_pressed = nil
 	_mrb_last_pressed = nil
 	_mmb_last_pressed = nil
-	_mwxb_last_pressed = nil
 	_mwyb_last_pressed = nil
 	_coroutines = {}
 	c=man:new({})
@@ -2062,7 +2075,15 @@ function update_mouse_input()
 		_m_r_b=true
 	else
 		_m_r_b=false
-	end 
+	end
+	if ((_m_w_y>0 or _m_w_y<0) and _mwyb_last_pressed == nil) 
+	or ((_m_w_y>0 or _m_w_y<0) and time_since(_mwyb_last_pressed,time(),false) > _buffer_time) then
+		_mrb_last_pressed = time()
+		local _m_w_y = _m_w_y * -1
+		_m_w_y_b = true
+	else
+		_m_w_y_b = false
+	end
 end
 
 function debug()
@@ -2073,7 +2094,7 @@ function debug()
 			.. " cpu2: " .. stat(2), _c_x-475, _c_y+258, 31)
 end
 :: moodles.lua
---[[pod_format="raw",created="2024-05-07 21:40:35",modified="2024-09-19 22:26:51",revision=6372]]
+--[[pod_format="raw",created="2024-05-07 21:40:35",modified="2024-09-20 15:54:51",revision=6405]]
 include './types.lua'
 include './util.lua'
 
@@ -2252,7 +2273,7 @@ moodle_sprites={
 	thirst_4 = (gfx_offset.gfx_3+19),
 }
 :: rooms.lua
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-09-19 22:26:51",revision=1793]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-09-20 15:54:51",revision=1827]]
 include './types.lua'
 include './util.lua'
 
@@ -2327,7 +2348,7 @@ function init_rooms()
 	})
 end
 :: static_interactable.lua
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2024-09-19 22:26:51",revision=5941]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2024-09-20 15:54:51",revision=5978]]
 include './types.lua'
 include './util.lua'
 include './containers.lua'
@@ -2393,7 +2414,7 @@ function redraw_tiles(c)
 	_redraw_list={}
 end
 :: types.lua
---[[pod_format="raw",created="2024-05-06 22:22:02",modified="2024-09-19 22:26:51",revision=6264]]
+--[[pod_format="raw",created="2024-05-06 22:22:02",modified="2024-09-20 15:54:51",revision=6297]]
 class={
 	new=
 		function(self,tbl)
@@ -2444,7 +2465,7 @@ direction={
 	right = 4
 }
 :: util.lua
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-09-19 22:26:51",revision=6598]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-09-20 15:54:51",revision=6631]]
 
 --object, start frame,
 --num frames, speed, flip
@@ -2602,32 +2623,32 @@ gfx_offset={
 	gfx_3=768
 }
 :: .info.pod
-b64$LS1bW3BvZCx2ZXJzaW9uPSIwLjAuOSIscnVudGltZT0xMSxhdXRob3I9IkJhdWxlcnMiLGlj
-b249dXNlcmRhdGEoInU4IiwxNiwxNiwiMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
-MDAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAw
-MDAwMDAwMDAwMDAwMDEwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTBkMDAwMDBkMDAw
-MDAwMDAwMDAwMDAwMDAwMDAwMDBkMDEwMTBkMDAwZDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwMDBk
-MDEwZDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwZDAxMDAwMDBkMDAwMDAwMDAwMDAwMDAw
-MDAwMDAwZDAwMDEwMTBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDEwMDBkMDAwMDAw
-MDAwMDAwMDAwMDAwMDAwMDBkMDAwMTBkMDAwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDEw
-MTBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwMDBkMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
-MDAwMDBkMDAwMDAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDAwMDAw
-MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiKSxtb2RpZmllZD0iMjAyNC0wOS0xOSAyMjoyNjo1MSIs
-Y3JlYXRlZD0iMjAyNC0wNS0wMyAxMzo0ODo0NyIsbm90ZXM9IlVuZmluaXNoZWQsIHBsZWFzZSBp
-Z25vcmUuIix0aXRsZT0iR3V0IFdvdW5kIChXb3JraW5nIFRpdGxlKSIsd29ya3NwYWNlcz17e2xv
-Y2F0aW9uPSJtYWluLmx1YSMyNiIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2NhdGlvbj0iY2hhcmFj
-dGVyLmx1YSMzMDUiLHdvcmtzcGFjZV9pbmRleD0xfSx7bG9jYXRpb249InN0YXRpY19pbnRlcmFj
-dGFibGUubHVhIzI2Iix3b3Jrc3BhY2VfaW5kZXg9MX0se2xvY2F0aW9uPSJpbnZlbnRvcnkubHVh
-IzcxIix3b3Jrc3BhY2VfaW5kZXg9MX0se2xvY2F0aW9uPSJjb250ZXh0X21lbnUubHVhIzY2Iix3
-b3Jrc3BhY2VfaW5kZXg9MX0se2xvY2F0aW9uPSJtb29kbGVzLmx1YSMxMTciLHdvcmtzcGFjZV9p
-bmRleD0xfSx7bG9jYXRpb249InR5cGVzLmx1YSMyOCIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2Nh
-dGlvbj0idXRpbC5sdWEjMzciLHdvcmtzcGFjZV9pbmRleD0xfSx7bG9jYXRpb249ImNvbnRhaW5l
-cnMubHVhIzE0MiIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2NhdGlvbj0iaXRlbXMubHVhIzI2NSIs
-d29ya3NwYWNlX2luZGV4PTF9LHtsb2NhdGlvbj0icm9vbXMubHVhIzE3Iix3b3Jrc3BhY2VfaW5k
-ZXg9MX0se2xvY2F0aW9uPSJnZngvMS5nZngiLHdvcmtzcGFjZV9pbmRleD0yfSx7bG9jYXRpb249
-ImdmeC8yLmdmeCIsd29ya3NwYWNlX2luZGV4PTJ9LHtsb2NhdGlvbj0iZ2Z4LzAuZ2Z4Iix3b3Jr
-c3BhY2VfaW5kZXg9Mn0se2xvY2F0aW9uPSJnZngvMy5nZngiLHdvcmtzcGFjZV9pbmRleD0yfSx7
-bG9jYXRpb249Im1hcC8wLm1hcCIsd29ya3NwYWNlX2luZGV4PTN9LHtsb2NhdGlvbj0ic2Z4LzAu
-c2Z4Iix3b3Jrc3BhY2VfaW5kZXg9NH0se2xvY2F0aW9uPSJwYWwvMC5wYWwiLHdvcmtzcGFjZV9p
-bmRleD03fX1dXQ==
+b64$LS1bW3BvZCx3b3Jrc3BhY2VzPXt7bG9jYXRpb249Im1haW4ubHVhIzEwNiIsd29ya3NwYWNl
+X2luZGV4PTF9LHtsb2NhdGlvbj0iY2hhcmFjdGVyLmx1YSMzMDUiLHdvcmtzcGFjZV9pbmRleD0x
+fSx7bG9jYXRpb249InN0YXRpY19pbnRlcmFjdGFibGUubHVhIzI2Iix3b3Jrc3BhY2VfaW5kZXg9
+MX0se2xvY2F0aW9uPSJpbnZlbnRvcnkubHVhIzE3OSIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2Nh
+dGlvbj0iY29udGV4dF9tZW51Lmx1YSM2NiIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2NhdGlvbj0i
+bW9vZGxlcy5sdWEjMTE3Iix3b3Jrc3BhY2VfaW5kZXg9MX0se2xvY2F0aW9uPSJ0eXBlcy5sdWEj
+MjgiLHdvcmtzcGFjZV9pbmRleD0xfSx7bG9jYXRpb249InV0aWwubHVhIzM3Iix3b3Jrc3BhY2Vf
+aW5kZXg9MX0se2xvY2F0aW9uPSJpdGVtcy5sdWEjMjY1Iix3b3Jrc3BhY2VfaW5kZXg9MX0se2xv
+Y2F0aW9uPSJjb250YWluZXJzLmx1YSMxNDIiLHdvcmtzcGFjZV9pbmRleD0xfSx7bG9jYXRpb249
+InJvb21zLmx1YSMxNyIsd29ya3NwYWNlX2luZGV4PTF9LHtsb2NhdGlvbj0iZ2Z4LzEuZ2Z4Iix3
+b3Jrc3BhY2VfaW5kZXg9Mn0se2xvY2F0aW9uPSJnZngvMi5nZngiLHdvcmtzcGFjZV9pbmRleD0y
+fSx7bG9jYXRpb249ImdmeC8wLmdmeCIsd29ya3NwYWNlX2luZGV4PTJ9LHtsb2NhdGlvbj0iZ2Z4
+LzMuZ2Z4Iix3b3Jrc3BhY2VfaW5kZXg9Mn0se2xvY2F0aW9uPSJtYXAvMC5tYXAiLHdvcmtzcGFj
+ZV9pbmRleD0zfSx7bG9jYXRpb249InNmeC8wLnNmeCIsd29ya3NwYWNlX2luZGV4PTR9LHtsb2Nh
+dGlvbj0icGFsLzAucGFsIix3b3Jrc3BhY2VfaW5kZXg9N319LHZlcnNpb249IjAuMC45IixhdXRo
+b3I9IkJhdWxlcnMiLHJ1bnRpbWU9MTEsdGl0bGU9Ikd1dCBXb3VuZCAoV29ya2luZyBUaXRsZSki
+LGNyZWF0ZWQ9IjIwMjQtMDUtMDMgMTM6NDg6NDciLG5vdGVzPSJVbmZpbmlzaGVkLCBwbGVhc2Ug
+aWdub3JlLiIsbW9kaWZpZWQ9IjIwMjQtMDktMjAgMTU6NTQ6NTEiLGljb249dXNlcmRhdGEoInU4
+IiwxNiwxNiwiMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEw
+MDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTBkMDAwMDBkMDAwMDAwMDAwMDAwMDAwMDAw
+MDAwMDBkMDEwMTBkMDAwZDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwMDBkMDEwZDAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDAwMDBkMDAwZDAxMDAwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwZDAwMDEwMTBk
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDEwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDBkMDAwMTBkMDAwMDBkMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDEwMTBkMDAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDBkMDAwMDBkMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBkMDAwMDAxMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw
+MDAwMDAwMDAiKV1d
 :: [eoc]

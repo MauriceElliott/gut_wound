@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-09-30 21:13:25",revision=7574]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-09-30 22:57:46",revision=7599]]
 include './types.lua'
 include './util.lua'
 
@@ -285,6 +285,7 @@ function update_character_vitals(c)
 			end
 		end
 	end
+	c.capacity = c.base_capacity + c.extra_capacity
 end
 
 function draw_blood_splatter()

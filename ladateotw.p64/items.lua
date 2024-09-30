@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-09-30 21:13:25",revision=5219]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-09-30 22:57:46",revision=5246]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -199,6 +199,7 @@ readable=item:new({
 	item_type = item_type.readable,
 	open_sprite = 0,
 	is_flamable = true,
+	weight = 0.8,
 	read = function(self)
 		
 	end

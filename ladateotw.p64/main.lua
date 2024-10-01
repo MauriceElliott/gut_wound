@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-09-30 22:57:46",revision=7806]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-10-01 23:21:28",revision=7827]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'

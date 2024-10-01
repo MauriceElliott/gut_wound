@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-09-30 22:57:46",revision=6839]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-01 23:21:28",revision=6859]]
 
 --object, start frame,
 --num frames, speed, flip
@@ -102,7 +102,7 @@ function time_since(from, to, f)
 	if f == true then
 		return flr(to) - flr(from)
 	else
-		return to - from 
+		return to - from
 	end
 end
 
@@ -117,7 +117,7 @@ end
 
 -- pre calculated flag, flag
 function fget_precalc(pcf, f)
-	return (pcf>>f)&1==1	
+	return (pcf>>f)&1==1
 end
 
 function table_length(t)
@@ -137,12 +137,12 @@ end
 function draw_info_text(t, d)
 	local func = cocreate(function()
 		local l = #t
-		local n_px = l*5 
+		local n_px = l*5
 		local x_offset = (480-n_px)/2
 		for i=1,(d*60) do
 			local x = (_c_x-480)+x_offset
 			rectfill(x-1, _c_y+239, x+n_px+1, _c_y+248, 0)
-			print(t, x, _c_y+240, 33)	
+			print(t, x, _c_y+240, 33)
 			yield()
 		end
 	end)

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-09-30 22:57:46",revision=7599]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-01 23:21:28",revision=7624]]
 include './types.lua'
 include './util.lua'
 
@@ -194,15 +194,6 @@ function scan_character_area(c)
 	local b_co = { x = current_cel.x, y = current_cel.y + 1 }
 	local b_spr = mget(b_co.x, b_co.y)
 	local b_f = fget(b_spr)
---	local bx_co = { x = current_cel.x, y = current_cel.y + 2 }
---	local bx_spr = mget(bx_co.x, bx_co.y)
---	local bx_f = fget(bx_spr)
---	local bxr_co = { x = current_cel.x+1, y = current_cel.y + 2 }
---	local bxr_spr = mget(bxr_co.x, bxr_co.y)
---	local bxr_f = fget(bxr_spr)
---	local bxl_co = { x = current_cel.x-1, y = current_cel.y + 2 }
---	local bxl_spr = mget(bxl_co.x, bxl_co.y)
---	local bxl_f = fget(bxl_spr)
 	local c_co = { x = current_cel.x, y = current_cel.y }
 	local c_spr = mget(c_co.x, c_co.y)
 	local c_f = fget(c_spr)
@@ -231,15 +222,6 @@ function scan_character_area(c)
 	if b_f != 0 then
 		add(_flagged_tiles,{ tile_co = b_co, sprite = b_spr, flags = b_f })
 	end
---	if bx_f != 0 then
---		add(_flagged_tiles,{ tile_co = bx_co, sprite = bx_spr, flags = bx_f })
---	end	
---	if bxr_f != 0 then
---		add(_flagged_tiles,{ tile_co = bxr_co, sprite = bxr_spr, flags = bxr_f })
---	end	
---	if bxl_f != 0 then
---		add(_flagged_tiles,{ tile_co = bxl_co, sprite = bxl_spr, flags = bxl_f })
---	end	
 	if c_f != 0 then
 		add(_flagged_tiles,{ tile_co = c_co, sprite = c_spr, flags = c_f })
 	end
@@ -285,7 +267,7 @@ function update_character_vitals(c)
 			end
 		end
 	end
-	c.capacity = c.base_capacity + c.extra_capacity
+	i.capacity = i.base_capacity + i.extra_capacity
 end
 
 function draw_blood_splatter()

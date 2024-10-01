@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-09-30 22:57:46",revision=6807]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-10-01 23:21:28",revision=6828]]
 include './types.lua'
 include './util.lua'
 include './items.lua'
@@ -51,7 +51,7 @@ function add_to_inventory(c_i, cc, item)
         total_weight += (s.item.weight * s.quantity)
     end
     if (total_weight + item.weight) > c_i.max_capacity then
-        print("Can't carry anymore.", _m_x, _m_y + 6, 8)
+        draw_info_text("Can't carry anymore.", 5)
         return
     end
     if existing_item_index > 0 then

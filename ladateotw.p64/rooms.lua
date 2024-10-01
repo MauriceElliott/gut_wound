@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-09-30 22:57:46",revision=2051]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-10-01 23:21:28",revision=2077]]
 include './types.lua'
 include './util.lua'
 
@@ -9,8 +9,8 @@ room=entity:new({
 	e_y = 0,
 	is_discovered = false,
 	replacement_sprite = 0,
-	health_taken = 0,
 	is_unlocked = true,
+	call_counter = 0
 })
 
 function draw_fow()
@@ -39,17 +39,22 @@ function unlock_inner_door(ft,rep_tile)
 end
 
 function unlock_normal_door(room, ft)
-	draw_info_text("unlock called", 10)
 	mset(ft.tile_co.x, ft.tile_co.y, room.replacement_sprite)
 	mset(ft.tile_co.x, ft.tile_co.y+1, room.replacement_sprite)
 	room.is_discovered=true
 end
 
 function unlock_heavy_door(room, ft)
-	draw_info_text("heavy called", 5)
-	mset(ft.tile_co.x, ft.tile_co.y, room.replacement_sprite)
-	mset(ft.tile_co.x, ft.tile_co.y+1, room.replacement_sprite)
-	room.is_discovered=true
+    if room.call_counter == 0 then
+        room.call_counter += 1
+        draw_info_text("The door is jammed, try again and put some weight into it.", 5)
+    else
+        c.health -= 10
+        c.wound_health -= 20
+        mset(ft.tile_co.x, ft.tile_co.y, room.replacement_sprite)
+        mset(ft.tile_co.x, ft.tile_co.y+1, room.replacement_sprite)
+        room.is_discovered=true
+    end
 end
 
 function init_rooms()
@@ -69,6 +74,7 @@ function init_rooms()
 		e_y = 144+15,
 		replacement_sprite = 11,
 		is_discovered = false,
-		call_unlock = unlock_heavy_door
+		call_unlock = unlock_heavy_door,
+		call_counter = 0
 	})
 end

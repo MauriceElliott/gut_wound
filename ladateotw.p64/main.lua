@@ -13,7 +13,6 @@ include './camera.lua'
 
 _debug_message = ""
 
-
 function _init()
     -- Update Pallet and font
 	poke4(0x5000, get(fetch(pwd().."/pal/0.pal")))

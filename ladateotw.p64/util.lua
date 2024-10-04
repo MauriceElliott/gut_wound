@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-04 12:20:30",revision=6866]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-04 14:13:41",revision=6900]]
 
 --object, start frame,
 --num frames, speed, flip
@@ -21,21 +21,21 @@ function animate_sprite(o, sf, nf, sp, fl)
 end
 
 -- object, radius, flag
-function collide(o,f)
+function collide()
 	f = f or 0
 	local p_adj = 0
-	local x1 = (c.x+6)/_tile_size
-	local y1 = (c.y+10)/_tile_size
-	local x2 = ((c.x+c.max_width)-6)/_tile_size
-	local y2 = ((c.y+c.max_height))/_tile_size
-	local ax1 = ((c.x+6)-p_adj)/_tile_size
-	local ax2 = (((c.x+c.max_width)-6)+p_adj)/_tile_size
-	local ay1 = ((c.y+10)-p_adj)/_tile_size
-	local ay2 = (((c.y+c.max_height))+p_adj)/_tile_size
-	c.d_x1 = x1*_tile_size
-	c.d_y1 = y1*_tile_size
-	c.d_x2 = x2*_tile_size
-	c.d_y2 = y2*_tile_size
+	local x1 = (_char.x+6)/_tile_size
+	local y1 = (_char.y+10)/_tile_size
+	local x2 = ((_char.x+_char.max_width)-6)/_tile_size
+	local y2 = ((_char.y+_char.max_height))/_tile_size
+	local ax1 = ((_char.x+6)-p_adj)/_tile_size
+	local ax2 = (((_char.x+_char.max_width)-6)+p_adj)/_tile_size
+	local ay1 = ((_char.y+10)-p_adj)/_tile_size
+	local ay2 = (((_char.y+_char.max_height))+p_adj)/_tile_size
+	_char.d_x1 = x1*_tile_size
+	_char.d_y1 = y1*_tile_size
+	_char.d_x2 = x2*_tile_size
+	_char.d_y2 = y2*_tile_size
 	c1 = fget2(mget(x1, y1), f)
 	c2 = fget2(mget(x1, y2), f)
 	c3 = fget2(mget(x2, y2), f)
@@ -50,38 +50,38 @@ function collide(o,f)
 		local has_adj = false
 		local adj_val = 0.6
 		if down_right == false then
-			if c.i_dir == direction.down then
-				c.x+=adj_val
+			if _char.i_dir == direction.down then
+				_char.x+=adj_val
 				has_adj = true
-			elseif c.i_dir == direction.right then
-				c.y+=adj_val
+			elseif _char.i_dir == direction.right then
+				_char.y+=adj_val
 				has_adj = true
 			end
 		end
 		if down_left == false and has_adj == false then
-			if c.i_dir == direction.down then
-				c.x-=adj_val
+			if _char.i_dir == direction.down then
+				_char.x-=adj_val
 				has_adj = true
-			elseif c.i_dir == direction.left then
-				c.y+=adj_val
+			elseif _char.i_dir == direction.left then
+				_char.y+=adj_val
 				has_adj = true
 			end
 		end
 		if up_left == false and has_adj == false then
-			if c.i_dir == direction.up then
-				c.x-=adj_val
+			if _char.i_dir == direction.up then
+				_char.x-=adj_val
 				has_adj = true
-			elseif c.i_dir == direction.left then
-				c.y-=adj_val
+			elseif _char.i_dir == direction.left then
+				_char.y-=adj_val
 				has_adj = true
 			end
 		end
 		if up_right == false and has_adj == false then
-			if c.i_dir == direction.up then
-				c.x+=adj_val
+			if _char.i_dir == direction.up then
+				_char.x+=adj_val
 				has_adj = true
-			elseif c.i_dir == direction.right then
-				c.y-=adj_val
+			elseif _char.i_dir == direction.right then
+				_char.y-=adj_val
 				has_adj = true
 			end
 		end

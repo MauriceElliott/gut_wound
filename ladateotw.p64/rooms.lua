@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-10-04 12:20:30",revision=2085]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-10-04 14:13:41",revision=2117]]
 include './types.lua'
 include './util.lua'
 
@@ -17,17 +17,12 @@ function draw_fow()
 	for i, r in pairs(_rooms) do
 		if r.is_discovered == false then
 			if _c_x > r.s_x and _c_y_b > r.s_y then
-				--if _c_x > r.e_x and _c_y_b > r.e_y then --NOT SURE WHAT THIS WAS FOR!
-																	--BUT IT WAS BREAKING WHEN MC
-																	--WENT TO TOP OF MAP
-					rectfill(r.s_x, r.s_y, r.e_x, r.e_y, 0)
-				--else
-					if _c_x > r.e_x and _c_y_b < r.e_y then
-						rectfill(r.s_x, r.s_y, r.e_x, _c_y_b, 0)
-					elseif _c_x < r.e_x and _c_y_b > r.e_y then
-						rectfill(r.s_x, r.s_y, _c_x, r.e_y, 0)
-					end
-				--end
+				rectfill(r.s_x, r.s_y, r.e_x, r.e_y, 0)
+				if _c_x > r.e_x and _c_y_b < r.e_y then
+					rectfill(r.s_x, r.s_y, r.e_x, _c_y_b, 0)
+				elseif _c_x < r.e_x and _c_y_b > r.e_y then
+					rectfill(r.s_x, r.s_y, _c_x, r.e_y, 0)
+				end
 			end
 		end
 	end

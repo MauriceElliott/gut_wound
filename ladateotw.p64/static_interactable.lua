@@ -1,11 +1,11 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2024-10-04 12:20:30",revision=6219]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2024-10-04 14:13:41",revision=6248]]
 include './types.lua'
 include './util.lua'
 include './containers.lua'
 include './rooms.lua'
 
 
-function update_interactables(inv, c)
+function update_interactables(c)
 	local is_cont_in_range = false
 	for i,ft in pairs(_flagged_tiles) do
 		if fget_precalc(ft.flags,1) == true then
@@ -14,9 +14,9 @@ function update_interactables(inv, c)
 			if container_obj != nil then
 				is_cont_in_range = true
 				container_obj.in_range = true
-				if inv.selected_container == 1 or inv.selected_container == container_co then
+				if _inv.selected_container == 1 or _inv.selected_container == container_co then
 					spr(
-						container_obj.in_range_sprite, 
+						container_obj.in_range_sprite,
 						(flr(ft.tile_co.x*_tile_size)) + container_obj.in_range_sprite_adjustment.x,
 						(flr(ft.tile_co.y*_tile_size)) + container_obj.in_range_sprite_adjustment.y
 					)
@@ -36,15 +36,15 @@ function update_interactables(inv, c)
 					room.call_unlock(room, ft)
 				else
 					replacement_tile = mget(ft.tile_co.x, ft.tile_co.y-1)
-					unlock_inner_door(ft, replacement_tile) 
+					unlock_inner_door(ft, replacement_tile)
 				end
 			end
 		end
 		if fget_precalc(ft.flags,3) == true then
-			if (coalesce(c.d_y2, 0)-16) < (ft.tile_co.y*16) then
+			if (coalesce(_char.d_y2, 0)-16) < (ft.tile_co.y*16) then
 				add(_redraw_list, ft)
 			end
-		end	
+		end
 	end
 	if not is_cont_in_range then
 		for i, dc in pairs(_discovered_containers) do

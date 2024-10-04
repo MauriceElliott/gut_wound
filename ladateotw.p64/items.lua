@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-10-04 12:20:30",revision=5273]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-10-04 14:13:41",revision=5304]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -35,20 +35,20 @@ consumable=item:new({
 	can_heat = false,
 	hot_offset = 0,
 	cold_offset = 0,
-	consume = function(self, o)
+	consume = function(self)
 		local offset = 0
 		if is_hot then
 			offset = self.hot_offset
 		else
 			offset = self.cold_offset
 		end
-		o.thirst -= (self.thirst + offset)
-		o.hunger -= (self.hunger + offset)
-		o.exhaustion -= (self.exhaustion + offset)
-		o.delirium -= (self.delirium + offset)
-		o.pain -= self.pain
-		o.wound_health += self.wound_health
-		o.health += self.health
+		_char.thirst -= (self.thirst + offset)
+		_char.hunger -= (self.hunger + offset)
+		_char.exhaustion -= (self.exhaustion + offset)
+		_char.delirium -= (self.delirium + offset)
+		_char.pain -= self.pain
+		_char.wound_health += self.wound_health
+		_char.health += self.health
 	end,
 	heat = function(self)
 		self.is_hot = true
@@ -201,7 +201,7 @@ readable=item:new({
 	is_flamable = true,
 	weight = 0.8,
 	read = function(self)
-		
+
 	end
 })
 
@@ -267,9 +267,9 @@ useable=item:new({
 wash_cloth=useable:new({
 	sprite=(gfx_offset.gfx_3+152),
 	name="Wash Cloth",
-	use=function(self,i)
-		add(i.contents,	container_slot:new({quantity = 2, item = cloth_strips:new({})}))
-		del(i,self)
+	use=function(self)
+		add(_inv.contents,	container_slot:new({quantity = 2, item = cloth_strips:new({})}))
+		del(_inv,self)
 	end
 })
 
@@ -287,11 +287,11 @@ backpack=equipable:new({
 	sprite=(gfx_offset.gfx_3+154),
 	name="Backpack",
 	is_equipped=false,
-	equip=function(self,o)
-		add(o.equipped_items, self)
+	equip=function(self)
+		add(_char.equipped_items, self)
 	end,
 	unequip=function(self,o)
-		del(o.equpped_items, self)
+		del(_char.equpped_items, self)
 	end
-	
+
 })

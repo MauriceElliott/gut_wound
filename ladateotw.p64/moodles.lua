@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-07 21:40:35",modified="2024-10-04 12:20:30",revision=6640]]
+--[[pod_format="raw",created="2024-05-07 21:40:35",modified="2024-10-04 14:13:41",revision=6673]]
 include './types.lua'
 include './util.lua'
 
@@ -9,8 +9,8 @@ moodle=entity:new({
 	y = 0,
 })
 
-function get_index(moodles, name)
-	for i, m in ipairs(moodles) do
+function get_index(name)
+	for i, m in ipairs(_moodles) do
 		if m.moodle == name then
 			return i
 		end
@@ -19,12 +19,12 @@ function get_index(moodles, name)
 end
 
 -- moodle entity, name, value, sprite 1, 2, 3, 4, lower check
-function generate_moodle(m, n, v, s1, s2, s3, s4, lc)
-	index = get_index(m.moodles, n)
+function generate_moodle(n, v, s1, s2, s3, s4, lc)
+	index = get_index(n)
 	current_moodle = nil
 	new_sprite = -1
 	if index != -1 then
-		current_moodle = m.moodles[index]
+		current_moodle = _moodles[index]
 	end
 	if lc then
 		if v >= 20 and v < 30 then
@@ -50,101 +50,95 @@ function generate_moodle(m, n, v, s1, s2, s3, s4, lc)
 	if current_moodle == nil and new_sprite != nil then
 		return moodle:new({moodle=n,sprite=new_sprite})
 	elseif current_moodle != nil and current_moodle.sprite != new_sprite then
-		del(m.moodles,current_moodle)
+		del(_moodles,current_moodle)
 		return moodle:new({moodle=n,sprite=new_sprite})
 	elseif current_moodle != nil and new_sprite == nil then
-		del(m.moodles,current_moodle)
+		del(_moodles,current_moodle)
 		return nil
 	elseif current_moodle != nil and current_moodle.sprite == new_sprite then
-		del(m.moodles,current_moodle)
+		del(_moodles,current_moodle)
 		return moodle:new({moodle=n,sprite=new_sprite})
 	end
 	return nil
 end
 
 --moodle object, character
-function display_moodles(m,c)
-	m.moodles = {}
+function display_moodles()
+	_moodles = {}
 	h = generate_moodle(
-		m, 
-		"health", 
-		c.health, 
-		moodle_sprites.health_1, 
-		moodle_sprites.health_2, 
-		moodle_sprites.health_3, 
-		moodle_sprites.health_4, 
+		"health",
+		_char.health,
+		moodle_sprites.health_1,
+		moodle_sprites.health_2,
+		moodle_sprites.health_3,
+		moodle_sprites.health_4,
 		false)
 	if h.sprite > 0 then
-		add(m.moodles,h)
+		add(_moodles,h)
 	end
 
 	wh = generate_moodle(
-		m, 
-		"wound_health", 
-		c.wound_health, 
-		moodle_sprites.wound_health_1, 
-		moodle_sprites.wound_health_2, 
-		moodle_sprites.wound_health_3, 
+		"wound_health",
+		_char.wound_health,
+		moodle_sprites.wound_health_1,
+		moodle_sprites.wound_health_2,
+		moodle_sprites.wound_health_3,
 		moodle_sprites.wound_health_4,
 		false)
 	if wh.sprite > 0 then
-		add(m.moodles,wh)
+		add(_moodles,wh)
 	end
 
 	p = generate_moodle(
-		m, 
-		"pain", 
-		c.pain, 
-		moodle_sprites.pain_1, 
-		moodle_sprites.pain_2, 
-		moodle_sprites.pain_3, 
+		"pain",
+		_char.pain,
+		moodle_sprites.pain_1,
+		moodle_sprites.pain_2,
+		moodle_sprites.pain_3,
 		moodle_sprites.pain_4,
 		true)
 	if p.sprite > 0 then
-		add(m.moodles,p)
+		add(_moodles,p)
 	end
 
 	hu = generate_moodle(
-		m, 
-		"hunger", 
-		c.hunger, 
-		moodle_sprites.hunger_1, 
-		moodle_sprites.hunger_2, 
-		moodle_sprites.hunger_3, 
+		"hunger",
+		_char.hunger,
+		moodle_sprites.hunger_1,
+		moodle_sprites.hunger_2,
+		moodle_sprites.hunger_3,
 		moodle_sprites.hunger_4,
 		true)
 	if hu.sprite > 0 then
-		add(m.moodles,hu)
+		add(_moodles,hu)
 	end
 
 	t = generate_moodle(
-		m, 
-		"thirst", 
-		c.thirst, 
-		moodle_sprites.thirst_1, 
-		moodle_sprites.thirst_2, 
-		moodle_sprites.thirst_3, 
+		"thirst",
+		_char.thirst,
+		moodle_sprites.thirst_1,
+		moodle_sprites.thirst_2,
+		moodle_sprites.thirst_3,
 		moodle_sprites.thirst_4,
 		true)
 	if t.sprite > 0 then
-		add(m.moodles,t)
+		add(_moodles,t)
 	end
 
 	d = generate_moodle(
-		m, 
 		"delirium",
-		c.delirium,
-		moodle_sprites.delirium_1, 
-		moodle_sprites.delirium_2, 
-		moodle_sprites.delirium_3, 
+		_char.delirium,
+		moodle_sprites.delirium_1,
+		moodle_sprites.delirium_2,
+		moodle_sprites.delirium_3,
 		moodle_sprites.delirium_4,
 		true)
 	if d.sprite > 0 then
-		add(m.moodles,d)
+		add(_moodles,d)
 	end
-	
+
 	current_y = 4
-	for i, moodle in pairs(m.moodles) do
+	for i, moodle in pairs(_moodles) do
 		spr(moodle.sprite, _c_x-20, _c_y + current_y)
 		current_y += 20
 	end

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-10-04 12:20:30",revision=2711]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-10-04 14:13:41",revision=2740]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -32,23 +32,23 @@ function draw_context_menu()
 		else
 			_cm.open = false
 			_cm.options = {}
-		end	
-		
+		end
+
 		local current_offset = 0
 		for i, o in pairs(_cm.options) do
 			rectfill(_cm.x, _cm.y+current_offset, _cm.x+60, _cm.y+current_offset+12,0)
 			rect(_cm.x, _cm.y+current_offset, _cm.x+60, _cm.y+current_offset+12,23)
 			print(o.name, _cm.x+2, _cm.y+1+current_offset)
-			if _m_x > _cm.x 
-			and _m_x < _cm.x+60 
-			and _m_y > _cm.y+current_offset 
+			if _m_x > _cm.x
+			and _m_x < _cm.x+60
+			and _m_y > _cm.y+current_offset
 			and _m_y < _cm.y+current_offset+12 then
 				rect(_cm.x+1, _cm.y+current_offset+1, _cm.x+59, _cm.y+current_offset+11,2)
 				o.m_is_on = true
 			end
 			current_offset += 12
 		end
-	end	
+	end
 end
 
 function update_context_menu(obj)
@@ -71,8 +71,8 @@ end
 function execute_context_menu_option(c, a)
 	if _cm.open and _m_l_b then
 		for i, o in pairs(_cm.options) do
-			if o.m_is_on then  
-				o.action(_cm.current_obj, c, a)
+			if o.m_is_on then
+				o.action(_cm.current_obj)
 			end
 		end
 	end

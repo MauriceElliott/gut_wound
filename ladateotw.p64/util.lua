@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-01 23:21:28",revision=6859]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-04 12:20:30",revision=6866]]
 
 --object, start frame,
 --num frames, speed, flip

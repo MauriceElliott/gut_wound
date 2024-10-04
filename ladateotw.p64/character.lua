@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-04 14:13:41",revision=7660]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-04 22:36:12",revision=7783]]
 include './types.lua'
 include './util.lua'
 
@@ -277,10 +277,11 @@ function draw_blood_splatter()
 	end
 end
 
-function update_equippables(o)
-	for i, e in ipairs(o.equipped_items) do
-		if e.name == "Backpack" then
-			o.inventory.extra_capacity = 12
-		end
+function update_equippables()
+	if util.name_contains("Backpack") then
+		_inv.extra_capacity = 12
+	else
+		_inv.extra_capacity = 0
 	end
+	_inv.max_capacity = _inv.capacity + _inv.extra_capacity
 end

@@ -1,4 +1,5 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-04 14:13:41",revision=6900]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-04 22:36:12",revision=7025]]
+util = {}
 
 --object, start frame,
 --num frames, speed, flip
@@ -98,6 +99,14 @@ function coalesce(a, b)
 	end
 end
 
+function util.bool_to_int(a)
+	if a then
+		return 1
+	else
+		return 0
+	end
+end
+
 function time_since(from, to, f)
 	if f == true then
 		return flr(to) - flr(from)
@@ -126,6 +135,16 @@ function table_length(t)
 		length+=1
 	end
 	return length
+end
+
+function util.name_contains(list, value)
+	local return_value = false
+	for i, e in ipairs(list) do
+		if e.name == value then
+			return_value = true
+		end
+	end
+	return return_value
 end
 
 function draw_border()

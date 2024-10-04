@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-10-04 14:13:41",revision=2740]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2024-10-04 22:36:12",revision=2872]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -20,6 +20,7 @@ context_menu_actions = {
 	discard = "Discard",
 	use = "Use",
 	equip = "Equip",
+	unequip = "Unequip",
 }
 
 function draw_context_menu()
@@ -65,15 +66,24 @@ function update_context_menu(obj)
 		if obj.item_type == item_type.junk then
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
+		if obj.item_type == item_type.equipable then
+			_debug_message = "bp: " .. util.bool_to_int(obj.is_equipped)
+			if obj.is_equipped == false then
+				add(_cm.options, context_option:new({name = context_menu_actions.equip, action = obj.equip}))
+			else
+				add(_cm.options, context_option:new({name = context_menu_actions.unequip, action = obj.unequip}))
+			end
+		end
 	end
 end
 
-function execute_context_menu_option(c, a)
+function execute_context_menu_option()
 	if _cm.open and _m_l_b then
 		for i, o in pairs(_cm.options) do
 			if o.m_is_on then
 				o.action(_cm.current_obj)
 			end
 		end
+		_cm.open = false 
 	end
 end

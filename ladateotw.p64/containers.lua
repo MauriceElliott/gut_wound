@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-10-04 14:13:41",revision=3208]]
+--[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-10-04 22:36:12",revision=3324]]
 include './types.lua'
 include './util.lua'
 
@@ -164,7 +164,7 @@ function init_containers()
 			)
 		}
 	})
-	_containers["21_2"] = container:new({
+	_containers["21_1"] = container:new({
 		small_icon = 184,
 		in_range_sprite = 176,
 		in_range_sprite_adjustment = {x=0,y=7},

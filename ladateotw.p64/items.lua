@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-10-04 14:13:41",revision=5304]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-10-04 22:36:12",revision=5423]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -13,7 +13,7 @@ item_type = {
 	consumable = 1,
 	junk = 2,
 	useable = 3,
-	special = 4,
+	equipable = 4,
 	unique = 5,
 	readable = 6,
 }
@@ -279,7 +279,7 @@ wash_cloth=useable:new({
 -- equipable --
 ---------------
 equipable=item:new({
-	item_type = item_type.useable,
+	item_type = item_type.equipable,
 })
 
 
@@ -289,9 +289,11 @@ backpack=equipable:new({
 	is_equipped=false,
 	equip=function(self)
 		add(_char.equipped_items, self)
+		self.is_equipped=true
 	end,
-	unequip=function(self,o)
+	unequip=function(self)
 		del(_char.equpped_items, self)
+		self.is_equipped=false
 	end
 
 })

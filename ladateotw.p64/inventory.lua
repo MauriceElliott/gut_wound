@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-10-04 14:13:41",revision=6872]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2024-10-04 22:36:12",revision=7000]]
 include './types.lua'
 include './util.lua'
 include './items.lua'
@@ -92,6 +92,9 @@ function display_inventory_contents()
                 rect(c.starting_x - 1, c.starting_y - 2, c.ending_x + 1, c.ending_y + 1, 2)
             end
             spr(c.item.sprite, _inv.inv_starting_x, current_y, 23)
+            if c.item.is_equipped then
+            		spr((gfx_offset.gfx_3+6), _inv.inv_starting_x-1, current_y) 
+            end
             print(c.item.name, _inv.inv_starting_x + 11, current_y, 23)
             print(c.item.weight, _inv.inv_starting_x + 80, current_y, 23)
             print(c.quantity, _inv.inv_starting_x + 103, current_y, 23)

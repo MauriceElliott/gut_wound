@@ -1,9 +1,12 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-10-04 22:36:12",revision=144]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-10-08 23:01:02",revision=177]]
 -- Title Scene
 function title_scene_draw()
 	cls(16)
+	
 	spr(gfx_offset.gfx_3+49, 250, 20)
 	spr(gfx_offset.gfx_3+48, 15, 20)
+	spr(gfx_offset.gfx_3+56, 100, 135)
+	
 end
 
 function title_scene_update()

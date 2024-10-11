@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-10-08 23:01:02",revision=8016]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-10-11 23:35:11",revision=8072]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -49,6 +49,7 @@ function _init()
 	_cm=context_menu:new({})
 	_char=man:new({})
 
+	add(_char.equipped_items, backpack:new({}))
 	-- Initialise static objects
 	init_containers()
 	init_rooms()
@@ -65,8 +66,8 @@ function update_coroutines()
 end
 
 function _draw()
-   --game_scene_draw()
-   title_scene_draw()
+   game_scene_draw()
+   --title_scene_draw()
 	update_coroutines()
 	debug()
 end

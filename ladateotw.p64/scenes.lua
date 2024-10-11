@@ -1,4 +1,6 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-10-08 23:01:02",revision=177]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-10-11 23:35:11",revision=241]]
+include './character.lua'
+
 -- Title Scene
 function title_scene_draw()
 	cls(16)
@@ -27,6 +29,7 @@ function game_scene_draw()
 	update_inventory()
 	draw_context_menu()
 	draw_border()
+	draw_equippables()
 end
 
 function game_scene_update()
@@ -34,4 +37,5 @@ function game_scene_update()
 	scan_character_area()
 	execute_context_menu_option()
 	update_character_vitals()
+	update_equippables()
 end

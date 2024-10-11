@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-08 23:01:02",revision=7044]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-11 23:35:11",revision=7098]]
 util = {}
 
 --object, start frame,
@@ -139,12 +139,14 @@ end
 
 function util.name_contains(list, value)
 	local return_value = false
+	local return_object = nil
 	for i, e in ipairs(list) do
 		if e.name == value then
 			return_value = true
+			return_object = e
 		end
 	end
-	return return_value
+	return { check = return_value, val = return_object }
 end
 
 function draw_border()

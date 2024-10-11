@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-08 23:01:02",revision=7802]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-11 23:35:11",revision=7868]]
 include './types.lua'
 include './util.lua'
 
@@ -278,10 +278,26 @@ function draw_blood_splatter()
 end
 
 function update_equippables()
-	if util.name_contains("Backpack") then
+	local bkpk = util.name_contains(_char.equipped_items,"Backpack")
+	if bkpk.check then
 		_inv.extra_capacity = 12
 	else
 		_inv.extra_capacity = 0
 	end
 	_inv.max_capacity = _inv.capacity + _inv.extra_capacity
+end
+
+function draw_equippables()
+	local bkpk = util.name_contains(_char.equipped_items, "Backpack")
+	if bkpk.check then
+		if _char.i_dir == direction.up then
+			spr(bkpk.val.u_spr.sprite, _char.x+bkpk.val.u_spr.x,_char.y+bkpk.val.u_spr.y)
+		elseif _char.i_dir == direction.down then
+			spr(bkpk.val.d_spr.sprite, _char.x+bkpk.val.d_spr.x,_char.y+bkpk.val.d_spr.y)
+		elseif _char.i_dir == direction.left then
+			spr(bkpk.val.l_spr.sprite, _char.x+bkpk.val.l_spr.x,_char.y+bkpk.val.l_spr.y)
+		elseif _char.i_dir == direction.right then
+			spr(bkpk.val.r_spr.sprite, _char.x+bkpk.val.r_spr.x,_char.y+bkpk.val.r_spr.y)
+		end
+	end
 end

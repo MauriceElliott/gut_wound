@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-10-08 23:01:02",revision=5442]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-10-11 23:35:11",revision=5511]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -287,6 +287,10 @@ backpack=equipable:new({
 	sprite=(gfx_offset.gfx_3+154),
 	name="Backpack",
 	is_equipped=false,
+	u_spr = { sprite = 220, x = 5, y = 8 }, 
+	d_spr = { sprite = 221, x = 8, y = 8 },
+	l_spr = { sprite = 223, x = 8, y = 8 },
+	r_spr = { sprite = 222, x = -3, y = 9 },
 	equip=function(self)
 		add(_char.equipped_items, self)
 		self.is_equipped=true
@@ -295,5 +299,4 @@ backpack=equipable:new({
 		del(_char.equpped_items, self)
 		self.is_equipped=false
 	end
-
 })

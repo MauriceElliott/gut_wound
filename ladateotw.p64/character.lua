@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-11 23:35:11",revision=7868]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-14 22:55:58",revision=7877]]
 include './types.lua'
 include './util.lua'
 
@@ -280,8 +280,10 @@ end
 function update_equippables()
 	local bkpk = util.name_contains(_char.equipped_items,"Backpack")
 	if bkpk.check then
+		_char.bkpk_equipped = true
 		_inv.extra_capacity = 12
 	else
+		_char.bkpk_equipped = false
 		_inv.extra_capacity = 0
 	end
 	_inv.max_capacity = _inv.capacity + _inv.extra_capacity

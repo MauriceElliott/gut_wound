@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-14 22:55:58",revision=7107]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2024-10-18 20:36:32",revision=7120]]
 util = {}
 
 --object, start frame,
@@ -171,7 +171,6 @@ function draw_info_text(t, d)
 end
 
 gfx_offset={
-	gfx_0=0,
 	gfx_1=256,
 	gfx_2=512,
 	gfx_3=768

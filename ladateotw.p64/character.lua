@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-14 22:55:58",revision=7877]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-10-18 20:36:32",revision=7916]]
 include './types.lua'
 include './util.lua'
 
@@ -26,14 +26,22 @@ man=character:new({
    max_height = 34,
 	wound_health = 60,
 	delirium = 0,
-	d_i_f = {sf = 252, nf = 2, s = 0.5, fl = false},
-	u_i_f = {sf = 254, nf = 2, s = 0.5, fl = false},
-	l_i_f = {sf = 244, nf = 2, s = 0.5, fl = true},
-	r_i_f = {sf = 244, nf = 2, s = 0.5, fl = false},
-	d_m_f = {sf = 228, nf = 4, s = 4, fl = false},
-	u_m_f = {sf = 236, nf = 4, s = 4, fl = false},
-	l_m_f = {sf = 212, nf = 4, s = 4, fl = true},
-	r_m_f = {sf = 212, nf = 4, s = 4, fl = false},
+	d_i_f = {sf = (gfx_offset.gfx_1+32), nf = 2, s = 0.5, fl = false},
+	u_i_f = {sf = (gfx_offset.gfx_1+40), nf = 2, s = 0.5, fl = false},
+	l_i_f = {sf = (gfx_offset.gfx_1+24), nf = 2, s = 0.5, fl = true},
+	r_i_f = {sf = (gfx_offset.gfx_1+24), nf = 2, s = 0.5, fl = false},
+	d_m_f = {sf = (gfx_offset.gfx_1+8), nf = 4, s = 4, fl = false},
+	u_m_f = {sf = (gfx_offset.gfx_1+16), nf = 4, s = 4, fl = false},
+	l_m_f = {sf = (gfx_offset.gfx_1+0), nf = 4, s = 4, fl = true},
+	r_m_f = {sf = (gfx_offset.gfx_1+0), nf = 4, s = 4, fl = false},
+	db_i_f = {sf = (gfx_offset.gfx_1+38), nf = 2, s = 0.5, fl = false},
+	ub_i_f = {sf = (gfx_offset.gfx_1+46), nf = 2, s = 0.5, fl = false},
+	lb_i_f = {sf = (gfx_offset.gfx_1+30), nf = 2, s = 0.5, fl = true},
+	rb_i_f = {sf = (gfx_offset.gfx_1+30), nf = 2, s = 0.5, fl = false},
+	db_m_f = {sf = (gfx_offset.gfx_1+12), nf = 4, s = 4, fl = false},
+	ub_m_f = {sf = (gfx_offset.gfx_1+20), nf = 4, s = 4, fl = false},
+	lb_m_f = {sf = (gfx_offset.gfx_1+4), nf = 4, s = 4, fl = true},
+	rb_m_f = {sf = (gfx_offset.gfx_1+4), nf = 4, s = 4, fl = false},
 })
 
 function move_man()
@@ -96,74 +104,147 @@ end
 
 function animate_character()
 	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-4, _char.y+_char.max_height+1, 0)
+	local bkpk = util.name_contains(_char.equipped_items, "Backpack")
 	if _char.state == "idle" then
-		if _char.i_dir == direction.down then
-			animate_sprite(
-				_char,
-				_char.d_i_f.sf,
-				_char.d_i_f.nf,
-				_char.d_i_f.s,
-				_char.d_i_f.fl
-			)
-		elseif _char.i_dir == direction.up then
-			animate_sprite(
-				_char,
-				_char.u_i_f.sf,
-				_char.u_i_f.nf,
-				_char.u_i_f.s,
-				_char.u_i_f.fl
-			)
-		elseif _char.i_dir == direction.left then
-			animate_sprite(
-				_char,
-				_char.l_i_f.sf,
-				_char.l_i_f.nf,
-				_char.l_i_f.s,
-				_char.l_i_f.fl
-			)
-		elseif _char.i_dir == direction.right then
-			animate_sprite(
-				_char,
-				_char.r_i_f.sf,
-				_char.r_i_f.nf,
-				_char.r_i_f.s,
-				_char.r_i_f.fl
-			)
-		end
+		if bkpk.check == false then
+			if _char.i_dir == direction.down then
+				animate_sprite(
+					_char,
+					_char.d_i_f.sf,
+					_char.d_i_f.nf,
+					_char.d_i_f.s,
+					_char.d_i_f.fl
+				)
+			elseif _char.i_dir == direction.up then
+				animate_sprite(
+					_char,
+					_char.u_i_f.sf,
+					_char.u_i_f.nf,
+					_char.u_i_f.s,
+					_char.u_i_f.fl
+				)
+			elseif _char.i_dir == direction.left then
+				animate_sprite(
+					_char,
+					_char.l_i_f.sf,
+					_char.l_i_f.nf,
+					_char.l_i_f.s,
+					_char.l_i_f.fl
+				)
+			elseif _char.i_dir == direction.right then
+				animate_sprite(
+					_char,
+					_char.r_i_f.sf,
+					_char.r_i_f.nf,
+					_char.r_i_f.s,
+					_char.r_i_f.fl
+				)
+			end
+		else
+			if _char.i_dir == direction.down then
+				animate_sprite(
+					_char,
+					_char.db_i_f.sf,
+					_char.db_i_f.nf,
+					_char.db_i_f.s,
+					_char.db_i_f.fl
+				)
+			elseif _char.i_dir == direction.up then
+				animate_sprite(
+					_char,
+					_char.ub_i_f.sf,
+					_char.ub_i_f.nf,
+					_char.ub_i_f.s,
+					_char.ub_i_f.fl
+				)
+			elseif _char.i_dir == direction.left then
+				animate_sprite(
+					_char,
+					_char.lb_i_f.sf,
+					_char.lb_i_f.nf,
+					_char.lb_i_f.s,
+					_char.lb_i_f.fl
+				)
+			elseif _char.i_dir == direction.right then
+				animate_sprite(
+					_char,
+					_char.rb_i_f.sf,
+					_char.rb_i_f.nf,
+					_char.rb_i_f.s,
+					_char.rb_i_f.fl
+				)
+			end
+		end	
 	end
 	if _char.state == "moving" then
-		if _char.i_dir == direction.right then
-			animate_sprite(
-				_char,
-				_char.r_m_f.sf,
-				_char.r_m_f.nf,
-				_char.r_m_f.s,
-				_char.r_m_f.fl
-			)
-		elseif _char.i_dir == direction.left then
-			animate_sprite(
-				_char,
-				_char.l_m_f.sf,
-				_char.l_m_f.nf,
-				_char.l_m_f.s,
-				_char.l_m_f.fl
-			)
-		elseif _char.i_dir == direction.down then
-			animate_sprite(
-				_char,
-				_char.d_m_f.sf,
-				_char.d_m_f.nf,
-				_char.d_m_f.s,
-				_char.d_m_f.fl
-			)
-		elseif _char.i_dir == direction.up then
-			animate_sprite(
-				_char,
-				_char.u_m_f.sf,
-				_char.u_m_f.nf,
-				_char.u_m_f.s,
-				_char.u_m_f.fl
-			)
+		if bkpk.check == false then
+			if _char.i_dir == direction.right then
+				animate_sprite(
+					_char,
+					_char.r_m_f.sf,
+					_char.r_m_f.nf,
+					_char.r_m_f.s,
+					_char.r_m_f.fl
+				)
+			elseif _char.i_dir == direction.left then
+				animate_sprite(
+					_char,
+					_char.l_m_f.sf,
+					_char.l_m_f.nf,
+					_char.l_m_f.s,
+					_char.l_m_f.fl
+				)
+			elseif _char.i_dir == direction.down then
+				animate_sprite(
+					_char,
+					_char.d_m_f.sf,
+					_char.d_m_f.nf,
+					_char.d_m_f.s,
+					_char.d_m_f.fl
+				)
+			elseif _char.i_dir == direction.up then
+				animate_sprite(
+					_char,
+					_char.u_m_f.sf,
+					_char.u_m_f.nf,
+					_char.u_m_f.s,
+					_char.u_m_f.fl
+				)
+			end
+		else
+			if _char.i_dir == direction.right then
+				animate_sprite(
+					_char,
+					_char.rb_m_f.sf,
+					_char.rb_m_f.nf,
+					_char.rb_m_f.s,
+					_char.rb_m_f.fl
+				)
+			elseif _char.i_dir == direction.left then
+				animate_sprite(
+					_char,
+					_char.lb_m_f.sf,
+					_char.lb_m_f.nf,
+					_char.lb_m_f.s,
+					_char.lb_m_f.fl
+				)
+			elseif _char.i_dir == direction.down then
+				animate_sprite(
+					_char,
+					_char.db_m_f.sf,
+					_char.db_m_f.nf,
+					_char.db_m_f.s,
+					_char.db_m_f.fl
+				)
+			elseif _char.i_dir == direction.up then
+				animate_sprite(
+					_char,
+					_char.ub_m_f.sf,
+					_char.ub_m_f.nf,
+					_char.ub_m_f.s,
+					_char.ub_m_f.fl
+				)
+			end	
 		end
 	end
 end
@@ -287,19 +368,4 @@ function update_equippables()
 		_inv.extra_capacity = 0
 	end
 	_inv.max_capacity = _inv.capacity + _inv.extra_capacity
-end
-
-function draw_equippables()
-	local bkpk = util.name_contains(_char.equipped_items, "Backpack")
-	if bkpk.check then
-		if _char.i_dir == direction.up then
-			spr(bkpk.val.u_spr.sprite, _char.x+bkpk.val.u_spr.x,_char.y+bkpk.val.u_spr.y)
-		elseif _char.i_dir == direction.down then
-			spr(bkpk.val.d_spr.sprite, _char.x+bkpk.val.d_spr.x,_char.y+bkpk.val.d_spr.y)
-		elseif _char.i_dir == direction.left then
-			spr(bkpk.val.l_spr.sprite, _char.x+bkpk.val.l_spr.x,_char.y+bkpk.val.l_spr.y)
-		elseif _char.i_dir == direction.right then
-			spr(bkpk.val.r_spr.sprite, _char.x+bkpk.val.r_spr.x,_char.y+bkpk.val.r_spr.y)
-		end
-	end
 end

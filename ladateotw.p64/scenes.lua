@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-10-14 22:55:58",revision=250]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-10-18 20:36:32",revision=264]]
 include './character.lua'
 
 -- Title Scene
@@ -29,7 +29,6 @@ function game_scene_draw()
 	update_inventory()
 	draw_context_menu()
 	draw_border()
-	draw_equippables()
 end
 
 function game_scene_update()

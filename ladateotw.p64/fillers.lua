@@ -1,20 +1,22 @@
---[[pod_format="raw",created="2024-11-11 13:08:11",modified="2024-11-11 14:05:38",revision=13]]
+--[[pod_format="raw",created="2024-11-11 13:08:11",modified="2024-11-11 22:31:39",revision=24]]
 include './items.lua'
 
 -- Clothes
 local _early_clothes_contents = {
   {
     container_slot:new({
-          quantity = 1,
-          item = backpack:new({})
-    }),
-  },
+					quantity = 1,
+					item = backpack:new({})
+		}),
+	},
 }
 
 local _mid_clothes_contents = {
+  
 }
 
 local _late_clothes_contents = {
+	
 }
 
 function get_random_contents(contents)

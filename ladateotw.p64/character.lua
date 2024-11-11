@@ -1,29 +1,29 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-11-11 14:05:38",revision=7926]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-11-11 22:31:39",revision=7932]]
 include './types.lua'
 include './util.lua'
 
 character=entity:new({
-    col_point = { x=0, y=0 },
-    select_point = { x=0, y=0},
-    i_dir = direction.down,
-    spd=0.60,
-    anim_spd=1,
-    health = 60,
-    pain = 10,
-    hunger = 10,
-    thirst = 50,
-    state = "idle",
-    start_idle = nil,
-    start_move = nil,
-    equipped_items = {},
-    inventory = nil
+   col_point = { x=0, y=0 },
+   select_point = { x=0, y=0},
+	i_dir = direction.down,
+	spd=0.60,
+	anim_spd=1,
+	health = 60,
+	pain = 10,
+	hunger = 10,
+	thirst = 50,
+	state = "idle",
+	start_idle = nil,
+	start_move = nil,
+	equipped_items = {},
+	inventory = nil
 })
 
 man=character:new({
-    x=90,
-    y=86,
-    max_width = 21,
-    max_height = 34,
+	x=90,
+   y=86,
+   max_width = 21,
+   max_height = 34,
 	wound_health = 60,
 	delirium = 0,
 	d_i_f = {sf = (gfx_offset.gfx_1+32), nf = 2, s = 0.5, fl = false},
@@ -341,31 +341,31 @@ function update_character_vitals()
 			add(_blood_splatters, { x = _char.x, y = (_char.y+_char.max_height)-4 })
 		end
 		if _char.pain > 70 and _char.hunger > 50 and _char.thirst > 50 then
-            last_update_idle, current_update = 0, time_since(start_move, time(), true)
-            if current_update != last_update_move then
-                last_update_move = current_update
-                _char.delirium += 0.1
-            end
-        end
-    end
+			last_update_idle, current_update = 0, time_since(start_move, time(), true)
+			if current_update != last_update_move then
+				last_update_move = current_update
+				_char.delirium += 0.1
+			end
+		end
+	end
 end
 
 function draw_blood_splatter()
-    if table_length(_blood_splatters) > 0 then
-        for i,b in pairs(_blood_splatters) do
-            ovalfill(b.x+5, b.y, b.x+13, b.y+3, 18)
-        end
-    end
+	if table_length(_blood_splatters) > 0 then
+		for i,b in pairs(_blood_splatters) do
+			ovalfill(b.x+5, b.y, b.x+13, b.y+3, 18)
+		end
+	end
 end
 
 function update_equippables()
-    local bkpk = util.name_contains(_char.equipped_items,"Backpack")
-    if bkpk.check then
-        _char.bkpk_equipped = true
-        _inv.extra_capacity = 12
-    else
-        _char.bkpk_equipped = false
-        _inv.extra_capacity = 0
-    end
-    _inv.max_capacity = _inv.capacity + _inv.extra_capacity
+	local bkpk = util.name_contains(_char.equipped_items,"Backpack")
+	if bkpk.check then
+		_char.bkpk_equipped = true
+		_inv.extra_capacity = 12
+	else
+		_char.bkpk_equipped = false
+		_inv.extra_capacity = 0
+	end
+	_inv.max_capacity = _inv.capacity + _inv.extra_capacity
 end

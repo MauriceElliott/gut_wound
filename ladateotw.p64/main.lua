@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-10-18 20:36:32",revision=8094]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2024-11-11 14:05:38",revision=8105]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -49,7 +49,7 @@ function _init()
 	_cm=context_menu:new({})
 	_char=man:new({})
 
-	add(_char.equipped_items, backpack:new({}))
+	--add(_char.equipped_items, backpack:new({}))
 	-- Initialise static objects
 	init_containers()
 	init_rooms()

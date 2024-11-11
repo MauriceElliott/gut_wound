@@ -1,6 +1,7 @@
---[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-10-18 20:36:32",revision=3419]]
+--[[pod_format="raw",created="2024-06-18 20:28:00",modified="2024-11-11 14:05:38",revision=3428]]
 include './types.lua'
 include './util.lua'
+include './fillers.lua'
 
 container=entity:new({
 	small_icon = 0,
@@ -169,13 +170,6 @@ function init_containers()
 		in_range_sprite = 176,
 		in_range_sprite_adjustment = {x=0,y=7},
 		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 1,
-					item = backpack:new({})
-				}
-			),
-		}
+		contents = get_early_clothes()
 	})
 end

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-10-18 20:36:32",revision=5532]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-11-11 14:05:38",revision=5541]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,

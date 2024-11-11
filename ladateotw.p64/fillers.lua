@@ -5,18 +5,16 @@ include './items.lua'
 local _early_clothes_contents = {
   {
     container_slot:new({
-					quantity = 1,
-					item = backpack:new({})
-		}),
-	},
+          quantity = 1,
+          item = backpack:new({})
+    }),
+  },
 }
 
 local _mid_clothes_contents = {
-  
 }
 
 local _late_clothes_contents = {
-	
 }
 
 function get_random_contents(contents)

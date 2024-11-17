@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-11-11 22:31:39",revision=5547]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-11-17 23:32:56",revision=5555]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -260,20 +260,25 @@ binbag=junk:new({
 -------------
 -- useable --
 -------------
+local rip_cloth=function(self)
+	add(_inv.contents,	container_slot:new({quantity = 2, item = cloth_strips:new({})}))
+	del(_inv,self)
+end
 useable=item:new({
-	item_type = item_type.useable,
+	item_type=item_type.useable,
 })
 
 wash_cloth=useable:new({
 	sprite=(gfx_offset.gfx_3+152),
 	name="Wash Cloth",
-	use=function(self)
-		add(_inv.contents,	container_slot:new({quantity = 2, item = cloth_strips:new({})}))
-		del(_inv,self)
-	end
+	use=rip_cloth
 })
 
-
+rags=useable:new({
+	sprite=(gfx_offset.gfx_3+153),
+	name="Rag",
+	use=rip_cloth
+})
 
 ---------------
 -- equipable --

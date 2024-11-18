@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-11-17 23:32:56",revision=2337]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2024-11-18 23:49:51",revision=2366]]
 include './types.lua'
 include './util.lua'
 
@@ -72,4 +72,24 @@ function init_rooms()
 		call_unlock = unlock_heavy_door,
 		call_counter = 0
 	})
-end
+	_rooms["46_10"] = room:new({
+		s_x = 704,
+		s_y = 0,
+		e_x = 1008+15,
+		e_y = 144+15,
+		replacement_sprite = 12,
+		is_discovered = false,
+		call_unlock = unlock_normal_door,
+		call_counter = 0
+	})
+	
+	_rooms["59_9"] = room:new({
+		s_x = 880,
+		s_y = 144,
+		e_x = 1008+15,
+		e_y = 272+15,
+		replacement_sprite = 12,
+		is_discovered = false,
+		call_unlock = unlock_normal_door,
+		call_counter = 0
+	})end

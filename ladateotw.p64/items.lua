@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-11-17 23:32:56",revision=5555]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2024-11-18 23:49:51",revision=5585]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -274,7 +274,7 @@ wash_cloth=useable:new({
 	use=rip_cloth
 })
 
-rags=useable:new({
+rag=useable:new({
 	sprite=(gfx_offset.gfx_3+153),
 	name="Rag",
 	use=rip_cloth

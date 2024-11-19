@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-11-18 23:56:03",revision=313]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2024-11-19 22:32:09",revision=359]]
 include './character.lua'
 
 -- Title Scene
@@ -20,12 +20,12 @@ function game_scene_draw()
     update_camera()
 	cls(0)
 	map()
-	draw_fow()
-	display_moodles(c)
 	update_interactables(_char)
 	draw_blood_splatter()
 	animate_character(_char)
 	redraw_tiles(_char)
+	draw_fow()
+	display_moodles(c)
 	update_inventory()
 	draw_context_menu()
 	draw_border()

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-11-18 23:56:03",revision=7966]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2024-11-19 22:32:09",revision=8011]]
 include './types.lua'
 include './util.lua'
 
@@ -103,7 +103,7 @@ function move_man()
 end
 
 function animate_character()
-	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-4, _char.y+_char.max_height+1, 0)
+	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-4, _char.y+_char.max_height+1, 16)
 	local bkpk = util.name_contains(_char.equipped_items, "Backpack")
 	if _char.state == "idle" then
 		if bkpk.check == false then

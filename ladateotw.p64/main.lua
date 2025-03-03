@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-03 22:58:03",revision=8213]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-03 23:30:25",revision=8265]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -31,6 +31,7 @@ function _init()
 	_c_x, _c_y = 0,0
 
 	-- random bits
+	_game_start = false
 	_max_items = 5
 	_blood_spatter_update = nil
 
@@ -66,8 +67,11 @@ function update_coroutines()
 end
 
 function _draw()
-   game_scene_draw()
-   --title_scene_draw()
+--	if _game_start == false then
+--		title_scene_draw()
+--	else
+   	game_scene_draw()
+--   end
 	update_coroutines()
 	debug()
 end

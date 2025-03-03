@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-03 23:33:33",revision=499]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-03 23:41:48",revision=524]]
 include './character.lua'
 
 -- Title Scene
@@ -8,13 +8,11 @@ function title_scene_draw()
 	spr(gfx_offset.gfx_3+49, 250, 20)
 	spr(gfx_offset.gfx_3+48, 15, 20)
 	spr(gfx_offset.gfx_3+56, 100, 135)
-	_debug_message = "m1, m2: " .. _m_x .. " " .. _m_y
 	if _m_x > 100 
 	and _m_x < 120
 	and _m_y > 135
 	and _m_y < 155
 	and _m_l_b then
-		print("hello!")
 		_game_start = true
 	end
 end

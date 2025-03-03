@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-03 23:30:25",revision=6601]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-03 23:33:33",revision=6603]]
 include './types.lua'
 include './util.lua'
 include './containers.lua'
@@ -56,10 +56,10 @@ end
 
 function redraw_tiles(c)
 	for i, ft in ipairs(_redraw_list) do
---		palt(48, true)
---		spr(ft.sprite, ft.tile_co.x*16, ft.tile_co.y*16)
---		pal()
---		poke4(0x5000, get(fetch(pwd().."/pal/0.pal")))
+		palt(48, true)
+		spr(ft.sprite, ft.tile_co.x*16, ft.tile_co.y*16)
+		palt()
+		poke4(0x5000, get(fetch(pwd().."/pal/0.pal")))
 	end
 	_redraw_list={}
 end

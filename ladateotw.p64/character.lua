@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-03-03 23:41:48",revision=8074]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-03-04 21:57:20",revision=8081]]
 include './types.lua'
 include './util.lua'
 
@@ -94,7 +94,6 @@ function move_man()
 				_char.y = _char.y + (1 * speed)
 			end
 		end
-
 	else
 		_char.state = "idle"
 		_char.col_point = { x = (_char.x+(_char.max_width/2)), y = (_char.y+(_char.max_height/2)) }

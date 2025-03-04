@@ -44,6 +44,33 @@ man=character:new({
 	rb_m_f = {sf = (gfx_offset.gfx_1+4), nf = 4, s = 4, fl = false},
 })
 
+function move_man2()
+	_btn = btn()
+	_w, _a, _s, _d = key("w"), key("a"), key("s"), key("d")
+	_none = true
+	if (_w or _a or _s or _d) _none = false
+	if _btn != button.none or not _none then
+		local speed = _char.spd
+		if key("shift") then
+			speed*=1.5
+			_char.anim_spd=1.5
+		else
+			speed*=1
+			_char.anim_spd=1
+		end
+		speed*=_char.anim_spd
+		_char.state, _char.start_move = "moving", time()
+		if _btn == button.right or _d then
+			_char.i_dir = direction.right
+			_char.select_point = { x = (_char.x+_char.max_width)-8, y = _char.y+(_char.max_height/2)}
+			_char.x = _char.x + (1 * speed)
+			if collide(c) == true then
+				_char.x = _char.x - (1 * speed)
+			end
+		end
+	end
+end
+
 function move_man()
 	_btn = btn()
 	_w, _a, _s, _d = key("w"), key("a"), key("s"), key("d")

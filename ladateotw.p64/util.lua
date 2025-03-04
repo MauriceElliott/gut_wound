@@ -21,7 +21,21 @@ function animate_sprite(o, sf, nf, sp, fl)
 	o.a_la = sf
 end
 
--- object, radius, flag
+function collide2()
+	
+	local up = (_char.y-8)/_tile_size
+	local down = (_char.y+8)/_tile_size
+	local left = (_char.x-8)/_tile_size
+	local right = (_char.x+8)/_tile_size
+	local x = _char.x/_tile_size
+	local y = _char.y/_tile_size
+	local collide = false
+
+	if _char.i_dir == direction.up then
+		collide = fget2(mget(x, up),0)
+	end
+end
+
 function collide()
 	f = f or 0
 	local p_adj = 0

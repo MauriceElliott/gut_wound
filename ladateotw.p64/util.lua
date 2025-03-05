@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-03-05 00:21:12",revision=7278]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-03-05 22:34:07",revision=7324]]
 util = {}
 
 --object, start frame,
@@ -19,21 +19,6 @@ function animate_sprite(o, sf, nf, sp, fl)
 	o.a_fr = sf + o.a_st
 	spr(o.a_fr, o.x, o.y, fl)
 	o.a_la = sf
-end
-
-function collide2()
-	
-	local up = (_char.y-8)/_tile_size
-	local down = (_char.y+8)/_tile_size
-	local left = (_char.x-8)/_tile_size
-	local right = (_char.x+8)/_tile_size
-	local x = _char.x/_tile_size
-	local y = _char.y/_tile_size
-	local collide = false
-
-	if _char.i_dir == direction.up then
-		collide = fget2(mget(x, up),0)
-	end
 end
 
 function collide()

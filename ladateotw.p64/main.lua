@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-05 00:21:12",revision=8294]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-05 22:34:07",revision=8324]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -11,7 +11,7 @@ include './scenes.lua'
 include './input.lua'
 include './camera.lua'
 
-_debug_message = ""
+_dbm = ""
 
 function _init()
     -- Update Pallet and font
@@ -82,6 +82,6 @@ function _update()
 end
 
 function debug()
-	print("debug_message: " .. _debug_message
+	print("debug: " .. _dbm
 		.. " cpu1: " .. stat(1), _c_x-475, _c_y+258, 17)
 end

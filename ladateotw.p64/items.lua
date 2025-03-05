@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-05 00:21:12",revision=5698]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-05 22:34:07",revision=5734]]
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -27,7 +27,6 @@ consumable=item:new({
 	is_hot = false,
 	thirst = 0,
 	hunger = 0,
-	exhaustion = 0,
 	delirium = 0,
 	wound_health = 0,
 	health = 0,
@@ -44,11 +43,11 @@ consumable=item:new({
 		end
 		_char.thirst -= (self.thirst + offset)
 		_char.hunger -= (self.hunger + offset)
-		_char.exhaustion -= (self.exhaustion + offset)
 		_char.delirium -= (self.delirium + offset)
 		_char.pain -= self.pain
 		_char.wound_health += self.wound_health
 		_char.health += self.health
+		remove_item_from_container(_inv, self)
 	end,
 	heat = function(self)
 		self.is_hot = true
@@ -76,7 +75,6 @@ energy_drink=consumable:new({
 	name = "Energy Drink",
 	weight = 0.5,
 	thirst = 10,
-	exhaustion = 10,
 	delirium = 5,
 })
 

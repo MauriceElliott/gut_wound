@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-05 22:34:07",revision=8324]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-05 23:44:11",revision=8380]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -10,6 +10,7 @@ include './rooms.lua'
 include './scenes.lua'
 include './input.lua'
 include './camera.lua'
+include './fire.lua'
 
 _dbm = ""
 
@@ -37,6 +38,7 @@ function _init()
 
 	-- Set up collections
 	_blood_splatters = {}
+	_fires = {}
 	_redraw_list = {}
 	_moodles={}
 	_flagged_tiles = {}

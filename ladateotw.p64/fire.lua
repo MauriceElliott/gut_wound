@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-05 22:54:36",modified="2025-03-05 23:44:11",revision=75]]
+--[[pod_format="raw",created="2025-03-05 22:54:36",modified="2025-03-05 23:47:04",revision=81]]
 fire=entity:new({
 	x = 0,
 	y = 0,

@@ -1,13 +1,13 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-09 20:30:50",revision=618]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-09 22:56:59",revision=637]]
 include './character.lua'
 
 -- Title Scene
 function title_scene_draw()
 	cls(16)
 	
-	spr(gfx_offset.gfx_3+49, 250, 20)
+	spr(gfx_offset.gfx_3+49, 260, 20)
 	spr(gfx_offset.gfx_3+48, 15, 20)
-	spr(gfx_offset.gfx_3+56, 100, 135)
+	spr(gfx_offset.gfx_3+56, 100, 160)
 	if _m_x > 100 
 	and _m_x < 120
 	and _m_y > 135
@@ -38,7 +38,7 @@ function game_scene_draw()
 end
 
 function game_scene_update()
-    move_man()
+   move_man()
 	scan_character_area()
 	execute_context_menu_option()
 	update_character_vitals()

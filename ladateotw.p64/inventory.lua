@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-08 00:34:19",revision=7332]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-09 20:30:50",revision=7348]]
 include './types.lua'
 include './util.lua'
 include './items.lua'
@@ -73,7 +73,6 @@ end
 
 function display_inventory_contents()
     local current_y = flr(_inv.c_i_starting_y + 13)
-    print("Inventory", _inv.inv_starting_x + 11, current_y - 11, 23)
     local current_count = 1
 
     local current_max = _scroll_inv + _max_items

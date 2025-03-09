@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-09 22:56:59",revision=8415]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-09 23:01:36",revision=8427]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -69,9 +69,9 @@ end
 
 function _draw()
 --	if _game_start == false then
-		title_scene_draw()
+--		title_scene_draw()
 --	else
-   	--game_scene_draw()
+   	game_scene_draw()
 --   end
 	update_coroutines()
 	debug()

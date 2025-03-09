@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-09 22:56:59",revision=7364]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-09 23:01:36",revision=7375]]
 include './types.lua'
 include './util.lua'
 include './items.lua'
@@ -41,13 +41,6 @@ function remove_item_from_container(ccc, item)
         end
     end
 end
-
---function remove_item_from_inventory(item)
---	for i, s in pairs(_inv.contents) do
---		if s.item.name == item.name then
---			if s.item.
---	end
---end
 
 function add_to_inventory(cc, item)
     local existing_item_index = 0

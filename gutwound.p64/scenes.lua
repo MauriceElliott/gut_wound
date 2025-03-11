@@ -1,24 +1,41 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-09 23:42:12",revision=659]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-11 23:31:25",revision=740]]
 include './character.lua'
 
 -- Title Scene
+menu_buttons = { }
+menu_buttons["start"] = {
+	sprite = gfx_offset.gfx_3+56,
+	hovered_sprite = gfx_offset.gfx_3+57,
+	x1 = -380,
+	x2 = -316,
+	y1 = 160,
+	y2 = 192,
+	dx = 100,
+	dy = 160
+}
+
 function title_scene_draw()
 	cls(16)
 	
 	spr(gfx_offset.gfx_3+49, 260, 20)
 	spr(gfx_offset.gfx_3+48, 15, 20)
-	spr(gfx_offset.gfx_3+56, 100, 160)
-	if _m_x > 100 
-	and _m_x < 120
-	and _m_y > 135
-	and _m_y < 155
-	and _m_l_b then
-		_game_start = true
+	for i, b in pairs(menu_buttons) do
+		if _m_x > b.y1
+		and _m_x < b.y2
+		and _m_y > b.y1
+		and _m_y < b.y2 then
+			spr(b.hovered_sprite, b.dx, b.dy)
+			if _m_l_b then
+				_game_start = true
+			end
+		else
+			spr(b.sprite, b.dx, b.dy)
+		end
 	end
 end
 
 function title_scene_update()
-
+	
 end
 
 -- Game Scene

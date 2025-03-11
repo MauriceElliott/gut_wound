@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-09 23:42:12",revision=8443]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-11 23:31:25",revision=8512]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -10,7 +10,6 @@ include './rooms.lua'
 include './scenes.lua'
 include './input.lua'
 include './camera.lua'
-include './fire.lua'
 
 _dbm = ""
 
@@ -68,17 +67,21 @@ function update_coroutines()
 end
 
 function _draw()
---	if _game_start == false then
---		title_scene_draw()
---	else
+	if _game_start == false then
+		title_scene_draw()
+		_dbm = "title"
+		debug()
+	else
    	game_scene_draw()
---   end
+   	_dbm = "game"
+   	debug()
+   end
 	update_coroutines()
 	debug()
 end
 
 function _update()
-    game_scene_update()
+   game_scene_update()
 	update_mouse_input()
 end
 

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-11 23:31:25",revision=6794]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-12 22:25:23",revision=6819]]
 include './types.lua'
 include './util.lua'
 include './containers.lua'
@@ -31,6 +31,7 @@ function update_interactables(c)
 		if fget_precalc(ft.flags,2) == true then
 			if keyp("e") then
 				local room_key = ft.tile_co.x .. "_" .. ft.tile_co.y
+				_dbm = room_key
 				local room = _rooms[room_key]
 				if room != nil then
 					room.call_unlock(room, ft)

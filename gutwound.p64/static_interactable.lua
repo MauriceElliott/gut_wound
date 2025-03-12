@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-12 22:25:23",revision=6819]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-12 23:15:33",revision=6840]]
 include './types.lua'
 include './util.lua'
 include './containers.lua'
@@ -45,6 +45,9 @@ function update_interactables(c)
 			if (coalesce(_char.d_y2, 0)-16) < (ft.tile_co.y*16) then
 				add(_redraw_list, ft)
 			end
+		end
+		if fget_precalc(ft.flags,5) == true then
+			update_fire(ft)
 		end
 	end
 	if not is_cont_in_range then

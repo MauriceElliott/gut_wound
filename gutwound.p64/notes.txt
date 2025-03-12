@@ -1,0 +1,32 @@
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-12 23:15:33",revision=5]]
+
+to finish
+	1. items
+		a. food items
+		b. usable items
+		c. equipable
+	2. item placement
+		a. fillers.lua
+		b. static items.
+		c. static placed interactables.
+	3. rooms.
+		a. the designs for the tiles in the rooms
+		b. the layout of the remaining rooms that need finishing
+		c. the blackout of the rooms
+		d. the doors
+		e. the reasons for doors to open
+	5. borders around containers.
+
+1. add fire to the game
+	a. add usable items (i.e. lighter, flint and tinder, matches)
+	b. add smoke animation against cooker where fires can be lit.
+	c. add warmth and cold
+	d. add heating on fire option to consumables
+2. add fatigue and fatigue reduction
+	a. sleep/blackouts are inevitable
+	b. they send you to a random (sudo random, pick from a few) part of the map
+	c. energy drinks, teas, etc should reduce these.
+3. add delirium mechanics
+	a. character following you
+	b. whiteouts, i.e. whole screen goes white bar the character
+	c. fuzzyness on the screen, darkening at the edges.

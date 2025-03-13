@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-13 23:43:57",revision=36]]
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-13 23:58:01",revision=49]]
 
 to finish
 	1. items
@@ -18,6 +18,7 @@ to finish
 	5. borders around containers.
 
 1. add fire to the game
+	s. finish off the logic
 	a. add usable items (i.e. lighter, flint and tinder, matches)
 	b. add smoke animation against cooker where fires can be lit.
 	c. add warmth and cold

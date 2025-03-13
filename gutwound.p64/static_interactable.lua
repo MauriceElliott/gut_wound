@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-13 23:43:57",revision=6874]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-13 23:58:01",revision=6889]]
 include './types.lua'
 include './util.lua'
 include './containers.lua'
@@ -47,7 +47,8 @@ function update_interactables(c)
 			end
 		end
 		if fget_precalc(ft.flags,5) == true then
-			update_fire(ft)
+			local fire_key = ft.tile_co.x .. "_" .. ft.tile_co.y
+			fire_in_range(fire_key)
 		end
 	end
 	if not is_cont_in_range then

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-13 23:43:57",revision=7]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-13 23:58:01",revision=26]]
 include './types.lua'
 include './util.lua'
 
@@ -9,21 +9,21 @@ smoke=entity:new({
 })
 
 fire=entity:new({
-	tile_x = 0,
-	tile_y = 0,
-	x = 0,
-	y = 0,
 	is_lit = false,
 	replacement_sprite = 204,
 	time_remaining = 0,
-	smoke_origin_point = 0,
+	--smoke origin x and y
+	sox = 0,
+	soy = 0,
 	smoke = {},
 	fuel = {}
 })
 
-_fires = {
+_fires["27_5"] = fire:new({
+	sox = 436, 
+	soy = 86,
+})
 
-}
 
 function draw_fires()
 	for i, f in pairs(_fires) do
@@ -37,6 +37,10 @@ end
 
 function update_fires()
 	
+end
+
+function fire_in_range(key)
+	_fires[key].in_range = true
 end
 
 function light_fire(tile_x, tile_y)

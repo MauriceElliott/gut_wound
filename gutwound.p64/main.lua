@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-13 23:43:57",revision=8588]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-13 23:58:01",revision=8606]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -87,5 +87,7 @@ end
 
 function debug()
 	print("debug: " .. _dbm
-		.. " cpu1: " .. stat(1), _c_x-475, _c_y+258, 17)
+		--.. " cpu1: " .. stat(1)
+		.. " mx, my: " .. _m_x .. " " .. _m_y
+		, _c_x-475, _c_y+258, 17)
 end

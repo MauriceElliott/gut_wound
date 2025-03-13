@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-12 23:15:33",revision=5]]
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-13 23:20:59",revision=31]]
 
 to finish
 	1. items
@@ -30,3 +30,5 @@ to finish
 	a. character following you
 	b. whiteouts, i.e. whole screen goes white bar the character
 	c. fuzzyness on the screen, darkening at the edges.
+4. when searching containers add timer to each item so it doesn't instantly display
+5. add speech bubble to MC, to show pain, tiredness, etc.

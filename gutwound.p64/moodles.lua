@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-03-12 23:15:33",revision=7248]]
+--[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-03-13 23:20:59",revision=7273]]
 include './types.lua'
 include './util.lua'
 
@@ -139,7 +139,7 @@ function display_moodles()
 
 	current_y = 4
 	for i, moodle in pairs(_moodles) do
-		spr(moodle.sprite, _c_x-20, _c_y + current_y)
+		spr(moodle.sprite, _c_x-21, _c_y + current_y)
 		current_y += 20
 	end
 end

@@ -1,8 +1,14 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-12 23:15:33",revision=7476]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-13 23:20:59",revision=7517]]
 include './types.lua'
 include './util.lua'
 include './items.lua'
 
+-- text colour
+_itc = 14
+-- highlight item colour
+_hic = 23
+-- deselected container colour
+_dcc = 28
 inventory = entity:new({
     max_width = 119,
     max_height = 68,
@@ -88,15 +94,15 @@ function display_inventory_contents()
                 and (_m_y) > c.starting_y
                 and (_m_y) < c.ending_y then
                 m_is_on = true
-                rect(c.starting_x - 1, c.starting_y - 2, c.ending_x + 1, c.ending_y + 1, 2)
+                rect(c.starting_x - 1, c.starting_y - 2, c.ending_x + 1, c.ending_y + 1, _hic)
             end
             spr(c.item.sprite, _inv.inv_starting_x, current_y, 23)
             if c.item.is_equipped then
             		spr((gfx_offset.gfx_3+6), _inv.inv_starting_x-1, current_y) 
             end
-            print(c.item.name, _inv.inv_starting_x + 11, current_y, 23)
-            print(c.item.weight, _inv.inv_starting_x + 80, current_y, 23)
-            print(c.quantity, _inv.inv_starting_x + 103, current_y, 23)
+            print(c.item.name, _inv.inv_starting_x + 11, current_y, _itc)
+            print(c.item.weight, _inv.inv_starting_x + 80, current_y, _itc)
+            print(c.quantity, _inv.inv_starting_x + 103, current_y, _itc)
             current_y += 10
             _inv.total_weight += (c.item.weight * c.quantity)
             if (m_is_on) then
@@ -111,10 +117,9 @@ end
 
 function display_container_contents()
     local current_y = flr(_inv.c_i_starting_y + 13)
-    print("Container(s)", _inv.cont_starting_x + 11, current_y - 11, 23)
+    print("Container(s)", _inv.cont_starting_x + 11, current_y - 11, _itc)
     local cont_icn_x = _inv.cont_starting_x + 2
-    local cont_icn_y = current_y + 45
-    --TODO: Add scroll logic here.
+    local cont_icn_y = current_y + 44
     for i, cc in pairs(_discovered_containers) do
         if cc.in_range == true then
             local cont_icn_b_s_x = cont_icn_x - 1
@@ -123,7 +128,7 @@ function display_container_contents()
             local cont_icn_b_e_y = cont_icn_y + 8
             if i == _inv.selected_container or _inv.selected_container == 1 then
                 _inv.selected_container = i
-                rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, 2)
+                rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, _itc)
                 spr(cc.small_icon, cont_icn_x, cont_icn_y)
                 for j, ccc in ipairs(cc.contents) do
                     local m_is_on = false
@@ -135,13 +140,13 @@ function display_container_contents()
                         and (_m_x) < ccc.ending_x
                         and (_m_y) > ccc.starting_y
                         and (_m_y) < ccc.ending_y then
-                        rect(ccc.starting_x - 1, ccc.starting_y - 2, ccc.ending_x + 1, ccc.ending_y + 1, 2)
+                        rect(ccc.starting_x - 1, ccc.starting_y - 2, ccc.ending_x + 1, ccc.ending_y + 1, _hic)
                         m_is_on = true
                     end
                     spr(ccc.item.sprite, _inv.cont_starting_x, current_y)
-                    print(ccc.item.name, _inv.cont_starting_x + 11, current_y, 23)
-                    print(ccc.item.weight, _inv.cont_starting_x + 80, current_y, 23)
-                    print(ccc.quantity, _inv.cont_starting_x + 100, current_y, 23)
+                    print(ccc.item.name, _inv.cont_starting_x + 11, current_y, _itc)
+                    print(ccc.item.weight, _inv.cont_starting_x + 80, current_y, _itc)
+                    print(ccc.quantity, _inv.cont_starting_x + 100, current_y, _itc)
                     current_y += 10
                     if (m_is_on) then
                         if _m_l_b then
@@ -152,7 +157,7 @@ function display_container_contents()
                     end
                 end
             else
-                rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, 21)
+                rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, _dcc)
                 spr(cc.small_icon, cont_icn_x, cont_icn_y)
                 if _m_l_b and ((_m_x) > cont_icn_b_s_x
                         and (_m_x) < cont_icn_b_e_x

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-06 22:22:02",modified="2025-03-13 23:58:01",revision=7177]]
+--[[pod_format="raw",created="2024-05-06 22:22:02",modified="2025-03-13 23:58:21",revision=7179]]
 class={
 	new=
 		function(self,tbl)

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:06:43",revision=157]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:18:55",revision=207]]
 include './types.lua'
 include './util.lua'
 
@@ -27,7 +27,7 @@ _smh = 7
 
 
 fire=entity:new({
-	is_lit = false,
+	is_lit = true,
 	replacement_sprite = 204,
 	time_remaining = 0,
 	--smoke origin x and y
@@ -47,11 +47,10 @@ fire=entity:new({
 	fuel = {},
 })
 
-_fires = {}
-
 function draw_fires()
 	for i, f in pairs(_fires) do
 		if f.is_lit then
+			_dbm = "fire lit"
 			for i, s in pairs(f.smoke) do
 				circfill(s.x, s.y, s.s, 17)
 			end

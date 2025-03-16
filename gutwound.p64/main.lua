@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-16 23:06:43",revision=8668]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-16 23:18:55",revision=8712]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -35,9 +35,9 @@ function _init()
 	_game_start = false
 	_max_items = 5
 	_blood_spatter_update = nil
-	light_fire(27, 5)
 
 	-- Set up collections
+	_fires = {}
 	_blood_splatters = {}
 	_fires = {}
 	_redraw_list = {}
@@ -56,6 +56,9 @@ function _init()
 	-- Initialise static objects
 	init_containers()
 	init_rooms()
+	
+	--debug
+	light_fire(27, 5)
 end
 
 function update_coroutines()
@@ -71,11 +74,9 @@ end
 function _draw()
 	if _game_start == false then
 		title_scene_draw()
-		_dbm = "title"
 		debug()
 	else
    	game_scene_draw()
-   	_dbm = "game"
    	debug()
    end
 	update_coroutines()
@@ -89,7 +90,6 @@ end
 
 function debug()
 	print("debug: " .. _dbm
-		--.. " cpu1: " .. stat(1)
 		.. " mx, my: " .. _m_x .. " " .. _m_y
 		, _c_x-475, _c_y+258, 17)
 end

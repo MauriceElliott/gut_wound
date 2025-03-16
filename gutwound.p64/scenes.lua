@@ -1,5 +1,6 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-16 11:43:18",revision=856]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-16 16:09:08",revision=874]]
 include './character.lua'
+include './fire.lua'
 
 -- Title Scene
 menu_buttons = { }
@@ -50,6 +51,7 @@ function game_scene_draw()
 	draw_blood_splatter()
 	animate_character(_char)
 	redraw_tiles(_char)
+	draw_fires()
 	draw_fow()
 	display_moodles(c)
 	update_inventory()
@@ -60,6 +62,7 @@ end
 function game_scene_update()
    move_man()
 	scan_character_area()
+	update_fires()
 	execute_context_menu_option()
 	update_character_vitals()
 	update_equippables()

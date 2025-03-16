@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 11:43:18",revision=39]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 16:09:08",revision=60]]
 include './types.lua'
 include './util.lua'
 
@@ -50,6 +50,7 @@ fire=entity:new({
 _fires["27_5"] = fire:new({
 	sox = 436, 
 	soy = 86,
+	is_lit = true,
 })
 
 
@@ -57,7 +58,7 @@ function draw_fires()
 	for i, f in pairs(_fires) do
 		if f.is_lit then
 			for i, s in pairs(f.smoke) do
-				circfill(s.x, s.y, s.s)
+				circfill(s.x, s.y, s.s, 17)
 			end
 		end
 	end
@@ -77,6 +78,7 @@ function update_fires()
 					s.sdx += _sms
 				end
 				s.x += s.sxd
+				s.y += -_sms
 			end
 		end
 	end

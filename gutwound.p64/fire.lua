@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 16:09:08",revision=60]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 22:04:59",revision=66]]
 include './types.lua'
 include './util.lua'
 
@@ -67,7 +67,7 @@ end
 function update_fires()
 		for i, f in pairs(_fires) do
 		if f.is_lit then
-			if #f.smoke > _mso then
+			if #f.smoke > _mso and time_since(f.smoke_update_timer, time(), false) > 0.3 then
 				f.add_smoke()
 			end
 			for i, s in pairs(f.smoke) do

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:18:55",revision=207]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:44:05",revision=250]]
 include './types.lua'
 include './util.lua'
 
@@ -9,7 +9,7 @@ smoke=entity:new({
 	x = 0,
 	y = 0,
 	s = 0,
-	sdx = _sms
+	sdx = 0.1
 })
 
 --Max smoke objects
@@ -36,21 +36,23 @@ fire=entity:new({
 	smoke = {},
 	add_smoke = function(self)
 		local smoke_size = rnd(_smin, _smax)
+		ef = self
 		local new_smoke = smoke:new({
-			x = self.sox,
-			y = self.soy,
+			x = ef.sox,
+			y = ef.soy,
 			s = smoke_size,
+			sdx = _sms
 		})
 		add(self.smoke, new_smoke)
+		smoke_update_timer = time()
 	end,
-	smoke_update_timer = 0,
+	smoke_update_timer = time(),
 	fuel = {},
 })
 
 function draw_fires()
 	for i, f in pairs(_fires) do
 		if f.is_lit then
-			_dbm = "fire lit"
 			for i, s in pairs(f.smoke) do
 				circfill(s.x, s.y, s.s, 17)
 			end
@@ -61,8 +63,10 @@ end
 function update_fires()
 		for i, f in pairs(_fires) do
 		if f.is_lit then
-			if #f.smoke > _mso and time_since(f.smoke_update_timer, time(), false) > 0.3 then
-				f.add_smoke()
+			_dbm = time_since(f.smoke_update_timer, time(), false)
+			if #f.smoke < _mso and time_since(f.smoke_update_timer, time(), false) >= 0.3 then
+				_dbm = "adds smoke"
+				f.add_smoke(f)
 			end
 			for i, s in pairs(f.smoke) do
 				if s.y > (f.soy + _smh) then
@@ -75,7 +79,7 @@ function update_fires()
 				if s.x < (f.sox - _sao) then
 					s.sdx += _sms
 				end
-				s.x += s.sxd
+				s.x += s.sdx
 				s.y += -_sms
 				::continue::
 			end

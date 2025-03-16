@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-13 23:58:21",revision=52]]
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-16 23:49:37",revision=54]]
 
 to finish
 	1. items
@@ -21,6 +21,7 @@ to finish
 	s. finish off the logic
 	a. add usable items (i.e. lighter, flint and tinder, matches)
 	b. add smoke animation against cooker where fires can be lit.
+		i. TO BE CONTINUED, GETTING VERY CLOSE!
 	c. add warmth and cold
 	d. add heating on fire option to consumables
 2. add fatigue and fatigue reduction

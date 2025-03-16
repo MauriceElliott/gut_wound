@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:44:05",revision=250]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:49:37",revision=261]]
 include './types.lua'
 include './util.lua'
 
@@ -16,7 +16,7 @@ smoke=entity:new({
 _mso = 3
 
 -- Min and Max size of smoke
-_smin = 1
+_smin = 4
 _smax = 6
 
 -- Smoke allowed offset (how far can it go side to size while rizing

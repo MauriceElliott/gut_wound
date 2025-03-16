@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 22:04:59",revision=66]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:06:43",revision=157]]
 include './types.lua'
 include './util.lua'
 
@@ -34,25 +34,20 @@ fire=entity:new({
 	sox = 0,
 	soy = 0,
 	smoke = {},
-	add_smoke = function(self) {
+	add_smoke = function(self)
 		local smoke_size = rnd(_smin, _smax)
 		local new_smoke = smoke:new({
 			x = self.sox,
 			y = self.soy,
 			s = smoke_size,
 		})
-		self.smoke.insert(new_smoke)
-	}
+		add(self.smoke, new_smoke)
+	end,
 	smoke_update_timer = 0,
 	fuel = {},
 })
 
-_fires["27_5"] = fire:new({
-	sox = 436, 
-	soy = 86,
-	is_lit = true,
-})
-
+_fires = {}
 
 function draw_fires()
 	for i, f in pairs(_fires) do
@@ -71,6 +66,10 @@ function update_fires()
 				f.add_smoke()
 			end
 			for i, s in pairs(f.smoke) do
+				if s.y > (f.soy + _smh) then
+					del(f.smoke, f)
+					goto continue
+				end
 				if s.x > (f.sox + _sao) then
 					s.sdx += -_sms
 				end
@@ -79,6 +78,7 @@ function update_fires()
 				end
 				s.x += s.sxd
 				s.y += -_sms
+				::continue::
 			end
 		end
 	end
@@ -89,7 +89,10 @@ function fire_in_range(key)
 end
 
 function light_fire(tile_x, tile_y)
-	add(_fires, fire:new())
+	local k = tile_x .. "_" .. tile_y
+	mset(tile_x, tile_y, 204)
+	mset(tile_x, tile_y+1, 212)
+	_fires[k] = fire:new()
 end
 
 function add_fuel()

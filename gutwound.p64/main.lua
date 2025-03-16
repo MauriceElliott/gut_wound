@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-16 22:04:59",revision=8637]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-16 23:06:43",revision=8668]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -10,6 +10,7 @@ include './rooms.lua'
 include './scenes.lua'
 include './input.lua'
 include './camera.lua'
+include './fire.lua'
 
 _dbm = ""
 
@@ -34,6 +35,7 @@ function _init()
 	_game_start = false
 	_max_items = 5
 	_blood_spatter_update = nil
+	light_fire(27, 5)
 
 	-- Set up collections
 	_blood_splatters = {}

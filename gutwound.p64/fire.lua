@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-16 23:49:37",revision=261]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-17 22:05:25",revision=271]]
 include './types.lua'
 include './util.lua'
 
@@ -69,6 +69,7 @@ function update_fires()
 				f.add_smoke(f)
 			end
 			for i, s in pairs(f.smoke) do
+				_dbm = "y,soy : " .. s.y .. " " .. (f.soy + _smh)
 				if s.y > (f.soy + _smh) then
 					del(f.smoke, f)
 					goto continue
@@ -93,9 +94,12 @@ end
 
 function light_fire(tile_x, tile_y)
 	local k = tile_x .. "_" .. tile_y
+	local fire = fire:new()
+	fire.sox = tile_x * 16
+	fire.soy = tile_y * 16
 	mset(tile_x, tile_y, 204)
 	mset(tile_x, tile_y+1, 212)
-	_fires[k] = fire:new()
+	_fires[k] = fire
 end
 
 function add_fuel()

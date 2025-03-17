@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-03-17 22:28:40",revision=8540]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-03-17 23:00:02",revision=8597]]
 include './types.lua'
 include './util.lua'
 
@@ -20,8 +20,8 @@ character=entity:new({
 })
 
 man=character:new({
-	x=90,
-   y=86,
+	x=314,
+   y=190,
    max_width = 21,
    max_height = 34,
 	wound_health = 60,

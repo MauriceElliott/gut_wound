@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-20 11:28:41",revision=8898]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-20 11:48:00",revision=8909]]
 include './util.lua'
 include './character.lua'
 include './moodles.lua'
@@ -38,6 +38,7 @@ function _init()
 
 	-- Set up collections
 	_fires = {}
+	_fire_in_range = ""
 	_blood_splatters = {}
 	_fires = {}
 	_redraw_list = {}

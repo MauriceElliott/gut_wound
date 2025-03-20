@@ -1,16 +1,16 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-17 23:28:53",revision=474]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-20 11:28:41",revision=507]]
 include './types.lua'
 include './util.lua'
 
 -- smoke movement speed
 _sms = 0.08
 --Max smoke objects
-_mso = 3
+_mso = 7
 -- Min and Max size of smoke
 _smin = 1
-_smax = 2
+_smax = 3
 -- Smoke allowed offset (how far can it go side to size while rizing
-_sao = 4
+_sao = 3
 -- Smoke max height
 _smh = 7
 -- Smoke colour index
@@ -19,7 +19,7 @@ _sci = 0
 -- Smoke size reduction as its fading out 
 _ssr = 0.04
 -- Smoke update timer, how often are new smoke objects added to the collection
-_sut = 0.5
+_sut = 0.2
 -- Starting position offset
 _spo = 4
 
@@ -54,7 +54,7 @@ fire=entity:new({
 			y = smoke_y,
 			s = smoke_size,
 			c = smoke_colour,
-			sdx = _sms
+			sdx = ((-_sms*2) + rnd(_sms))
 		})
 		add(self.smoke, new_smoke)
 		smoke_update_timer = time()
@@ -90,10 +90,10 @@ function update_fires()
 					end
 				end
 				if s.x > (f.sox + _sao) then
-					s.sdx = -_sms
+					s.sdx = -s.sdx
 				end
 				if s.x < (f.sox - _sao) then
-					s.sdx = _sms
+					s.sdx = abs(s.sdx)
 				end
 				s.x += s.sdx
 				s.y += -_sms

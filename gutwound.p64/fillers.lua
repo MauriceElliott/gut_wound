@@ -1,5 +1,20 @@
---[[pod_format="raw",created="2024-11-11 13:08:11",modified="2025-03-20 11:48:00",revision=735]]
+--[[pod_format="raw",created="2024-11-11 13:08:11",modified="2025-03-21 21:52:32",revision=837]]
+include './util.lua'
 include './items.lua'
+include './input.lua'
+include './fillers.lua'
+include './types.lua'
+include './character.lua'
+include './moodles.lua'
+include './inventory.lua'
+include './static_interactable.lua'
+include './containers.lua'
+include './context_menu.lua'
+include './rooms.lua'
+include './scenes.lua'
+include './input.lua'
+include './camera.lua'
+include './fire.lua'
 
 function get_random_contents(contents)
   local selected_contents = rnd(contents)

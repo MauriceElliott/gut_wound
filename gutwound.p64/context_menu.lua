@@ -1,4 +1,21 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-20 11:48:00",revision=3679]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-21 21:52:32",revision=3794]]
+include './util.lua'
+include './items.lua'
+include './input.lua'
+include './fillers.lua'
+include './types.lua'
+include './character.lua'
+include './moodles.lua'
+include './inventory.lua'
+include './static_interactable.lua'
+include './containers.lua'
+include './context_menu.lua'
+include './rooms.lua'
+include './scenes.lua'
+include './input.lua'
+include './camera.lua'
+include './fire.lua'
+
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -21,6 +38,8 @@ context_menu_actions = {
 	use = "Use",
 	equip = "Equip",
 	unequip = "Unequip",
+	light_fire = "Light Fire",
+	rip = "Rip",
 }
 
 function draw_context_menu()
@@ -66,8 +85,16 @@ function update_context_menu(obj)
 		if obj.item_type == item_type.junk then
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
+		if obj.item_type == item_type.usable then
+			if obj.subtype == usable_subtype.rippable then
+				add(_cm.options, context_option:new({ name = context_menu_actions.rip, action=obj.use }))
+			elseif obj.subtype == usable_subtype.firestarter then
+				if _fire_in_range != "" then
+					add(_cm.options, context_option:new({ name = context_menu_actions.light_fire, action=obj.use }))
+				end
+			end
+		end
 		if obj.item_type == item_type.equipable then
-			_debug_message = "bp: " .. util.bool_to_int(obj.is_equipped)
 			if obj.is_equipped == false then
 				add(_cm.options, context_option:new({name = context_menu_actions.equip, action = obj.equip}))
 			else

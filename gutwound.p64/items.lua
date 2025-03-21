@@ -1,4 +1,22 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-20 11:48:00",revision=6251]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-21 21:52:32",revision=6365]]
+include './util.lua'
+include './items.lua'
+include './input.lua'
+include './fillers.lua'
+include './types.lua'
+include './character.lua'
+include './moodles.lua'
+include './inventory.lua'
+include './static_interactable.lua'
+include './containers.lua'
+include './context_menu.lua'
+include './rooms.lua'
+include './scenes.lua'
+include './input.lua'
+include './camera.lua'
+include './fire.lua'
+
+
 item=entity:new({
 	type = object_type.item,
 	sprite = 0,
@@ -258,27 +276,45 @@ binbag=junk:new({
 -------------
 -- useable --
 -------------
+usable_subtype = {
+	rippable = 1,
+	firestarter = 2,
+}
+
 local rip_cloth=function(self)
-	add(_inv.contents,	container_slot:new({quantity = 2, item = cloth_strips:new({})}))
+	add(_inv.contents,
+		container_slot:new({
+			quantity = 2, 
+			item = cloth_strips:new({})
+		})
+	)
 	del(_inv,self)
 end
+
 useable=item:new({
 	item_type=item_type.useable,
 })
 
 wash_cloth=useable:new({
+	subtype = usable_subtype.rippable,
 	sprite=(gfx_offset.gfx_3+152),
 	name="Wash Cloth",
 	use=rip_cloth
 })
 
 rag=useable:new({
+	subtype = usable_subtype.rippable,
 	sprite=(gfx_offset.gfx_3+153),
 	name="Rag",
 	use=rip_cloth
 })
 
-
+lighter=useable:new({
+	subtype = usable_subtype.firestarter,
+	sprite = (gfx_offset.gfx_3+155),
+	name = "Lighter",
+	use = light_fire
+})
 
 ---------------
 -- equipable --
@@ -292,10 +328,10 @@ backpack=equipable:new({
 	sprite=(gfx_offset.gfx_3+154),
 	name="Backpack",
 	is_equipped=false,
-	u_spr = { sprite = 220, x = 5, y = 8 }, 
-	d_spr = { sprite = 221, x = 8, y = 8 },
-	l_spr = { sprite = 223, x = 8, y = 8 },
-	r_spr = { sprite = 222, x = -3, y = 9 },
+--	u_spr = { sprite = 220, x = 5, y = 8 }, 
+--	d_spr = { sprite = 221, x = 8, y = 8 },
+--	l_spr = { sprite = 223, x = 8, y = 8 },
+--	r_spr = { sprite = 222, x = -3, y = 9 },
 	equip=function(self)
 		add(_char.equipped_items, self)
 		self.is_equipped=true

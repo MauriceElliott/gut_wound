@@ -1,6 +1,20 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-20 11:48:00",revision=529]]
-include './types.lua'
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-21 21:52:32",revision=635]]
 include './util.lua'
+include './items.lua'
+include './input.lua'
+include './fillers.lua'
+include './types.lua'
+include './character.lua'
+include './moodles.lua'
+include './inventory.lua'
+include './static_interactable.lua'
+include './containers.lua'
+include './context_menu.lua'
+include './rooms.lua'
+include './scenes.lua'
+include './input.lua'
+include './camera.lua'
+include './fire.lua'
 
 -- smoke movement speed
 _sms = 0.08
@@ -102,7 +116,8 @@ function update_fires()
 	end
 end
 
-function light_fire(tile_x, tile_y)
+function light_fire()
+	local tile_x, tile_y = _fire_in_range.x, _fire_in_range.y
 	local k = tile_x .. "_" .. tile_y
 	local fire = fire:new()
 	fire.sox = (tile_x * 16)+ 6

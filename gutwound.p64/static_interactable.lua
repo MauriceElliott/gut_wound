@@ -1,8 +1,20 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-20 11:48:00",revision=7188]]
-include './types.lua'
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-21 21:52:32",revision=7299]]
 include './util.lua'
+include './items.lua'
+include './input.lua'
+include './fillers.lua'
+include './types.lua'
+include './character.lua'
+include './moodles.lua'
+include './inventory.lua'
+include './static_interactable.lua'
 include './containers.lua'
+include './context_menu.lua'
 include './rooms.lua'
+include './scenes.lua'
+include './input.lua'
+include './camera.lua'
+include './fire.lua'
 
 
 function update_interactables(c)
@@ -46,7 +58,9 @@ function update_interactables(c)
 			end
 		end
 		if fget_precalc(ft.flags,5) == true then
-			_fire_in_range = { ft.tile_co.x, ft.tile_co.y }  
+			_fire_in_range = { x = ft.tile_co.x, y = ft.tile_co.y }
+		else
+			_fire_in_range = ""
 		end
 	end
 	if not is_cont_in_range then

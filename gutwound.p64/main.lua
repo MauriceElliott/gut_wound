@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-21 21:52:32",revision=9020]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-22 00:47:17",revision=9064]]
 include './util.lua'
 include './items.lua'
 include './input.lua'
@@ -42,7 +42,7 @@ function _init()
 
 	-- Set up collections
 	_fires = {}
-	_fire_in_range = ""
+	_fire_in_range = { x = 27, y = 5 }
 	_blood_splatters = {}
 	_fires = {}
 	_redraw_list = {}
@@ -63,7 +63,7 @@ function _init()
 	init_rooms()
 	
 	--debug
-	light_fire(27, 5)
+	light_fire()
 end
 
 function update_coroutines()

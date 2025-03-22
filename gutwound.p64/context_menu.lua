@@ -1,20 +1,9 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-21 21:52:32",revision=3794]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-22 00:47:17",revision=3837]]
 include './util.lua'
 include './items.lua'
-include './input.lua'
-include './fillers.lua'
 include './types.lua'
-include './character.lua'
-include './moodles.lua'
 include './inventory.lua'
 include './static_interactable.lua'
-include './containers.lua'
-include './context_menu.lua'
-include './rooms.lua'
-include './scenes.lua'
-include './input.lua'
-include './camera.lua'
-include './fire.lua'
 
 context_menu=entity:new({
 	x = 0,

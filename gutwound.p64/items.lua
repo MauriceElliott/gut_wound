@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-21 21:52:32",revision=6365]]
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-22 00:47:17",revision=6408]]
 include './util.lua'
 include './items.lua'
 include './input.lua'
@@ -328,10 +328,10 @@ backpack=equipable:new({
 	sprite=(gfx_offset.gfx_3+154),
 	name="Backpack",
 	is_equipped=false,
---	u_spr = { sprite = 220, x = 5, y = 8 }, 
---	d_spr = { sprite = 221, x = 8, y = 8 },
---	l_spr = { sprite = 223, x = 8, y = 8 },
---	r_spr = { sprite = 222, x = -3, y = 9 },
+	u_spr = { sprite = 220, x = 5, y = 8 }, 
+	d_spr = { sprite = 221, x = 8, y = 8 },
+	l_spr = { sprite = 223, x = 8, y = 8 },
+	r_spr = { sprite = 222, x = -3, y = 9 },
 	equip=function(self)
 		add(_char.equipped_items, self)
 		self.is_equipped=true

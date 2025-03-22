@@ -1,9 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-22 00:47:17",revision=7980]]
-include './util.lua'
-include './input.lua'
-include './types.lua'
-include './character.lua'
-
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-03-22 23:50:26",revision=7999]]
 
 -- text colour
 _itc = 14

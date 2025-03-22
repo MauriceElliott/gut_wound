@@ -1,21 +1,5 @@
---[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-22 00:47:17",revision=6408]]
-include './util.lua'
-include './items.lua'
-include './input.lua'
-include './fillers.lua'
+--[[pod_format="raw",created="2024-05-30 22:52:53",modified="2025-03-22 23:50:26",revision=6429]]
 include './types.lua'
-include './character.lua'
-include './moodles.lua'
-include './inventory.lua'
-include './static_interactable.lua'
-include './containers.lua'
-include './context_menu.lua'
-include './rooms.lua'
-include './scenes.lua'
-include './input.lua'
-include './camera.lua'
-include './fire.lua'
-
 
 item=entity:new({
 	type = object_type.item,

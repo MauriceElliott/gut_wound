@@ -1,10 +1,4 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-22 00:47:17",revision=7345]]
-include './util.lua'
-include './input.lua'
-include './types.lua'
-include './character.lua'
-
-
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-22 23:50:26",revision=7363]]
 
 function update_interactables(c)
 	local is_cont_in_range = false

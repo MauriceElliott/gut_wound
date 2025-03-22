@@ -1,9 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-22 00:47:17",revision=3837]]
-include './util.lua'
-include './items.lua'
-include './types.lua'
-include './inventory.lua'
-include './static_interactable.lua'
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-22 23:50:26",revision=3858]]
 
 context_menu=entity:new({
 	x = 0,

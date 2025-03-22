@@ -1,9 +1,4 @@
---[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-03-22 00:47:17",revision=7730]]
-include './util.lua'
-include './types.lua'
-include './character.lua'
-
-
+--[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-03-22 23:50:26",revision=7748]]
 moodle=entity:new({
 	moodle = "none",
 	sprite = 0,

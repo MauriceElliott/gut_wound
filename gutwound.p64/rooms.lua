@@ -1,21 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-03-22 00:47:17",revision=3207]]
-include './util.lua'
-include './items.lua'
-include './input.lua'
-include './fillers.lua'
-include './types.lua'
-include './character.lua'
-include './moodles.lua'
-include './inventory.lua'
-include './static_interactable.lua'
-include './containers.lua'
-include './context_menu.lua'
-include './rooms.lua'
-include './scenes.lua'
-include './input.lua'
-include './camera.lua'
-include './fire.lua'
-
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-03-22 23:50:26",revision=3226]]
 
 room=entity:new({
 	s_x = 0,

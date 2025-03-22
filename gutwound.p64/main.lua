@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-22 00:47:17",revision=9064]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-22 23:50:26",revision=9081]]
 include './util.lua'
 include './items.lua'
 include './input.lua'
@@ -12,7 +12,6 @@ include './containers.lua'
 include './context_menu.lua'
 include './rooms.lua'
 include './scenes.lua'
-include './input.lua'
 include './camera.lua'
 include './fire.lua'
 

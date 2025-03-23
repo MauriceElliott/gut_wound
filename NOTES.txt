@@ -1,4 +1,6 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-17 23:28:10",revision=183]]
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-03-23 00:04:38",revision=184]]
+Fixed issue with circular dependency bug caused by too many includes.
+Need to clean up codebase and refactor the global state.
 
 to finish
 	1. items
@@ -19,7 +21,7 @@ to finish
 
 1. add fire to the game
 	s. finish off the logic
-	a. add usable items (i.e. lighter, flint and tinder, matches)
+	DONE - a. add usable items (i.e. lighter, flint and tinder, matches)
 	DONE - b. add smoke animation against cooker where fires can be lit.
 	d. add heating on fire option to consumables
 2. add fatigue and fatigue reduction
@@ -36,8 +38,8 @@ to finish
 
 Fires remaining work:
 	1. Add heating on consumables
-	2. Add items to make fire with (flint and tinder, use paper)
-		i. Add make fire context menu option to all fire items
+	DONE - 2. Add items to make fire with (flint and tinder, use paper)
+		IN PROGRESS - i. Add make fire context menu option to all fire items
 	3. Add timer to fires
 	4. Add ability to check timer
 	5. Add time to cook to consumables

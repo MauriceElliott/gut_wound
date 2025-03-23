@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-03-23 00:05:46",revision=3233]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-03-23 23:27:25",revision=3267]]
 
 room=entity:new({
 	s_x = 0,
@@ -48,78 +48,4 @@ function unlock_heavy_door(room, ft)
         mset(ft.tile_co.x, ft.tile_co.y+1, room.replacement_sprite)
         room.is_discovered=true
     end
-end
-
-function init_rooms()
-	_rooms["19_10"] = room:new({
-		s_x = 272,
-		s_y = 0,
-		e_x = 448+15,
-		e_y = 144+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_normal_door
-	})
-	
-	_rooms["37_10"] = room:new({
-		s_x = 464+8,
-		s_y = 0,
-		e_x = 688+15,
-		e_y = 144+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_heavy_door,
-	})
-	
-	_rooms["46_10"] = room:new({
-		s_x = 704,
-		s_y = 0,
-		e_x = 1008+15,
-		e_y = 144+15,
-		replacement_sprite = 12,
-		call_unlock = unlock_normal_door,
-	})
-	
-	_rooms["59_9"] = room:new({
-		s_x = 880,
-		s_y = 144+5,
-		e_x = 1008+15,
-		e_y = 272+15,
-		replacement_sprite = 12,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["4_14"] = room:new({
-		s_x = 0,
-		s_y = 224+5,
-		e_x = 112+15,
-		e_y = 336+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["6_20"] = room:new({
-		s_x = 0,
-		s_y = 320+5,
-		e_x = 112+15,
-		e_y = 416+15,
-		replacement_sprite = 128,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["2_25"] = room:new({
-		s_x = 0,
-		s_y = 400+5,
-		e_x = 112+15,
-		e_y = 464+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["13_14"] = room:new({
-		s_x = 144+8,
-		s_y = 224+5,
-		e_x = 400+15,
-		e_y = 400+15,
-		replacement_sprite = 9,
-		call_unlock = unlock_normal_door,
-	})
 end

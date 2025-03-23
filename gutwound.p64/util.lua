@@ -1,4 +1,39 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-03-23 00:05:46",revision=8020]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-03-23 23:27:25",revision=8051]]
+
+function update_camera()
+    _c_x = _char.x + (_w_w/2)
+	_c_y = (_char.y + (_w_h/2)) - 270
+	_c_y_b = (_char.y + (_w_h/2))
+	camera(_char.x - (_w_w/2),_char.y - (_w_h/2))
+end
+
+function update_mouse_input()
+	_m_x, _m_y, _m_b, _m_w_x, _m_w_y = mouse()
+	_m_x = _m_x + (_c_x - _w_w)
+	_m_y = _m_y + _c_y
+	if ((_m_b&1>0) and _mlb_last_pressed == nil)
+	or ((_m_b&1>0) and time_since(_mlb_last_pressed,time(),false) > _mp_buffer_time) then
+		_mlb_last_pressed = time()
+		_m_l_b=true
+	else
+		_m_l_b=false
+	end
+	if ((_m_b&2>0) and _mrb_last_pressed == nil)
+	or ((_m_b&2>0) and time_since(_mrb_last_pressed,time(),false) > _mp_buffer_time) then
+		_mrb_last_pressed = time()
+		_m_r_b=true
+	else
+		_m_r_b=false
+	end
+	if ((_m_w_y>0 or _m_w_y<0) and _mwyb_last_pressed == nil)
+	or ((_m_w_y>0 or _m_w_y<0) and time_since(_mwyb_last_pressed,time(),false) > _mp_buffer_time) then
+		_mrb_last_pressed = time()
+		local _m_w_y = _m_w_y * -1
+		_m_w_y_b = true
+	else
+		_m_w_y_b = false
+	end
+end
 
 util = {}
 
@@ -174,4 +209,54 @@ gfx_offset={
 	gfx_1=256,
 	gfx_2=512,
 	gfx_3=768
+}
+
+class={
+	new=
+		function(self,tbl)
+			tbl=tbl or {}
+			setmetatable(tbl, {
+				__index=self
+				}
+			)
+			return tbl
+		end,
+}
+
+entity=class:new({
+	x=0,
+	y=0,
+})
+
+container_slot=entity:new({
+	container_id = 1,
+	quantity = 0,
+	item = nil,
+	starting_x = 0,
+	starting_y = 0,
+	ending_x = 0,
+	ending_y = 0,
+})
+
+object_type={
+	item=1,
+}
+
+button={
+	up=4,
+	down=8,
+	left=1,
+	right=2,
+	down_right=10,
+	up_left=5,
+	up_right=6,
+	down_left=9,
+	none=0
+}
+
+direction={
+	up = 1,
+	down = 2,
+	left = 3,
+	right = 4
 }

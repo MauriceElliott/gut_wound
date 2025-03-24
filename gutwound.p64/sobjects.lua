@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-03-24 22:21:44",revision=80]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-03-24 22:42:38",revision=116]]
 include './fire.lua'
 
 --[[
@@ -10,9 +10,18 @@ Can be a bit less rigid.
 function init_rooms()
 	_rooms["19_10"] = room:new({
 		s_x = 272,
-		s_y = 0,
+		s_y = 64,
 		e_x = 448+15,
 		e_y = 144+15,
+		replacement_sprite = 11,
+		call_unlock = unlock_normal_door
+	})
+	
+	_rooms["18_4"] = room:new({
+		s_x = 272,
+		s_y = 0,
+		e_x = 448+15,
+		e_y = 48+15,
 		replacement_sprite = 11,
 		call_unlock = unlock_normal_door
 	})

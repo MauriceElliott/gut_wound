@@ -1,5 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-23 22:35:01",revision=3870]]
-
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-24 22:21:44",revision=3926]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -69,13 +68,12 @@ function update_context_menu(obj)
 		if obj.item_type == item_type.junk then
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
-		if obj.item_type == item_type.usable then
+		if obj.item_type == item_type.useable then
+			_dbm = "fir x,y: " .. _fire_in_range.x .. "_" .. _fire_in_range.y
 			if obj.subtype == usable_subtype.rippable then
 				add(_cm.options, context_option:new({ name = context_menu_actions.rip, action=obj.use }))
 			elseif obj.subtype == usable_subtype.firestarter then
-				if _fire_in_range != "" then
-					add(_cm.options, context_option:new({ name = context_menu_actions.light_fire, action=obj.use }))
-				end
+				add(_cm.options, context_option:new({ name = context_menu_actions.light_fire, action=obj.use }))
 			end
 		end
 		if obj.item_type == item_type.equipable then

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-03-23 23:56:43",revision=8053]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-03-24 22:21:44",revision=8104]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)
@@ -230,7 +230,7 @@ entity=class:new({
 
 container_slot=entity:new({
 	container_id = 1,
-	quantity = 0,
+	quantity = 1,
 	item = nil,
 	starting_x = 0,
 	starting_y = 0,

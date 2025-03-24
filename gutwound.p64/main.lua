@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-23 23:56:43",revision=9133]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-24 22:21:44",revision=9186]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -48,7 +48,7 @@ function _init()
 	_fog={}
 
 	-- major objects
-	_inv=inventory:new({contents = {}})
+	_inv=inventory:new({contents = {container_slot:new({ item = lighter:new({})})}})
 	_cm=context_menu:new({})
 	_char=man:new({})
 
@@ -57,7 +57,7 @@ function _init()
 	init_rooms()
 	
 	--debug
-	light_fire()
+--	light_fire()
 end
 
 function update_coroutines()

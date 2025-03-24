@@ -1,4 +1,5 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-03-23 23:56:43",revision=21]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-03-24 22:21:44",revision=80]]
+include './fire.lua'
 
 --[[
 Rooms
@@ -435,6 +436,12 @@ function init_containers()
 				{
 					quantity = 1,
 					item = cardboard:new({})
+				}
+			),
+			container_slot:new(
+				{
+					quantity = 1,
+					item = lighter:new({})
 				}
 			)
 		}

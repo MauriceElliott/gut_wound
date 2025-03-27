@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-24 22:43:52",revision=818]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-27 23:29:44",revision=940]]
 
 
 -- smoke movement speed
@@ -33,6 +33,8 @@ smoke=entity:new({
 fire=entity:new({
 	is_lit = true,
 	time_remaining = 0,
+	x = 0,
+	y = 0,
 	--smoke origin x and y
 	sox = 0,
 	soy = 0,
@@ -60,7 +62,7 @@ fire=entity:new({
 	end,
 	smoke_update_timer = time(),
 	smoke_delete_timer = time(),
-	fuel = {},
+	time_to_live = (time()+30),
 })
 
 function draw_fires()
@@ -74,7 +76,10 @@ function draw_fires()
 end
 
 function update_fires()
-		for i, f in pairs(_fires) do
+	for i, f in pairs(_fires) do
+		if f.time_to_live <= time() then
+			f.is_lit = false
+		end
 		if f.is_lit then
 			if #f.smoke < _mso and time_since(f.smoke_update_timer, time(), false) >= _sut then
 				f.add_smoke(f)
@@ -101,10 +106,26 @@ function update_fires()
 	end
 end
 
+function ctx_menu_fuel_add(item)
+	_in_range_lit_fire = nil
+	for i, f in pairs(_fires) do
+		if f.x == _fire_in_range.x and f.y == _fire_in_range.y then
+			_in_range_lit_fire = { in_range = true, fire = f, item = item }
+			return true
+		end
+	end
+end
+
+function add_fuel()
+	_in_range_lit_fire.time_to_live += _fire_in_range.item.fuel_value
+end
+
 function light_fire()
 	local tile_x, tile_y = _fire_in_range.x, _fire_in_range.y
 	local k = tile_x .. "_" .. tile_y
 	local fire = fire:new()
+	fire.x = tile_x
+	fire.y = tile_y
 	fire.sox = (tile_x * 16)+ 6
 	fire.soy = (tile_y * 16)+ 3
 	mset(tile_x, tile_y, 204)

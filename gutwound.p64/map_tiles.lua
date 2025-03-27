@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-24 22:43:52",revision=7418]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-03-27 23:29:44",revision=7535]]
 
 function update_interactables(c)
 	local is_cont_in_range = false
@@ -42,8 +42,6 @@ function update_interactables(c)
 		end
 		if fget_precalc(ft.flags,5) == true then
 			_fire_in_range = { x = ft.tile_co.x, y = ft.tile_co.y }
-		else
-			_fire_in_range = {}
 		end
 	end
 	if not is_cont_in_range then

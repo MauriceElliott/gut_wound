@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-24 22:43:52",revision=3957]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-03-27 23:29:44",revision=4088]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -23,6 +23,7 @@ context_menu_actions = {
 	unequip = "Unequip",
 	light_fire = "Light Fire",
 	rip = "Rip",
+	add_fuel = "Add Fuel"
 }
 
 function draw_context_menu()
@@ -66,14 +67,18 @@ function update_context_menu(obj)
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
 		if obj.item_type == item_type.junk then
+			if ctx_menu_fuel_add(obj) then
+				add(_cm.options, context_option:new({name = context_menu_actions.add_fuel, action = add_fuel }))
+			end
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
 		if obj.item_type == item_type.useable then
-			_dbm = "fir x,y: " .. _fire_in_range.x .. "_" .. _fire_in_range.y
 			if obj.subtype == usable_subtype.rippable then
 				add(_cm.options, context_option:new({ name = context_menu_actions.rip, action=obj.use }))
 			elseif obj.subtype == usable_subtype.firestarter then
-				add(_cm.options, context_option:new({ name = context_menu_actions.light_fire, action=obj.use }))
+				if _fire_in_range != nil then
+					add(_cm.options, context_option:new({ name = context_menu_actions.light_fire, action=obj.use }))
+				end
 			end
 		end
 		if obj.item_type == item_type.equipable then

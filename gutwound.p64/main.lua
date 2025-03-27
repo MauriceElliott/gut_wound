@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-24 22:43:52",revision=9213]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-27 23:29:44",revision=9333]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -36,7 +36,8 @@ function _init()
 
 	-- Set up collections
 	_fires = {}
-	_fire_in_range = { x = 27, y = 5 }
+	_fire_in_range = nil
+	_in_range_lit_fire = nil
 	_blood_splatters = {}
 	_fires = {}
 	_redraw_list = {}

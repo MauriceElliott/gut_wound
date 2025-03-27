@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-24 22:43:52",revision=1422]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-03-27 23:29:44",revision=1557]]
 
 -- Title Scene
 menu_buttons = { }
@@ -64,4 +64,5 @@ function game_scene_update()
 	execute_context_menu_option()
 	update_character_vitals()
 	update_equippables()
+	_fire_in_range = nil
 end

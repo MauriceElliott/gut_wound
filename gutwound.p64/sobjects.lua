@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-03-27 23:29:44",revision=238]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-03-28 21:16:30",revision=265]]
 include './fire.lua'
 
 --[[
@@ -315,6 +315,7 @@ letter=readable:new({
 ----------
 junk=item:new({
 	item_type = item_type.junk,
+	fuel_value = 2,
 })
 
 cardboard=junk:new({

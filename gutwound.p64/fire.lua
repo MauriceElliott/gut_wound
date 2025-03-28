@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-27 23:29:44",revision=940]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-28 21:16:30",revision=1010]]
 
 
 -- smoke movement speed
@@ -77,6 +77,7 @@ end
 
 function update_fires()
 	for i, f in pairs(_fires) do
+		_dbm = "ttl: " .. f.time_to_live
 		if f.time_to_live <= time() then
 			f.is_lit = false
 		end
@@ -116,8 +117,17 @@ function ctx_menu_fuel_add(item)
 	end
 end
 
+function add_time(time_to_add, current_time)
+	local additional_time = current_time - time()
+	additional_time += time_to_add
+	return (time() + additional_time)
+end
+
 function add_fuel()
-	_in_range_lit_fire.time_to_live += _fire_in_range.item.fuel_value
+	local irlf = _in_range_lit_fire
+	del(_fires, _in_range_lit_fire)
+	irlf.fire.time_to_live = add_time(irlf.item.fuel_value, irlf.fire.time_to_live)
+	add(_fires, irlf)
 end
 
 function light_fire()

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-31 22:34:27",revision=9368]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-03-31 22:52:04",revision=9377]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -50,6 +50,7 @@ function _init()
 
 	-- major objects
 	_inv=inventory:new({contents = {container_slot:new({ item = lighter:new({})})}})
+	add(_inv.contents, container_slot:new({ item = cardboard:new({})}))
 	_cm=context_menu:new({})
 	_char=man:new({})
 

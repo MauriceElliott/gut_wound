@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-28 21:16:30",revision=1010]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-03-31 22:34:27",revision=1026]]
 
 
 -- smoke movement speed
@@ -62,7 +62,8 @@ fire=entity:new({
 	end,
 	smoke_update_timer = time(),
 	smoke_delete_timer = time(),
-	time_to_live = (time()+30),
+	start_timer = time(),
+	time_to_live = 30,
 })
 
 function draw_fires()
@@ -77,8 +78,7 @@ end
 
 function update_fires()
 	for i, f in pairs(_fires) do
-		_dbm = "ttl: " .. f.time_to_live
-		if f.time_to_live <= time() then
+		if time_since(f.start_timer, time(), false) >= f.time_to_live then
 			f.is_lit = false
 		end
 		if f.is_lit then
@@ -117,16 +117,10 @@ function ctx_menu_fuel_add(item)
 	end
 end
 
-function add_time(time_to_add, current_time)
-	local additional_time = current_time - time()
-	additional_time += time_to_add
-	return (time() + additional_time)
-end
-
 function add_fuel()
 	local irlf = _in_range_lit_fire
 	del(_fires, _in_range_lit_fire)
-	irlf.fire.time_to_live = add_time(irlf.item.fuel_value, irlf.fire.time_to_live)
+	irlf.fire.time_to_live += irlf.item.fuel_value
 	add(_fires, irlf)
 end
 

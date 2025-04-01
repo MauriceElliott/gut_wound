@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-01 20:49:43",revision=1052]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-01 22:42:49",revision=1089]]
 
 
 -- smoke movement speed
@@ -21,6 +21,10 @@ _ssr = 0.04
 _sut = 0.2
 -- Starting position offset
 _spo = 4
+
+-- Fire
+-- Default time to live
+_dttl = 30
 
 smoke=entity:new({
 	x = 0,
@@ -63,7 +67,7 @@ fire=entity:new({
 	smoke_update_timer = time(),
 	smoke_delete_timer = time(),
 	start_timer = time(),
-	time_to_live = 30,
+	time_to_live = _dttl,
 })
 
 function draw_fires()
@@ -79,7 +83,7 @@ end
 function update_fires()
 	for i, f in pairs(_fires) do
 		if time_since(f.start_timer, time(), false) >= f.time_to_live then
-			f.is_lit = false
+			putout_fire(fire)
 		end
 		if f.is_lit then
 			if #f.smoke < _mso and time_since(f.smoke_update_timer, time(), false) >= _sut then
@@ -121,7 +125,7 @@ function add_fuel()
 	local irlf = _in_range_lit_fire
 	del(_fires, _in_range_lit_fire)
 	irlf.fire.time_to_live += irlf.item.fuel_value
-	add(_fires, irlf)
+	add(_fires, irlf.fire)
 end
 
 function light_fire()
@@ -130,9 +134,24 @@ function light_fire()
 	local fire = fire:new()
 	fire.x = tile_x
 	fire.y = tile_y
-	fire.sox = (tile_x * 16)+ 6
-	fire.soy = (tile_y * 16)+ 3
-	mset(tile_x, tile_y, 204)
-	mset(tile_x, tile_y+1, 212)
+	fire.sox = (tile_x * _tile_size)+ 6
+	fire.soy = (tile_y * _tile_size)+ 3
+	mset(tile_x, tile_y, fire_tiles.lit.top)
+	mset(tile_x, tile_y+1, fire_tiles.lit.bottom)
 	_fires[k] = fire
 end
+
+function putout_fire(fire)
+	
+end
+
+fire_tiles = {
+	lit = {
+		top = 204,
+		bottom = 212,
+	},
+	unlit = {
+		top = 163,
+		bottom = 171
+	}
+}

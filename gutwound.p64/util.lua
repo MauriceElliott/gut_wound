@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-01 20:49:43",revision=8313]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-01 22:42:49",revision=8341]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)
@@ -49,7 +49,7 @@ function animate_sprite(o, sf, nf, sp, fl)
 	 o.a_st += 1
 	 if(o.a_st == nf) o.a_st = 0
 	elseif o.a_la != sf then
-	o.a_st = 0
+		o.a_st = 0
 	end
 
 	o.a_fr = sf + o.a_st

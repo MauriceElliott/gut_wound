@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 13:38:07",revision=1106]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 20:32:04",revision=1148]]
 
 
 -- smoke movement speed
@@ -64,9 +64,12 @@ fire=entity:new({
 		add(self.smoke, new_smoke)
 		smoke_update_timer = time()
 	end,
-	smoke_update_timer = time(),
-	smoke_delete_timer = time(),
-	start_timer = time(),
+	new = function(self)
+		self.smoke_update_timer = time()
+		self.smoke_delete_timer = time()
+		self.start_timer = time()
+		return self
+	end,
 	time_to_live = _dttl,
 })
 
@@ -83,6 +86,7 @@ end
 function update_fires()
 	for i, f in pairs(_fires) do
 		if time_since(f.start_timer, time(), false) >= f.time_to_live then
+			f.is_lit = false
 			putout_fire(f)
 		end
 		if f.is_lit then
@@ -131,7 +135,8 @@ end
 function light_fire()
 	local tile_x, tile_y = _fire_in_range.x, _fire_in_range.y
 	local k = tile_x .. "_" .. tile_y
-	local fire = fire:new()
+	_dbm = "k: " .. k .. " fc: " .. #_fires
+	local fire = fire:new({})
 	fire.x = tile_x
 	fire.y = tile_y
 	fire.sox = (tile_x * _tile_size)+ 6
@@ -142,7 +147,8 @@ function light_fire()
 end
 
 function putout_fire(fire)
-	del(_fires, fire)
+	local key = fire.x .. "_" .. fire.y
+	_fires[key] = nil
 	mset(fire.x, fire.y, fire_tiles.unlit.top)
 	mset(fire.x, fire.y+1, fire_tiles.unlit.bottom)
 end

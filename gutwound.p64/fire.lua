@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-01 22:42:49",revision=1089]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 13:38:07",revision=1106]]
 
 
 -- smoke movement speed
@@ -83,7 +83,7 @@ end
 function update_fires()
 	for i, f in pairs(_fires) do
 		if time_since(f.start_timer, time(), false) >= f.time_to_live then
-			putout_fire(fire)
+			putout_fire(f)
 		end
 		if f.is_lit then
 			if #f.smoke < _mso and time_since(f.smoke_update_timer, time(), false) >= _sut then
@@ -142,7 +142,9 @@ function light_fire()
 end
 
 function putout_fire(fire)
-	
+	del(_fires, fire)
+	mset(fire.x, fire.y, fire_tiles.unlit.top)
+	mset(fire.x, fire.y+1, fire_tiles.unlit.bottom)
 end
 
 fire_tiles = {

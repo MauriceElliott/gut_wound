@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-02 21:01:43",revision=3611]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-02 22:09:28",revision=3654]]
 
 room=entity:new({
 	s_x = 0,

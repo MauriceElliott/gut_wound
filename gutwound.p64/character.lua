@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-02 21:01:43",revision=9215]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-02 22:09:28",revision=9266]]
 
 character=entity:new({
    col_point = { x=0, y=0 },
@@ -100,7 +100,7 @@ function move_man()
 end
 
 function animate_character()
-	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-4, _char.y+_char.max_height+1, 16)
+	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-5, _char.y+_char.max_height+1, 16)
 	local bkpk = util.name_contains(_char.equipped_items, "Backpack")
 	if _char.state == "idle" then
 		if bkpk.check == false then
@@ -306,6 +306,12 @@ function scan_character_area()
 end
 
 function update_character_vitals()
+--[[
+		If character is in range of fire add increase modifier to vital improvements
+		Especially delirium, health, and fatigue
+		Wound health should get a minor buff.
+		Thirst and hunger should get no buff.
+]]
 	if _char.state == "idle" and _char.health < 70 then
 		last_update_move, current_update = 0, time_since(start_idle, time(), true)
 		if current_update != last_update_idle then

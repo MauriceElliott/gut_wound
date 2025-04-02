@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-02 21:01:43",revision=8424]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-02 22:09:28",revision=8478]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)
@@ -221,7 +221,7 @@ function table_to_string(tbl)
         local key = serialize(k)
         local value = serialize(v)
         result = result .. key .. "=" .. value .. ", " .. [[ 
-        ]]
+]]
     end
     -- Remove the trailing comma and space if there are elements in the table
     if result:sub(-2) == ", " then

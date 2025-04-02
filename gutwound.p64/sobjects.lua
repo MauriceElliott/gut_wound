@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-02 21:01:43",revision=400]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-02 22:09:28",revision=452]]
 include './fire.lua'
 
 --[[
@@ -102,8 +102,9 @@ item=entity:new({
 	name = "",
 	weight = 1.0,
 	is_flamable = false,
+	fuel_value = 10,
 	item_type = nil,
-	description=""
+	description = "",
 })
 
 item_type = {
@@ -300,12 +301,6 @@ readable=item:new({
 	end
 })
 
-journal=readable:new({
-	open_sprite = (gfx_offset.gfx_3+120),
-	sprite=(gfx_offset.gfx_3+145),
-	name="Journal"
-})
-
 letter=readable:new({
 	sprite=(gfx_offset.gfx_3+144),
 	name="Letter"
@@ -320,12 +315,13 @@ junk=item:new({
 
 cardboard=junk:new({
 	sprite=(gfx_offset.gfx_3+143),
-	name="Cardboard"
+	name="Cardboard",
+	is_flamable = true,
 })
 
 rancid_food=junk:new({
 	sprite=(gfx_offset.gfx_3+151),
-	name="Rancid Food"
+	name="Rancid Food",
 })
 
 glass=junk:new({
@@ -394,6 +390,12 @@ lighter=useable:new({
 	sprite = (gfx_offset.gfx_3+155),
 	name = "Lighter",
 	use = light_fire
+})
+
+journal=useable:new({
+	sprite=(gfx_offset.gfx_3+145),
+	name="Journal",
+	use=use_journal,
 })
 
 ---------------

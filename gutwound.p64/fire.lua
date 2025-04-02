@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 21:01:43",revision=1197]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 22:09:28",revision=1251]]
 
 
 -- smoke movement speed
@@ -85,7 +85,6 @@ end
 
 function update_fires()
 	for i, f in pairs(_fires) do
-		_dbo = table_to_string(f)
 		if time_since(f.start_timer, time(), false) >= f.time_to_live then
 			putout_fire(f)
 		end
@@ -135,7 +134,6 @@ end
 function light_fire()
 	local tile_x, tile_y = _fire_in_range.x, _fire_in_range.y
 	local k = tile_x .. "_" .. tile_y
-	_dbm = "k: " .. k .. " fc: " .. #_fires
 	local fire = fire:new({})
 	fire.x = tile_x
 	fire.y = tile_y

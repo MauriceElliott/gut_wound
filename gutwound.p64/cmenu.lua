@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-02 21:01:43",revision=4249]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-02 22:09:28",revision=4295]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -66,7 +66,7 @@ function update_context_menu(obj)
 			add(_cm.options, context_option:new({name = context_menu_actions.consume, action = obj.consume}))
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
-		if obj.item_type == item_type.junk then
+		if obj.is_flamable == true then
 			if ctx_menu_fuel_add(obj) then
 				add(_cm.options, context_option:new({name = context_menu_actions.add_fuel, action = add_fuel }))
 			end

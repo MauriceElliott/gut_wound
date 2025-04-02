@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-02 20:32:04",revision=8382]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-02 21:01:43",revision=8424]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)
@@ -204,6 +204,33 @@ function draw_info_text(t, d)
 	end)
 	add(_coroutines, func)
 end
+
+function table_to_string(tbl)
+    local function serialize(value)
+        if type(value) == "table" then
+            return table_to_string(value)
+        elseif type(value) == "string" then
+            return "\"" .. value .. "\""
+        else
+            return tostring(value)
+        end
+    end
+
+    local result = "{"
+    for k, v in pairs(tbl) do
+        local key = serialize(k)
+        local value = serialize(v)
+        result = result .. key .. "=" .. value .. ", " .. [[ 
+        ]]
+    end
+    -- Remove the trailing comma and space if there are elements in the table
+    if result:sub(-2) == ", " then
+        result = result:sub(1, -3)
+    end
+    result = result .. "}"
+    return result
+end
+
 
 gfx_offset={
 	gfx_1=256,

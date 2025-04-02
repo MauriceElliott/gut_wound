@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-02 20:32:04",revision=9458]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-02 21:01:43",revision=9503]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -11,6 +11,7 @@ include './scenes.lua'
 include './fire.lua'
 
 _dbm = ""
+_dbo = nil
 
 function _init()
     -- Update Pallet and font
@@ -57,9 +58,6 @@ function _init()
 	-- Initialise static objects
 	init_containers()
 	init_rooms()
-	
-	--debug
---	light_fire()
 end
 
 function update_coroutines()
@@ -90,7 +88,12 @@ function _update()
 end
 
 function debug()
-	print("debug: " .. _dbm
-		.. " mx, my: " .. _m_x .. " " .. _m_y
-		, _c_x-475, _c_y+258, 17)
+	if _dbo != nil then
+		print(_dbo, _c_x-478, _c_y+10, 17)
+		_dbo = nil
+	else
+		print("debug: " .. _dbm
+			.. " mx, my: " .. _m_x .. " " .. _m_y
+			, _c_x-475, _c_y+258, 17)
+	end
 end

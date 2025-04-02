@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 20:32:04",revision=1148]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 21:01:43",revision=1197]]
 
 
 -- smoke movement speed
@@ -85,8 +85,8 @@ end
 
 function update_fires()
 	for i, f in pairs(_fires) do
+		_dbo = table_to_string(f)
 		if time_since(f.start_timer, time(), false) >= f.time_to_live then
-			f.is_lit = false
 			putout_fire(f)
 		end
 		if f.is_lit then
@@ -148,6 +148,7 @@ end
 
 function putout_fire(fire)
 	local key = fire.x .. "_" .. fire.y
+	del(_fires, fire)
 	_fires[key] = nil
 	mset(fire.x, fire.y, fire_tiles.unlit.top)
 	mset(fire.x, fire.y+1, fire_tiles.unlit.bottom)

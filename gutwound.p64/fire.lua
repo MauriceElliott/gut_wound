@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 10:25:47",revision=1325]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 10:32:59",revision=1347]]
 
 
 -- smoke movement speed
@@ -136,9 +136,9 @@ end
 
 function heat_on_fire()
 	local irlf = _in_range_lit_fire
-	remove_item_from_container(_inv, irlf.item)
-	irlf.item.name = "(H) " .. irlf.item.name
+--	irlf.item.name = "(H) " .. irlf.item.name
 	irlf.item.is_hot = true
+	_dbm = "in heat on fire"
 	add_to_inventory(_inv, irlf.item)
 end
 

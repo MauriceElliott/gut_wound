@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-04-03 22:41:13",revision=1949]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-04-03 22:45:09",revision=1954]]
 
 -- Title Scene
 menu_buttons = { }
@@ -56,7 +56,8 @@ function game_scene_draw()
 	draw_context_menu()
 	draw_border()
 	if _wub > 1 then
-		circfill(_char.x, _char.y)
+		circfill(_char.x, _char.y, 1, 4)
+		circfill(_char.x+1, _char.y, 1, 18)
 	end
 end
 

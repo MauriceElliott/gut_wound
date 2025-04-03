@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-03 09:37:11",revision=8453]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-03 10:25:47",revision=8489]]
 
 -- text colour
 _itc = 14
@@ -49,8 +49,9 @@ function add_to_inventory(cc, item)
     local existing_item_index = 0
     local total_weight = 0
     for i, s in pairs(_inv.contents) do
-        if s.item.sprite == item.sprite then
+        if s.item.sprite == item.sprite and s.item.name == item.name then
             existing_item_index = i
+            _dbm = "existing item true"
         end
         total_weight += (s.item.weight * s.quantity)
     end

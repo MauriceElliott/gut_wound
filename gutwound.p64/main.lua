@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-03 09:37:11",revision=9576]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-03 10:25:47",revision=9612]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -10,7 +10,7 @@ include './rooms.lua'
 include './scenes.lua'
 include './fire.lua'
 
-_dbm = ""
+_dbm = nil
 _dbo = nil
 
 function _init()
@@ -91,9 +91,9 @@ function debug()
 	if _dbo != nil then
 		print(_dbo, _c_x-478, _c_y+10, 17)
 		_dbo = nil
-	else
+	elseif _dbm != nil then
 		print("debug: " .. _dbm
-			.. " mx, my: " .. _m_x .. " " .. _m_y
+--			.. " mx, my: " .. _m_x .. " " .. _m_y
 			, _c_x-475, _c_y+258, 17)
 	end
 end

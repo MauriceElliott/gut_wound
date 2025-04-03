@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-03 09:37:11",revision=4333]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-03 10:25:47",revision=4362]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -65,7 +65,7 @@ function update_context_menu(obj)
 	if obj.type == object_type.item then
 		if obj.item_type == item_type.consumable then
 			if ctx_menu_fire_check(obj) then
-				add(_cm.options, context_option:new({name = context_menu_actions.heat, action = obj.heat}))
+				add(_cm.options, context_option:new({name = context_menu_actions.heat, action = heat_on_fire }))
 			end
 			add(_cm.options, context_option:new({name = context_menu_actions.consume, action = obj.consume}))
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))

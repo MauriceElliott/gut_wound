@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 09:37:11",revision=1292]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 10:25:47",revision=1325]]
 
 
 -- smoke movement speed
@@ -132,6 +132,14 @@ function add_fuel()
 	del(_fires, _in_range_lit_fire)
 	irlf.fire.time_to_live += irlf.item.fuel_value
 	add(_fires, irlf.fire)
+end
+
+function heat_on_fire()
+	local irlf = _in_range_lit_fire
+	remove_item_from_container(_inv, irlf.item)
+	irlf.item.name = "(H) " .. irlf.item.name
+	irlf.item.is_hot = true
+	add_to_inventory(_inv, irlf.item)
 end
 
 function light_fire()

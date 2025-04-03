@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-03 09:37:11",revision=481]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-03 10:25:47",revision=511]]
 include './fire.lua'
 
 --[[
@@ -119,6 +119,7 @@ item_type = {
 -----------------
 -- CONSUMABLES --
 -----------------
+
 
 consumable=item:new({
 	item_type = item_type.consumable,

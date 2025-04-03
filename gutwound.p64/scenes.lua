@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-04-03 14:53:49",revision=1885]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-04-03 22:41:13",revision=1949]]
 
 -- Title Scene
 menu_buttons = { }
@@ -55,6 +55,9 @@ function game_scene_draw()
 	update_inventory()
 	draw_context_menu()
 	draw_border()
+	if _wub > 1 then
+		circfill(_char.x, _char.y)
+	end
 end
 
 function game_scene_update()
@@ -65,5 +68,6 @@ function game_scene_update()
 	execute_context_menu_option()
 	update_character_vitals()
 	update_equippables()
+	update_warmed_up_buff()
 	_fire_in_range = nil
 end

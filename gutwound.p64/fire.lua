@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 14:53:49",revision=1402]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 22:41:13",revision=1474]]
 
 
 -- smoke movement speed
@@ -119,11 +119,11 @@ end
 
 function lit_fire_scan()
 	_in_range_lit_fire = nil
-	for i, f in pairs(_fires) do
-		if f.x == _fire_in_range.x and f.y == _fire_in_range.y 
-			and f.is_lit == true 
-		then
-			_in_range_lit_fire = { fire = f }
+	if _fire_in_range != nil then
+		for i, f in pairs(_fires) do
+			if f.x == _fire_in_range.x and f.y == _fire_in_range.y and f.is_lit == true then
+				_in_range_lit_fire = { fire = f }
+			end
 		end
 	end
 end
@@ -152,6 +152,30 @@ function heat_on_fire()
 	end
 	add_to_inventory(_inv, _fire_item)
 	_fire_item = nil
+end
+
+-- Time til warmed up buff
+_ttwub = 15
+-- Warmed up buff, used as multiplier
+_wub = 1
+-- Timer used to check if the player 
+-- has been standing by the fire long enough to get the buff
+_warm_up_buff_timer = nil
+
+function update_warmed_up_buff()
+	if _in_range_lit_fire == nil then
+		_warm_up_buff_timer = nil
+		_wub = 1
+		_dbm = "first"
+	elseif _warm_up_buff_timer == nil then
+		_warm_up_buff_timer = time()
+		_dbm = "second"
+	end
+	if _warm_up_buff_timer != nil then
+		if time_since(_warm_up_buff_timer, time(), false) > _ttwub then
+			_wub = 4
+		end
+	end
 end
 
 function light_fire()

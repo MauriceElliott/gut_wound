@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-03 14:53:49",revision=9678]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-03 22:41:13",revision=9745]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -25,6 +25,7 @@ function _init()
 	-- Set up Mouse
 	_m_x, _m_y, _m_b, _m_w_x, _m_w_y, _scroll_inv, _scroll_cont = 0,0,0,0,0,0,0
 	_mlb_last_pressed, _mrb_last_pressed, _mmb_last_pressed, _mwyb_last_pressed = nil, nil, nil, nil
+	-- Mouse press buffer time (to avoid multi click in a single click)
 	_mp_buffer_time = 0.3
 
 	-- Set up camera

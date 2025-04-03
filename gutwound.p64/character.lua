@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-03 14:53:49",revision=9383]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-03 22:41:13",revision=9447]]
 
 character=entity:new({
    col_point = { x=0, y=0 },
@@ -14,7 +14,8 @@ character=entity:new({
 	start_idle = nil,
 	start_move = nil,
 	equipped_items = {},
-	inventory = nil
+	inventory = nil,
+	is_warmed_up = false,
 })
 
 man=character:new({
@@ -305,6 +306,17 @@ function scan_character_area()
 	end
 end
 
+--health
+_cv_i_h = 0.05
+--wound health
+_cv_i_wh = 0.05
+--hunger
+_cv_i_hh = 0.01
+--thirst
+_cv_i_t = 0.02
+--pain
+_cv_i_p = 0.05
+
 function update_character_vitals()
 --[[
 		If character is in range of fire add increase modifier to vital improvements
@@ -316,14 +328,14 @@ function update_character_vitals()
 		last_update_move, current_update = 0, time_since(start_idle, time(), true)
 		if current_update != last_update_idle then
 			last_update_idle = current_update
-			_char.health += 0.05
-			_char.hunger += 0.01
-			_char.thirst += 0.02
+			_char.health += (_cv_i_h*_wub)
+			_char.hunger += (_cv_i_hh/_wub)
+			_char.thirst += (_cv_i_t/_wub)
 			if _char.wound_health < 50 then
-				_char.wound_health += 0.01
+				_char.wound_health += (_cv_i_wh*_wub)
 			end
 			if _char.pain > 50 then
-				_char.pain -= 0.05
+				_char.pain -= (_cv_i_p*_wub)
 			end
 		end
 	end

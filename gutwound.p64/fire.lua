@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 10:36:56",revision=1359]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 14:53:49",revision=1402]]
 
 
 -- smoke movement speed
@@ -117,27 +117,41 @@ function update_fires()
 	end
 end
 
-function ctx_menu_fire_check(item)
+function lit_fire_scan()
 	_in_range_lit_fire = nil
 	for i, f in pairs(_fires) do
-		if f.x == _fire_in_range.x and f.y == _fire_in_range.y then
-			_in_range_lit_fire = { in_range = true, fire = f, item = item }
-			return true
+		if f.x == _fire_in_range.x and f.y == _fire_in_range.y 
+			and f.is_lit == true 
+		then
+			_in_range_lit_fire = { fire = f }
 		end
 	end
 end
 
+function ctx_menu_fire_check(item)
+	lit_fire_scan()
+	if _in_range_lit_fire != nil then
+		_fire_item = item
+		return true
+	end
+	return false
+end
+
 function add_fuel()
 	local irlf = _in_range_lit_fire
-	del(_fires, _in_range_lit_fire)
-	irlf.fire.time_to_live += irlf.item.fuel_value
+	del(_fires, _in_range_lit_fire.fire)
+	irlf.fire.time_to_live += _fire_item.fuel_value
 	add(_fires, irlf.fire)
+	_fire_item = nil
 end
 
 function heat_on_fire()
 	local irlf = _in_range_lit_fire
-	irlf.item.is_hot = true
-	add_to_inventory(_inv, irlf.item)
+	if _in_range_lit_fire != nil then
+		_fire_item.is_hot = true
+	end
+	add_to_inventory(_inv, _fire_item)
+	_fire_item = nil
 end
 
 function light_fire()

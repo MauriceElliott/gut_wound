@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-04-03 10:36:56",revision=1848]]
+--[[pod_format="raw",created="2024-10-04 13:59:02",modified="2025-04-03 14:53:49",revision=1885]]
 
 -- Title Scene
 menu_buttons = { }
@@ -61,6 +61,7 @@ function game_scene_update()
    move_man()
 	scan_character_area()
 	update_fires()
+	lit_fire_scan()
 	execute_context_menu_option()
 	update_character_vitals()
 	update_equippables()

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-02 22:09:28",revision=1251]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 09:17:23",revision=1288]]
 
 
 -- smoke movement speed
@@ -85,8 +85,11 @@ end
 
 function update_fires()
 	for i, f in pairs(_fires) do
-		if time_since(f.start_timer, time(), false) >= f.time_to_live then
+		local f_time_remaining = f.time_to_live - time_since(f.start_timer, time(), false)
+		if f_time_remaining < 0 then
 			putout_fire(f)
+		else
+			f.time_remaining = f_time_remaining
 		end
 		if f.is_lit then
 			if #f.smoke < _mso and time_since(f.smoke_update_timer, time(), false) >= _sut then
@@ -114,7 +117,7 @@ function update_fires()
 	end
 end
 
-function ctx_menu_fuel_add(item)
+function ctx_menu_fire_check(item)
 	_in_range_lit_fire = nil
 	for i, f in pairs(_fires) do
 		if f.x == _fire_in_range.x and f.y == _fire_in_range.y then

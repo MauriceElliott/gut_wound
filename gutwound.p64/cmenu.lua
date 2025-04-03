@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-02 22:09:28",revision=4295]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-03 09:17:23",revision=4329]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -23,7 +23,8 @@ context_menu_actions = {
 	unequip = "Unequip",
 	light_fire = "Light Fire",
 	rip = "Rip",
-	add_fuel = "Add Fuel"
+	add_fuel = "Add Fuel",
+	heat = "Warm in Fire",
 }
 
 function draw_context_menu()
@@ -63,11 +64,14 @@ function update_context_menu(obj)
 	_cm.x, _cm.y = s_x, s_y
 	if obj.type == object_type.item then
 		if obj.item_type == item_type.consumable then
+			if ctx_menu_fire_check(obj) then
+				add(_cm.options, context_option:new({name = context_menu_actions.heat, action = obj.heat}))
+			end
 			add(_cm.options, context_option:new({name = context_menu_actions.consume, action = obj.consume}))
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
 		if obj.is_flamable == true then
-			if ctx_menu_fuel_add(obj) then
+			if ctx_menu_fire_check(obj) then
 				add(_cm.options, context_option:new({name = context_menu_actions.add_fuel, action = add_fuel }))
 			end
 			add(_cm.options, context_option:new({name = context_menu_actions.discard}))

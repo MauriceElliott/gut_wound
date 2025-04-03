@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-02 22:09:28",revision=452]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-03 09:17:23",revision=477]]
 include './fire.lua'
 
 --[[
@@ -222,6 +222,7 @@ jarred_kimchi=consumable:new({
 	name = "Kimchi",
 	weight = 0.35,
 	hunger = 8,
+	hot_offset = 4,
 	thirst = 4,
 	delirium = -2,
 })

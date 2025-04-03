@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-03 10:32:59",revision=8510]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-03 10:36:56",revision=8524]]
 
 -- text colour
 _itc = 14
@@ -48,7 +48,6 @@ end
 function add_to_inventory(cc, item)
     local existing_item_index = 0
     local total_weight = 0
-    _dbo = item
     for i, s in pairs(_inv.contents) do
         if s.item.sprite == item.sprite and s.item.name == item.name then
             existing_item_index = i
@@ -97,7 +96,10 @@ function display_inventory_contents()
             end
             spr(c.item.sprite, _inv.inv_starting_x, current_y, 23)
             if c.item.is_equipped then
-            		spr((gfx_offset.gfx_3+6), _inv.inv_starting_x-1, current_y) 
+            	spr((gfx_offset.gfx_3+6), _inv.inv_starting_x-1, current_y) 
+            end
+            if c.item.is_hot then
+            	spr((gfx_offset.gfx_3+7), _inv.inv_starting_x-1, current_y)
             end
             print(c.item.name, _inv.inv_starting_x + 11, current_y, _itc)
             print(c.item.weight, _inv.inv_starting_x + 80, current_y, _itc)

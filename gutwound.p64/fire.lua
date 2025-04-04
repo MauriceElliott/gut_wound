@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-04 10:36:54",revision=1485]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-04 11:43:30",revision=1494]]
 
 
 -- smoke movement speed
@@ -158,22 +158,29 @@ end
 _ttwub = 15
 -- Warmed up buff, used as multiplier
 _wub = 1
+-- Warmed up buff removed and applied
+_wubr = 1
+_wuba = 4
+-- time til warmed up buff is removed
+_warmed_up_buff_applied_start = nil
 -- Timer used to check if the player 
 -- has been standing by the fire long enough to get the buff
 _warm_up_buff_timer = nil
 
 function update_warmed_up_buff()
-	if _in_range_lit_fire == nil then
+	if _in_range_lit_fire == nil and _wub == _wubr then
 		_warm_up_buff_timer = nil
-		_wub = 1
+		_wub = _wubr
 		_dbm = "first"
 	elseif _warm_up_buff_timer == nil then
 		_warm_up_buff_timer = time()
 		_dbm = "second"
 	end
+	if 
 	if _warm_up_buff_timer != nil then
 		if time_since(_warm_up_buff_timer, time(), false) > _ttwub then
-			_wub = 4
+			_wub = _wuba
+			_warmed_up_buff_applied_start = time()
 		end
 	end
 end

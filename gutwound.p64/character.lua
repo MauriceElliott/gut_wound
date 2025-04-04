@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-04 19:49:26",revision=9480]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-04 20:05:33",revision=9502]]
 
 character=entity:new({
    col_point = { x=0, y=0 },
@@ -102,6 +102,9 @@ end
 
 function animate_character()
 	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-5, _char.y+_char.max_height+1, 16)
+	if _wub > 1 then
+		spr(gfx_offset.gfx_3+14, _char.x-2, _char.y-2)
+	end
 	local bkpk = util.name_contains(_char.equipped_items, "Backpack")
 	if _char.state == "idle" then
 		if bkpk.check == false then

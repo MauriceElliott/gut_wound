@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-04 20:05:33",revision=1530]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-04 21:00:53",revision=1562]]
 
 
 -- smoke movement speed
@@ -37,6 +37,7 @@ smoke=entity:new({
 fire=entity:new({
 	is_lit = true,
 	time_remaining = 0,
+	key = "",
 	x = 0,
 	y = 0,
 	--smoke origin x and y
@@ -139,9 +140,22 @@ end
 
 function add_fuel()
 	local irlf = _in_range_lit_fire
-	del(_fires, _in_range_lit_fire.fire)
-	irlf.fire.time_to_live += _fire_item.fuel_value
-	add(_fires, irlf.fire)
+	local fk = irlf.fire.key
+	_fires[fk].time_to_live += _fire_item.fuel_value
+	for i=0,5 do
+		local smoke_x = (ef.sox + (-_spo + rnd(_spo)))
+		local smoke_y = (ef.soy + (rnd(_spo)))
+		local new_smoke = smoke:new({
+			x = smoke_x,
+			y = smoke_y,
+			s = 1,
+			c = 28,
+			sdx = ((-_sms*2) + rnd(_sms))
+			
+		})
+		add(_fires[fk].smoke, new_smoke)
+	end
+	remove_item_from_container(_inv, _fire_item)
 	_fire_item = nil
 end
 
@@ -196,6 +210,7 @@ function light_fire()
 	local fire = fire:new({})
 	fire.x = tile_x
 	fire.y = tile_y
+	fire.key = k
 	fire.sox = (tile_x * _tile_size)+ 6
 	fire.soy = (tile_y * _tile_size)+ 3
 	mset(tile_x, tile_y, fire_tiles.lit.top)

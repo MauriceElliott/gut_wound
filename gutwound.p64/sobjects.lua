@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-04 21:00:53",revision=707]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-04 22:37:11",revision=734]]
 include './fire.lua'
 
 --[[
@@ -436,6 +436,8 @@ container=entity:new({
 	small_icon = 0,
 	in_range_sprite = 0,
 	in_range = false,
+	search_timer = nil,
+	is_searched = false,
 	contents = {},
 })
 

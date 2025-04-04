@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-04 21:00:53",revision=8689]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-04 22:37:11",revision=8717]]
 
 -- text colour
 _itc = 14
@@ -116,11 +116,14 @@ function display_inventory_contents()
     end
 end
 
+_min_search_time = 1.75
+
 function display_container_contents()
     local current_y = flr(_inv.c_i_starting_y + 13)
     print("Container(s)", _inv.cont_starting_x + 11, current_y - 11, _itc)
     local cont_icn_x = _inv.cont_starting_x + 2
     local cont_icn_y = current_y + 44
+    
     for i, cc in pairs(_discovered_containers) do
         if cc.in_range == true then
             local cont_icn_b_s_x = cont_icn_x - 1
@@ -128,36 +131,44 @@ function display_container_contents()
             local cont_icn_b_e_x = cont_icn_x + 8
             local cont_icn_b_e_y = cont_icn_y + 8
             if i == _inv.selected_container or _inv.selected_container == 1 then
-                _inv.selected_container = i
-                rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, _itc)
-                spr(cc.small_icon, cont_icn_x, cont_icn_y)
-                for j, ccc in ipairs(cc.contents) do
-                    local m_is_on = false
-                    ccc.starting_x = _inv.cont_starting_x
-                    ccc.starting_y = current_y
-                    ccc.ending_x = _inv.cont_starting_x + 114
-                    ccc.ending_y = current_y + 8
-                    if (_m_x) > ccc.starting_x
-                        and (_m_x) < ccc.ending_x
-                        and (_m_y) > ccc.starting_y
-                        and (_m_y) < ccc.ending_y then
-                        rect(ccc.starting_x - 1, ccc.starting_y - 2, ccc.ending_x + 1, ccc.ending_y + 1, _hic)
-                        m_is_on = true
-                    end
-                    spr(ccc.item.sprite, _inv.cont_starting_x, current_y)
-                    print(ccc.item.name, _inv.cont_starting_x + 11, current_y, _itc)
-                    print(ccc.item.weight, _inv.cont_starting_x + 80, current_y, _itc)
-                    print(ccc.quantity, _inv.cont_starting_x + 100, current_y, _itc)
-                    current_y += 10
-                    if (m_is_on) then
-                        if _m_l_b then
-                            add_to_inventory(cc, ccc.item)
-                        elseif _m_r_b then
-                            update_context_menu(ccc.item)
-                        end
-                    end
-                end
-            else
+            	
+               _inv.selected_container = i
+               rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, _itc)
+               spr(cc.small_icon, cont_icn_x, cont_icn_y)
+					
+					if cc.search_timer == nil then
+						cc.search_timer = time()
+					elseif time_since(cc.search_timer, time(), false) < _min_search_time then
+							print("searching...", _inv.cont_starting_x, current_y)
+					else
+	               for j, ccc in ipairs(cc.contents) do
+	                   local m_is_on = false
+	                   ccc.starting_x = _inv.cont_starting_x
+	                   ccc.starting_y = current_y
+	                   ccc.ending_x = _inv.cont_starting_x + 114
+	                   ccc.ending_y = current_y + 8
+	                   if (_m_x) > ccc.starting_x
+	                       and (_m_x) < ccc.ending_x
+	                       and (_m_y) > ccc.starting_y
+	                       and (_m_y) < ccc.ending_y then
+	                       rect(ccc.starting_x - 1, ccc.starting_y - 2, ccc.ending_x + 1, ccc.ending_y + 1, _hic)
+	                       m_is_on = true
+	                   end
+	                   spr(ccc.item.sprite, _inv.cont_starting_x, current_y)
+	                   print(ccc.item.name, _inv.cont_starting_x + 11, current_y, _itc)
+	                   print(ccc.item.weight, _inv.cont_starting_x + 80, current_y, _itc)
+	                   print(ccc.quantity, _inv.cont_starting_x + 100, current_y, _itc)
+	                   current_y += 10
+	                   if (m_is_on) then
+	                       if _m_l_b then
+	                           add_to_inventory(cc, ccc.item)
+	                       elseif _m_r_b then
+	                           update_context_menu(ccc.item)
+	                       end
+	                   end
+	               end
+               end
+           else
                 rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, _dcc)
                 spr(cc.small_icon, cont_icn_x, cont_icn_y)
                 if _m_l_b and ((_m_x) > cont_icn_b_s_x

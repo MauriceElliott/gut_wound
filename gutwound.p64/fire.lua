@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-03 22:45:09",revision=1477]]
+--[[pod_format="raw",created="2025-03-13 23:24:59",modified="2025-04-04 10:36:54",revision=1485]]
 
 
 -- smoke movement speed
@@ -45,7 +45,7 @@ fire=entity:new({
 	smoke = {},
 	add_smoke = function(self)
 		local smoke_size = _smin + rnd(_smax)
-		if _sci > 1 then
+		if _sci > 2 then
 			_sci = 0
 		else
 			_sci+=1

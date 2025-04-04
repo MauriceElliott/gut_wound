@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-04 11:43:30",revision=9463]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-04 19:49:26",revision=9480]]
 
 character=entity:new({
    col_point = { x=0, y=0 },
@@ -311,9 +311,9 @@ _cv_i_h = 0.05
 --wound health
 _cv_i_wh = 0.05
 --hunger
-_cv_i_hh = 0.01
+_cv_i_hh = 0.05
 --thirst
-_cv_i_t = 0.02
+_cv_i_t = 0.05
 --pain
 _cv_i_p = 0.05
 

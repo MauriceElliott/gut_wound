@@ -33,7 +33,7 @@ Fires remaining work:
 	CANCELLED - 4. Add ability to check timer
 	CANCELLED - 5. Add time to cook to consumables
 		ii. time to cook will be set, context menu will say if there's not enough time left.
-		i. Add "cook" context menu item when fire in range.
+		DONE i. Add "cook" context menu item when fire in range.
 	IN PROGRESS - 6. Add reason to stand by fire (boon, like reduced damage to wound, reduced delirium...etc)
 	DONE - 7. Coroutine to burn fires out after x amount of time.
 

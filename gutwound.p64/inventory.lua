@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-04 23:01:10",revision=8746]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-04-07 22:24:30",revision=8810]]
 
 -- text colour
 _itc = 14
@@ -116,8 +116,7 @@ function display_inventory_contents()
     end
 end
 
-_min_search_time = 1.75
-_container_being_searched = nil
+_min_search_time = 3
 
 function display_container_contents()
     local current_y = flr(_inv.c_i_starting_y + 13)
@@ -138,9 +137,15 @@ function display_container_contents()
                spr(cc.small_icon, cont_icn_x, cont_icn_y)
 					if cc.search_timer == nil then
 						cc.search_timer = time()
-						_container_being_searched = i
+						cc.update_timer = time()
+						cc.dots = ".."
 					elseif time_since(cc.search_timer, time(), false) < _min_search_time then
-							print("searching...", _inv.cont_starting_x, current_y)
+						if time_since(cc.update_timer, time(), false) >= 0.5 then
+							cc.dots = cc.dots .. "."
+							cc.update_timer = time()
+						end
+						local text = "searching" .. cc.dots
+						print(text, _inv.cont_starting_x, current_y)
 					else
 						cc.is_searched = true
 	               for j, ccc in ipairs(cc.contents) do
@@ -182,9 +187,7 @@ function display_container_contents()
             end
             cont_icn_x += 10
         else
-        	_dbm = "container not in range but discovered"
         		if cc.search_timer != nil and cc.is_searched == false then
-        			_dbm = "search timer reset"
         			cc.search_timer = nil
         		end
         end

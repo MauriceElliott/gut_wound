@@ -1,18 +1,7 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-03 22:43:36",revision=190]]
-3rd of April plan
-1. Cook food ticked off - DONE!
-2. Loot takes time to identify 
-and if we still have time after this
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-07 22:45:18",revision=191]]
 3. Character moans and complains as health decreases
 4. FATIGUE!
 
-1. add fire to the game
-	s. finish off the logic
-	DONE - a. add usable items (i.e. lighter, flint and tinder, matches)
-	DONE - b. add smoke animation against cooker where fires can be lit.
-	DONE - c. add fuel to fire
-		DONE - i. fix many bugs
-	d. add heating on fire option to consumables - DONE
 2. add fatigue and fatigue reduction
 	a. sleep/blackouts are inevitable
 	b. they send you to a random (sudo random, pick from a few) part of the map
@@ -21,21 +10,8 @@ and if we still have time after this
 	a. character following you
 	b. whiteouts, i.e. whole screen goes white bar the character
 	c. fuzzyness on the screen, darkening at the edges.
-4. when searching containers add timer to each item so it doesn't instantly display
 5. add speech bubble to MC, to show pain, tiredness, etc.
 6. Split up map so I can finish off a section and get some testing on it.
-
-Fires remaining work:
-	DONE - 1. Add heating on consumables
-	DONE - 2. Add items to make fire with (flint and tinder, use paper)
-		DONE - i. Add make fire context menu option to all fire items
-	DONE - 3. Add timer to fires
-	CANCELLED - 4. Add ability to check timer
-	CANCELLED - 5. Add time to cook to consumables
-		ii. time to cook will be set, context menu will say if there's not enough time left.
-		DONE i. Add "cook" context menu item when fire in range.
-	IN PROGRESS - 6. Add reason to stand by fire (boon, like reduced damage to wound, reduced delirium...etc)
-	DONE - 7. Coroutine to burn fires out after x amount of time.
 
 to finish
 	1. items

@@ -1,6 +1,11 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-07 22:45:18",revision=191]]
-3. Character moans and complains as health decreases
-4. FATIGUE!
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-08 23:25:49",revision=193]]
+
+//Future
+1. Character moans and complains as health decreases
+//Now
+1. FATIGUE!
+2. Fix room fow to allow multiple single trips.
+	A. way to do this, make coords for rooms an array of tables
 
 2. add fatigue and fatigue reduction
 	a. sleep/blackouts are inevitable

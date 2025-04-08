@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-07 22:24:30",revision=9901]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-08 22:31:21",revision=9984]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -93,7 +93,7 @@ function debug()
 		print(_dbo, _c_x-478, _c_y+10, 17)
 		_dbo = nil
 	elseif _dbm != nil then
---		_dbm	.. " mx, my: " .. _m_x .. " " .. _m_y
+		_dbm = _dbm .. " mx, my: " .. _m_x .. " " .. _m_y
 		print("debug: " .. _dbm
 			, _c_x-475, _c_y+258, 17)
 	end

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-04-07 22:24:30",revision=8067]]
+--[[pod_format="raw",created="2024-05-23 20:57:56",modified="2025-04-08 22:31:21",revision=8156]]
 
 function update_interactables(c)
 	local is_cont_in_range = false
@@ -24,15 +24,18 @@ function update_interactables(c)
 			end
 		end
 		if fget_precalc(ft.flags,2) == true then
+			local room_key = ft.tile_co.x .. "_" .. ft.tile_co.y
+			local room = _rooms[room_key]
 			if keyp("e") then
-				local room_key = ft.tile_co.x .. "_" .. ft.tile_co.y
-				local room = _rooms[room_key]
 				if room != nil then
 					room.call_unlock(room, ft)
 				else
 					replacement_tile = mget(ft.tile_co.x, ft.tile_co.y-1)
 					unlock_inner_door(ft, replacement_tile)
 				end
+			end
+			if fget_precalc(ft.flags,6) == true then
+				room.is_discovered = true
 			end
 		end
 		if fget_precalc(ft.flags,3) == true then

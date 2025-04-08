@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-07 22:24:30",revision=810]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-08 22:31:21",revision=947]]
 include './fire.lua'
 
 --[[
@@ -8,6 +8,22 @@ Can be a bit less rigid.
 ]]
 
 function init_rooms()
+	_rooms["12_12"] = room:new({
+		s_x = 16,
+		s_y = 167,
+		e_x = 176+15,
+		e_y = 240,
+		replacement_sprite = 9,
+	})
+
+	_rooms["13_12"] = room:new({
+		s_x = 224,
+		s_y = 167,
+		e_x = 500,
+		e_y = 240,
+		replacement_sprite = 9,
+	})
+
 	_rooms["19_10"] = room:new({
 		s_x = 272,
 		s_y = 64,
@@ -87,6 +103,15 @@ function init_rooms()
 		e_y = 400+15,
 		replacement_sprite = 9,
 		call_unlock = unlock_normal_door,
+	})
+	
+	_rooms["40_12"] = room:new({
+		s_x = 640+11,
+		s_y = 170-14,
+		e_x = 1008,
+		e_y = 816,
+		replacement_sprite = 9,
+		call_unlock = unlock_locked_door,
 	})
 end
 

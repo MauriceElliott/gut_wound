@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-07 22:24:30",revision=3983]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-08 22:31:21",revision=4078]]
 
 room=entity:new({
 	s_x = 0,
@@ -42,10 +42,15 @@ function unlock_heavy_door(room, ft)
         room.call_counter += 1
         draw_info_text("The door is jammed, try again and put some weight into it.", 5)
     else
-        c.health -= 10
-        c.wound_health -= 20
+        _char.health -= 10
+        _char.wound_health -= 20
         mset(ft.tile_co.x, ft.tile_co.y, room.replacement_sprite)
         mset(ft.tile_co.x, ft.tile_co.y+1, room.replacement_sprite)
         room.is_discovered=true
     end
+end
+
+function unlock_locked_door(room, ft)
+	_dbm = "unlock locked door"
+	draw_info_text("This door is locked", 5)
 end

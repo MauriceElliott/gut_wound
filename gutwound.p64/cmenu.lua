@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-08 23:15:24",revision=4758]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-09 22:42:08",revision=4927]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -25,6 +25,7 @@ context_menu_actions = {
 	rip = "Rip",
 	add_fuel = "Add Fuel",
 	heat = "Warm in Fire",
+	read = "Read",
 }
 
 function draw_context_menu()
@@ -92,6 +93,9 @@ function update_context_menu(obj)
 				add(_cm.options, context_option:new({name = context_menu_actions.unequip, action = obj.unequip}))
 			end
 		end
+		if obj.item_type == item_type.readable then
+			add(_cm.options, context_option:new({name = context_menu_actions.read, action = obj.read}))
+		end
 	end
 end
 
@@ -99,9 +103,12 @@ function execute_context_menu_option()
 	if _cm.open and _m_l_b then
 		for i, o in pairs(_cm.options) do
 			if o.m_is_on then
-				o.action(_cm.current_obj)
+				if o.action == nil then
+					_dbm = "action is nil"
+				end
+				--o.action(_cm.current_obj)
 			end
 		end
-		_cm.open = false 
+		_cm.open = false
 	end
 end

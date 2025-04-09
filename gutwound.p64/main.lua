@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-08 23:15:24",revision=10019]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-09 22:42:08",revision=10150]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -52,7 +52,7 @@ function _init()
 
 	-- major objects
 	_inv=inventory:new({contents = {container_slot:new({ item = lighter:new({})})}})
-	add(_inv.contents, container_slot:new({ item = cardboard:new({})}))
+	add(_inv.contents, container_slot:new({ item = letter:new({})}))
 	_cm=context_menu:new({})
 	_char=man:new({})
 
@@ -89,7 +89,6 @@ function _update()
 end
 
 function debug()
-	_dbm = " "
 	if _dbo != nil then
 		print(_dbo, _c_x-478, _c_y+10, 17)
 		_dbo = nil

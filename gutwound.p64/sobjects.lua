@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-08 23:15:24",revision=995]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-09 22:42:08",revision=1148]]
 include './fire.lua'
 
 --[[
@@ -326,19 +326,22 @@ cloth_strips=consumable:new({
 --------------
 -- Readable --
 --------------
-readable=item:new({
+readable = item:new({
 	item_type = item_type.readable,
 	open_sprite = 0,
 	is_flamable = true,
 	weight = 0.8,
+	text = "",
+	time_to_read = 10,
 	read = function(self)
-
-	end
+		draw_info_text(self.text, self.time_to_read)
+	end,
 })
 
-letter=readable:new({
-	sprite=(gfx_offset.gfx_3+144),
-	name="Letter"
+letter = readable:new({
+	sprite = (gfx_offset.gfx_3+144),
+	name = "Letter",
+	text = "Dearly beloved, I hope this message finds you well.",
 })
 ----------
 -- Junk --
@@ -505,7 +508,7 @@ function init_containers()
 			container_slot:new(
 				{
 					quantity = 1,
-					item = letter:new({})
+					item = letter:new()
 				}
 			)
 		}

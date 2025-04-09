@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-09 22:49:04",revision=1169]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-09 22:55:57",revision=1190]]
 include './fire.lua'
 
 --[[
@@ -341,7 +341,14 @@ readable = item:new({
 letter = readable:new({
 	sprite = (gfx_offset.gfx_3+144),
 	name = "Letter",
-	text = "Dearly beloved, I hope this message finds you well.",
+	text = [[
+	Dearly beloved, I hope this message finds you well.
+	This is the final time I will be writing to you.
+	This is as good as it gets.
+	Let me tell you, I have had a horrible time here!
+	Please look after our daughter.
+	Love you
+	]],
 })
 ----------
 -- Junk --

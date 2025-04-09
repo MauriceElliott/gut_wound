@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-09 22:49:04",revision=4953]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-09 22:55:57",revision=4971]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -102,10 +102,7 @@ function execute_context_menu_option()
 	if _cm.open and _m_l_b then
 		for i, o in pairs(_cm.options) do
 			if o.m_is_on then
-				if o.action == nil then
-					_dbm = "action is nil: " .. o.name
-				end
-				--o.action(_cm.current_obj)
+				o.action(_cm.current_obj)
 			end
 		end
 		_cm.open = false

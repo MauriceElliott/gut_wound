@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-09 22:42:08",revision=4927]]
+--[[pod_format="raw",created="2024-06-19 22:02:44",modified="2025-04-09 22:49:04",revision=4953]]
 context_menu=entity:new({
 	x = 0,
 	y = 0,
@@ -75,7 +75,6 @@ function update_context_menu(obj)
 			if ctx_menu_fire_check(obj) then
 				add(_cm.options, context_option:new({name = context_menu_actions.add_fuel, action = add_fuel }))
 			end
-			add(_cm.options, context_option:new({name = context_menu_actions.discard}))
 		end
 		if obj.item_type == item_type.useable then
 			if obj.subtype == usable_subtype.rippable then
@@ -94,7 +93,7 @@ function update_context_menu(obj)
 			end
 		end
 		if obj.item_type == item_type.readable then
-			add(_cm.options, context_option:new({name = context_menu_actions.read, action = obj.read}))
+			add(_cm.options, context_option:new({ name = context_menu_actions.read, action=obj.read }))
 		end
 	end
 end
@@ -104,7 +103,7 @@ function execute_context_menu_option()
 		for i, o in pairs(_cm.options) do
 			if o.m_is_on then
 				if o.action == nil then
-					_dbm = "action is nil"
+					_dbm = "action is nil: " .. o.name
 				end
 				--o.action(_cm.current_obj)
 			end

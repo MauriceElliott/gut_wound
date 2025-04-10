@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-09 22:55:57",revision=1190]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-10 23:09:44",revision=1244]]
 include './fire.lua'
 
 --[[
@@ -8,29 +8,6 @@ Can be a bit less rigid.
 ]]
 
 function init_rooms()
-	_rooms["12_12"] = room:new({
-		s_x = 16,
-		s_y = 167,
-		e_x = 176+15,
-		e_y = 240,
-		replacement_sprite = 9,
-	})
-
-	_rooms["13_12"] = room:new({
-		s_x = 224,
-		s_y = 167,
-		e_x = 500,
-		e_y = 240,
-		replacement_sprite = 9,
-	})
-	
-	_rooms["13_12"] = room:new({
-		s_x = 266,
-		s_y = 160,
-		e_x = 500,
-		e_y = 240,
-		replacement_sprite = 9,
-	})
 
 	_rooms["19_10"] = room:new({
 		s_x = 272,
@@ -70,7 +47,7 @@ function init_rooms()
 
 	_rooms["59_9"] = room:new({
 		s_x = 880,
-		s_y = 144+5,
+		s_y = 144+2,
 		e_x = 1008+15,
 		e_y = 272+15,
 		replacement_sprite = 12,
@@ -79,7 +56,7 @@ function init_rooms()
 
 	_rooms["4_14"] = room:new({
 		s_x = 0,
-		s_y = 224+5,
+		s_y = 224+2,
 		e_x = 112+15,
 		e_y = 336+15,
 		replacement_sprite = 11,
@@ -88,7 +65,7 @@ function init_rooms()
 
 	_rooms["6_20"] = room:new({
 		s_x = 0,
-		s_y = 320+5,
+		s_y = 320+2,
 		e_x = 112+15,
 		e_y = 416+15,
 		replacement_sprite = 128,
@@ -97,7 +74,7 @@ function init_rooms()
 
 	_rooms["2_25"] = room:new({
 		s_x = 0,
-		s_y = 400+5,
+		s_y = 400+2,
 		e_x = 112+15,
 		e_y = 464+15,
 		replacement_sprite = 11,
@@ -106,7 +83,7 @@ function init_rooms()
 
 	_rooms["13_14"] = room:new({
 		s_x = 144+8,
-		s_y = 224+5,
+		s_y = 224+2,
 		e_x = 400+15,
 		e_y = 400+15,
 		replacement_sprite = 9,
@@ -120,6 +97,13 @@ function init_rooms()
 		e_y = 816,
 		replacement_sprite = 9,
 		call_unlock = unlock_locked_door,
+	})
+	
+	_rooms["32_18"] = room:new({
+		s_x = 416+8,
+		s_y = 224+4,
+		e_x = 624,
+		e_y = 287,
 	})
 end
 

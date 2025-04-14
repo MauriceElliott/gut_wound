@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-11 21:00:10",revision=10217]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-14 20:55:53",revision=10241]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -19,7 +19,7 @@ function _init()
 	poke(0x4000, get(fetch"/system/fonts/lil_mono.font"))
 
 	-- Set up environment
-	_w_w, _w_h, _tile_size = 480,270, 16
+	_w_w, _w_h, _tile_size = 480, 270, 16
 	_coroutines = {}
 
 	-- Set up Mouse

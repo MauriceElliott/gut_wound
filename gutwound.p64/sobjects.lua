@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-11 21:00:10",revision=1249]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-14 20:55:53",revision=1283]]
 include './fire.lua'
 
 --[[
@@ -8,102 +8,95 @@ Can be a bit less rigid.
 ]]
 
 function init_rooms()
-	_rooms["19_10"] = room:new({
-		s_x = 272,
-		s_y = 64,
-		e_x = 448+15,
-		e_y = 144+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_normal_door
-	})
-	
-	_rooms["18_4"] = room:new({
-		s_x = 272,
-		s_y = 0,
-		e_x = 448+15,
-		e_y = 48+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_normal_door
-	})
-
-	_rooms["37_10"] = room:new({
-		s_x = 464+8,
-		s_y = 0,
-		e_x = 688+15,
-		e_y = 144+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_heavy_door,
-	})
-
-	_rooms["46_10"] = room:new({
-		s_x = 704,
-		s_y = 0,
-		e_x = 1008+15,
-		e_y = 144+15,
-		replacement_sprite = 12,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["59_9"] = room:new({
-		s_x = 880,
-		s_y = 144+2,
-		e_x = 1008+15,
-		e_y = 272+15,
-		replacement_sprite = 12,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["4_14"] = room:new({
-		s_x = 0,
-		s_y = 224+2,
-		e_x = 112+15,
-		e_y = 336+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["6_20"] = room:new({
-		s_x = 0,
-		s_y = 320+2,
-		e_x = 112+15,
-		e_y = 416+15,
-		replacement_sprite = 128,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["2_25"] = room:new({
-		s_x = 0,
-		s_y = 400+2,
-		e_x = 112+15,
-		e_y = 464+15,
-		replacement_sprite = 11,
-		call_unlock = unlock_normal_door,
-	})
-
-	_rooms["13_14"] = room:new({
-		s_x = 144+8,
-		s_y = 224+2,
-		e_x = 400+15,
-		e_y = 400+15,
-		replacement_sprite = 9,
-		call_unlock = unlock_normal_door,
-	})
-	
-	_rooms["40_12"] = room:new({
-		s_x = 640+11,
-		s_y = 170-14,
-		e_x = 1008,
-		e_y = 816,
-		replacement_sprite = 9,
-		call_unlock = unlock_locked_door,
-	})
-	
-	_rooms["32_18"] = room:new({
-		s_x = 416+8,
-		s_y = 224+4,
-		e_x = 624,
-		e_y = 287,
-	})
+	_rooms["19_10"] = room:new(17, 0, 28, 9, 0, 0, 15, 15, 11, unlock_normal_door)
+--	
+--	_rooms["18_4"] = room:new({
+--		s_x = 272,
+--		s_y = 0,
+--		e_x = 448+15,
+--		e_y = 48+15,
+--		replacement_sprite = 11,
+--		call_unlock = unlock_normal_door
+--	})
+--
+--	_rooms["37_10"] = room:new({
+--		s_x = 464+8,
+--		s_y = 0,
+--		e_x = 688+15,
+--		e_y = 144+15,
+--		replacement_sprite = 11,
+--		call_unlock = unlock_heavy_door,
+--	})
+--
+--	_rooms["46_10"] = room:new({
+--		s_x = 704,
+--		s_y = 0,
+--		e_x = 1008+15,
+--		e_y = 144+15,
+--		replacement_sprite = 12,
+--		call_unlock = unlock_normal_door,
+--	})
+--
+--	_rooms["59_9"] = room:new({
+--		s_x = 880,
+--		s_y = 144+2,
+--		e_x = 1008+15,
+--		e_y = 272+15,
+--		replacement_sprite = 12,
+--		call_unlock = unlock_normal_door,
+--	})
+--
+--	_rooms["4_14"] = room:new({
+--		s_x = 0,
+--		s_y = 224+2,
+--		e_x = 112+15,
+--		e_y = 336+15,
+--		replacement_sprite = 11,
+--		call_unlock = unlock_normal_door,
+--	})
+--
+--	_rooms["6_20"] = room:new({
+--		s_x = 0,
+--		s_y = 320+2,
+--		e_x = 112+15,
+--		e_y = 416+15,
+--		replacement_sprite = 128,
+--		call_unlock = unlock_normal_door,
+--	})
+--
+--	_rooms["2_25"] = room:new({
+--		s_x = 0,
+--		s_y = 400+2,
+--		e_x = 112+15,
+--		e_y = 464+15,
+--		replacement_sprite = 11,
+--		call_unlock = unlock_normal_door,
+--	})
+--
+--	_rooms["13_14"] = room:new({
+--		s_x = 144+8,
+--		s_y = 224+2,
+--		e_x = 400+15,
+--		e_y = 400+15,
+--		replacement_sprite = 9,
+--		call_unlock = unlock_normal_door,
+--	})
+--	
+--	_rooms["40_12"] = room:new({
+--		s_x = 640+11,
+--		s_y = 170-14,
+--		e_x = 1008,
+--		e_y = 816,
+--		replacement_sprite = 9,
+--		call_unlock = unlock_locked_door,
+--	})
+--	
+--	_rooms["32_18"] = room:new({
+--		s_x = 416+8,
+--		s_y = 224+4,
+--		e_x = 624,
+--		e_y = 287,
+--	})
 end
 
 --[[

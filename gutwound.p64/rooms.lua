@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-14 20:55:53",revision=4336]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-14 21:19:42",revision=4401]]
 _ts = 16
 
 room=entity:new({
@@ -28,12 +28,15 @@ room=entity:new({
 
 function draw_fow()
 	for i, r in pairs(_rooms) do
+		_dbm = "_rooms count: " .. table_length(_rooms)
 		if r.is_discovered == false then
 			if _c_x > r.s_x and _c_y_b > r.s_y then
 				rectfill(r.s_x, r.s_y, r.e_x, r.e_y, 0)
 				if _c_x > r.e_x and _c_y_b < r.e_y then
-					rectfill(r.s_x, r.s_y, r.e_x, _c_y_b, 0)
+					_dbm = "if: " .. i
+					rectfill(r.s_x, r.s_y, r.e_x, r.e_y, 0)
 				elseif _c_x < r.e_x and _c_y_b > r.e_y then
+					_dbm = "else: " .. i
 					rectfill(r.s_x, r.s_y, _c_x, r.e_y, 0)
 				end
 			end

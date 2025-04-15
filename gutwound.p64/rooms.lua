@@ -1,43 +1,47 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-14 21:21:06",revision=4405]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-04-15 21:36:36",revision=4553]]
 _ts = 16
 
+fog_patch=entity:new({
+		s_x = 0,
+		s_y = 0,
+		e_x = 0,
+		e_y = 0,
+		-- offset values
+		s_xo = 0,
+		s_yo = 0,
+		e_xo = 0,
+		e_yo = 0,
+})
+
 room=entity:new({
-	s_x = 0,
-	s_y = 0,
-	e_x = 0,
-	e_y = 0,
-	-- ofset values
-	s_xo = 0,
-	s_yo = 0,
-	e_xo = 0,
-	e_yo = 0,
+	fog_patches = {},
 	is_discovered = false,
 	-- door replacement sprites
 	replacement_sprite = 0,
 	call_unlock = nil,
-	new = function(self, sx, sy, ex, ey, sxo, syo, exo, eyo, rs, unlock_function)
-		self.s_x = (sx * _ts) + sxo
-		self.s_y = (sy * _ts) + syo
-		self.e_x = (ex * _ts) + exo
-		self.e_y = (ey * _ts) + eyo
-		self.replacement_sprite = rs
-		self.call_unlock = unlock_function
-		return self
-	end
 })
+
+function update_fog_patches(fog_patches)
+		for i, fp in pairs(fog_patches) do
+			fp.s_x = (fp.s_x * _ts) + fp.s_xo
+			fp.s_y = (fp.s_y * _ts) + fp.s_yo
+			fp.e_x = (fp.e_x * _ts) + fp.e_xo
+			fp.e_y = (fp.e_y * _ts) + fp.e_yo
+		end
+		return fog_patches
+end
 
 function draw_fow()
 	for i, r in pairs(_rooms) do
-		_dbm = "_rooms count: " .. table_length(_rooms)
 		if r.is_discovered == false then
-			if _c_x > r.s_x and _c_y_b > r.s_y then
-				rectfill(r.s_x, r.s_y, r.e_x, r.e_y, 0)
-				if _c_x > r.e_x and _c_y_b < r.e_y then
-					_dbm = "if: " .. i
-					rectfill(r.s_x, r.s_y, r.e_x, r.e_y, 0)
-				elseif _c_x < r.e_x and _c_y_b > r.e_y then
-					_dbm = "else: " .. i
-					rectfill(r.s_x, r.s_y, _c_x, r.e_y, 0)
+			for i, fp in pairs(r.fog_patches) do 
+				if _c_x > fp.s_x and _c_y_b > fp.s_y then
+					rectfill(fp.s_x, fp.s_y, fp.e_x, fp.e_y, 0)
+					if _c_x > fp.e_x and _c_y_b < fp.e_y then
+						rectfill(fp.s_x, fp.s_y, fp.e_x, fp.e_y, 0)
+					elseif _c_x < fp.e_x and _c_y_b > fp.e_y then
+						rectfill(r.s_x, r.s_y, _c_x, r.e_y, 0)
+					end
 				end
 			end
 		end

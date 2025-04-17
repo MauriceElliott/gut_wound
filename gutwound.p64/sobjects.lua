@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-15 21:36:36",revision=1502]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-17 21:51:27",revision=1596]]
 include './fire.lua'
 
 --[[
@@ -44,84 +44,54 @@ function init_rooms()
 		call_unlock = unlock_normal_door
 	})
 
---	_rooms["37_10"] = room:new({
---		s_x = 464+8,
---		s_y = 0,
---		e_x = 688+15,
---		e_y = 144+15,
---		replacement_sprite = 11,
---		call_unlock = unlock_heavy_door,
+--	_rooms["12_11"] = room:new(
+--	{
+--		fog_patches = update_fog_patches({
+--			fog_patch:new({
+--				s_x = 1, 
+--				s_y = 11, 
+--				e_x = 11, 
+--				e_y = 14, 
+--				s_xo = 0, 
+--				s_yo = -12,
+--				e_xo = 15, 
+--				e_yo = -1,
+--			}),
+--			fog_patch:new({
+--				s_x = 14, 
+--				s_y = 11, 
+--				e_x = 26, 
+--				e_y = 14, 
+--				s_xo = 0, 
+--				s_yo = -12,
+--				e_xo = 15, 
+--				e_yo = -1,
+--			}),
+--			fog_patch:new({
+--				s_x = 17, 
+--				s_y = 9, 
+--				e_x = 26, 
+--				e_y = 14, 
+--				s_xo = -8, 
+--				s_yo = -12,
+--				e_xo = 15, 
+--				e_yo = -1,
+--			}),
+--			fog_patch:new({
+--				s_x = 1, 
+--				s_y = 14, 
+--				e_x = 26, 
+--				e_y = 30, 
+--				s_xo = -8, 
+--				s_yo = -12,
+--				e_xo = 15, 
+--				e_yo = -1,
+--			})
+--		}),
+--		replacement_sprite = 11, 
+--		call_unlock = unlock_normal_door
 --	})
---
---	_rooms["46_10"] = room:new({
---		s_x = 704,
---		s_y = 0,
---		e_x = 1008+15,
---		e_y = 144+15,
---		replacement_sprite = 12,
---		call_unlock = unlock_normal_door,
---	})
---
---	_rooms["59_9"] = room:new({
---		s_x = 880,
---		s_y = 144+2,
---		e_x = 1008+15,
---		e_y = 272+15,
---		replacement_sprite = 12,
---		call_unlock = unlock_normal_door,
---	})
---
---	_rooms["4_14"] = room:new({
---		s_x = 0,
---		s_y = 224+2,
---		e_x = 112+15,
---		e_y = 336+15,
---		replacement_sprite = 11,
---		call_unlock = unlock_normal_door,
---	})
---
---	_rooms["6_20"] = room:new({
---		s_x = 0,
---		s_y = 320+2,
---		e_x = 112+15,
---		e_y = 416+15,
---		replacement_sprite = 128,
---		call_unlock = unlock_normal_door,
---	})
---
---	_rooms["2_25"] = room:new({
---		s_x = 0,
---		s_y = 400+2,
---		e_x = 112+15,
---		e_y = 464+15,
---		replacement_sprite = 11,
---		call_unlock = unlock_normal_door,
---	})
---
---	_rooms["13_14"] = room:new({
---		s_x = 144+8,
---		s_y = 224+2,
---		e_x = 400+15,
---		e_y = 400+15,
---		replacement_sprite = 9,
---		call_unlock = unlock_normal_door,
---	})
---	
---	_rooms["40_12"] = room:new({
---		s_x = 640+11,
---		s_y = 170-14,
---		e_x = 1008,
---		e_y = 816,
---		replacement_sprite = 9,
---		call_unlock = unlock_locked_door,
---	})
---	
---	_rooms["32_18"] = room:new({
---		s_x = 416+8,
---		s_y = 224+4,
---		e_x = 624,
---		e_y = 287,
---	})
+
 end
 
 --[[

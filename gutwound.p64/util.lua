@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-15 21:36:36",revision=9335]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-17 21:51:27",revision=9394]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)
@@ -190,15 +190,36 @@ function draw_border()
 	rect(_c_x-477, _c_y+2, _c_x-3, _c_y+267, 33)
 end
 
+function split_text(text)
+    local chunk_size = flr(#text / 43)
+    if chunk_size <= 0 then 
+    	chunk_size = 1
+    end
+
+    local chunks = {}
+    for i = 1, #array, chunk_size do
+        local chunk = {}
+        for j = i, min(i + chunk_size - 1, #text) do
+            table.insert(chunk, text[j])
+        end
+        table.insert(chunks, chunk)
+    end
+    return chunks
+end
+
 function draw_info_text(t, d)
 	local func = cocreate(function()
-		local l = #t
-		local n_px = l*5
-		local x_offset = (480-n_px)/2
 		for i=1,(d*60) do
-			local x = (_c_x-480)+x_offset
-			rectfill(x-1, _c_y+239, x+n_px+1, _c_y+248, 0)
-			print(t, x, _c_y+240, 33)
+			text = split_text(split(t, " "))
+			local current_y = _c_y+239
+			for i, c in pairs(text) do
+				local n_px = #c*5
+				local x_offset = (480-n_px)/2
+				local x = (_c_x-480)+x_offset
+				local current_y = current_y+10
+				rectfill(x-1, current_y, x+n_px+1, current_y+9, 0)
+				print(c, x, current_y+1, 33)
+			end
 			yield()
 		end
 	end)

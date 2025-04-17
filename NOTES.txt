@@ -1,36 +1,17 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-08 23:25:49",revision=193]]
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-17 20:14:59",revision=195]]
 
 //Future
 1. Character moans and complains as health decreases
 //Now
 1. FATIGUE!
-2. Fix room fow to allow multiple single trips.
-	A. way to do this, make coords for rooms an array of tables
+2. DONE! - Fix room fow to allow multiple single trips.
+3. READABLES READABLE!
 
-2. add fatigue and fatigue reduction
+FATIGUE
 	a. sleep/blackouts are inevitable
 	b. they send you to a random (sudo random, pick from a few) part of the map
 	c. energy drinks, teas, etc should reduce these.
-3. add delirium mechanics
+DELIRIUM
 	a. character following you
 	b. whiteouts, i.e. whole screen goes white bar the character
 	c. fuzzyness on the screen, darkening at the edges.
-5. add speech bubble to MC, to show pain, tiredness, etc.
-6. Split up map so I can finish off a section and get some testing on it.
-
-to finish
-	1. items
-		a. food items
-		b. usable items
-		c. equipable
-	2. item placement
-		a. fillers.lua
-		b. static items.
-		c. static placed interactables.
-	3. rooms.
-		a. the designs for the tiles in the rooms
-		b. the layout of the remaining rooms that need finishing
-		c. the blackout of the rooms
-		d. the doors
-		e. the reasons for doors to open
-	5. borders around containers.

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-17 22:13:35",revision=9451]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-17 22:19:38",revision=9460]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)
@@ -194,6 +194,7 @@ function draw_info_text(t, d)
 	local func = cocreate(function()
 		for i=1,(d*60) do
 			text = split(t, "\n")
+			_dbm = "text: " .. #text
 			local current_y = _c_y+200
 			for i, c in pairs(text) do
 				local n_px = #c*5

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-18 20:29:26",revision=10506]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-04-18 21:48:56",revision=10532]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'

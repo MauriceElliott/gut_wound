@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-18 20:29:26",revision=9484]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-18 21:48:56",revision=9527]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)
@@ -195,14 +195,17 @@ function draw_info_text(t, d)
 		for i=1,(d*60) do
 			text = split(t, "\n")
 			_dbm = "text: " .. #text
-			local current_y = _c_y+200
+			local y_offset = 270-((#text*10)+10)
+			local current_y = _c_y+y_offset
 			for i, c in pairs(text) do
 				local n_px = #c*5
 				local x_offset = (480-n_px)/2
 				local x = (_c_x-480)+x_offset
 				current_y += 10
-				rectfill(x-1, current_y, x+n_px+1, current_y+9, 0)
-				print(c, x, current_y, 33)
+				if i != #text then
+					rectfill(x-1, current_y, x+n_px+1, current_y+9, 0)
+					print(c, x, current_y, 33)
+				end
 			end
 			yield()
 		end

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-18 22:09:19",revision=1696]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-19 22:15:02",revision=1712]]
 include './fire.lua'
 
 --[[
@@ -318,8 +318,7 @@ letter = readable:new({
 	This is as good as it gets.
 	Let me tell you, I have had a horrible time here!
 	Please look after our daughter.
-	Love you
-	]],
+	Love you]],
 })
 ----------
 -- Junk --

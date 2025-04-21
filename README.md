@@ -9,4 +9,3 @@ My objective was to create the feeling Project Zomboid single player, as well as
 
 The most intersting part of developing this is the long drawn out system designs that go into a survival game, and as such, there are a lot of poorly thought out systems so feedback is welcome. I'm sure we'll end up pairing them back when we get close to the end.
 
-If you see improvements that could be made, please open an issue.

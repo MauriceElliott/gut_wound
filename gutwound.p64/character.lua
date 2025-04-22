@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-22 21:45:51",revision=10342]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-22 22:06:58",revision=10378]]
 
 character=entity:new({
    col_point = { x=0, y=0 },
@@ -10,6 +10,7 @@ character=entity:new({
 	pain = 10,
 	hunger = 10,
 	thirst = 50,
+	fatigue = 10,
 	state = "idle",
 	start_idle = nil,
 	start_move = nil,
@@ -351,6 +352,7 @@ function update_character_vitals()
 			_char.pain += 0.1
 			_char.hunger += 0.1
 			_char.thirst += 0.1
+			_char.fatigue += 0.65
 		end
 	end
 	if _char.health < 50 and _char.wound_health < 50 then

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-04-22 21:45:51",revision=9228]]
+--[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-04-22 22:06:58",revision=9273]]
 moodle=entity:new({
 	moodle = "none",
 	sprite = 0,
@@ -62,7 +62,7 @@ end
 --moodle object, character
 function display_moodles()
 	_moodles = {}
-	h = generate_moodle(
+	local h = generate_moodle(
 		"health",
 		_char.health,
 		moodle_sprites.health_1,
@@ -74,7 +74,7 @@ function display_moodles()
 		add(_moodles,h)
 	end
 
-	wh = generate_moodle(
+	local wh = generate_moodle(
 		"wound_health",
 		_char.wound_health,
 		moodle_sprites.wound_health_1,
@@ -86,7 +86,7 @@ function display_moodles()
 		add(_moodles,wh)
 	end
 
-	p = generate_moodle(
+	local p = generate_moodle(
 		"pain",
 		_char.pain,
 		moodle_sprites.pain_1,
@@ -98,7 +98,7 @@ function display_moodles()
 		add(_moodles,p)
 	end
 
-	hu = generate_moodle(
+	local hu = generate_moodle(
 		"hunger",
 		_char.hunger,
 		moodle_sprites.hunger_1,
@@ -110,7 +110,7 @@ function display_moodles()
 		add(_moodles,hu)
 	end
 
-	t = generate_moodle(
+	local t = generate_moodle(
 		"thirst",
 		_char.thirst,
 		moodle_sprites.thirst_1,
@@ -122,7 +122,7 @@ function display_moodles()
 		add(_moodles,t)
 	end
 
-	d = generate_moodle(
+	local d = generate_moodle(
 		"delirium",
 		_char.delirium,
 		moodle_sprites.delirium_1,
@@ -132,6 +132,18 @@ function display_moodles()
 		true)
 	if d.sprite > 0 then
 		add(_moodles,d)
+	end
+	
+	local f = generate_moodle(
+		"fatigue",
+		_char.fatigue,
+		moodle_sprites.fatigue_1,
+		moodle_sprites.fatigue_2,
+		moodle_sprites.fatigue_3,
+		moodle_sprites.fatigue_4,
+		false)
+	if f.sprite > 0 then
+		add(_moodles,f)
 	end
 
 	current_y = 4
@@ -166,4 +178,8 @@ moodle_sprites={
 	thirst_2 = (gfx_offset.gfx_3+17),
 	thirst_3 = (gfx_offset.gfx_3+18),
 	thirst_4 = (gfx_offset.gfx_3+19),
+	fatigue_1 = (gfx_offset.gfx_3+36),
+	fatigue_2 = (gfx_offset.gfx_3+37),
+	fatigue_3 = (gfx_offset.gfx_3+38),
+	fatigue_4 = (gfx_offset.gfx_3+39),
 }

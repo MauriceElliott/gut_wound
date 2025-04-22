@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-04-22 22:06:58",revision=9273]]
+--[[pod_format="raw",created="2024-05-07 21:40:35",modified="2025-04-22 22:08:06",revision=9279]]
 moodle=entity:new({
 	moodle = "none",
 	sprite = 0,
@@ -141,7 +141,7 @@ function display_moodles()
 		moodle_sprites.fatigue_2,
 		moodle_sprites.fatigue_3,
 		moodle_sprites.fatigue_4,
-		false)
+		true)
 	if f.sprite > 0 then
 		add(_moodles,f)
 	end

@@ -1,11 +1,12 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-19 22:18:55",revision=196]]
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-22 21:35:57",revision=198]]
 
 //Future
 1. Character moans and complains as health decreases
+2. Delirium
 //Now
 1. FATIGUE!
 2. DONE! - Fix room fow to allow multiple single trips.
-3. DONE, but still bug on x of all lower lines - READABLES READABLE!
+3. DONE! READABLES READABLE!
 
 FATIGUE
 	a. sleep/blackouts are inevitable

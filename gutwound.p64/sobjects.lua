@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-22 21:03:57",revision=1766]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-22 21:20:57",revision=1811]]
 include './fire.lua'
 
 --[[
@@ -312,8 +312,16 @@ readable = item:new({
 letter = readable:new({
 	sprite = (gfx_offset.gfx_3+144),
 	name = "Letter",
-	text = "Dearly beloved\nI hope this message finds you well\nThis is the final time I will be writing to you.\nThis is as good as it gets\nLet me tell you, I've had a horrible time here\nPlease look after our daughter\nLove you",
+	text = "To my darling wife\n" ..
+			 "I hope it is not too late, the final days are uppon us\n" ..
+			 "God willing I will make it back to before too long\n" ..
+			 "Keep yourself safe, stock up as much as possible, and don't trust a soul\n" .. 
+			 "I am leaving this hell hole a week from now when I can guarantee our safety,\n" .. 
+			 "Don't worry about Ari, I promise he will be home safe before you know it\n" .. 
+			 "Look after our daughter,\n" .. 
+			 "I love you",
 })
+
 ----------
 -- Junk --
 ----------

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-22 22:08:06",revision=1859]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-27 22:13:43",revision=1927]]
 include './fire.lua'
 
 --[[
@@ -44,54 +44,69 @@ function init_rooms()
 		call_unlock = unlock_normal_door
 	})
 
---	_rooms["12_11"] = room:new(
---	{
---		fog_patches = update_fog_patches({
---			fog_patch:new({
---				s_x = 1, 
---				s_y = 11, 
---				e_x = 11, 
---				e_y = 14, 
---				s_xo = 0, 
---				s_yo = -12,
---				e_xo = 15, 
---				e_yo = -1,
---			}),
---			fog_patch:new({
---				s_x = 14, 
---				s_y = 11, 
---				e_x = 26, 
---				e_y = 14, 
---				s_xo = 0, 
---				s_yo = -12,
---				e_xo = 15, 
---				e_yo = -1,
---			}),
---			fog_patch:new({
---				s_x = 17, 
---				s_y = 9, 
---				e_x = 26, 
---				e_y = 14, 
---				s_xo = -8, 
---				s_yo = -12,
---				e_xo = 15, 
---				e_yo = -1,
---			}),
---			fog_patch:new({
---				s_x = 1, 
---				s_y = 14, 
---				e_x = 26, 
---				e_y = 30, 
---				s_xo = -8, 
---				s_yo = -12,
---				e_xo = 15, 
---				e_yo = -1,
---			})
---		}),
---		replacement_sprite = 11, 
---		call_unlock = unlock_normal_door
---	})
+	_rooms["4_14"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 1, 
+				s_y = 15, 
+				e_x = 6, 
+				e_y = 19,
+				s_xo = 0, 
+				s_yo = -14, 
+				e_xo = 15,
+				e_yo = 15,
+			})
+		}),
+		replacement_sprite = 11, 
+		call_unlock = unlock_normal_door
+	})
 
+	_rooms["3_34"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 1, 
+				s_y = 30, 
+				e_x = 6, 
+				e_y = 33,
+				s_xo = 0, 
+				s_yo = -13, 
+				e_xo = 15,
+				e_yo = 15,
+			})
+		}),
+		replacement_sprite = 11, 
+		call_unlock = unlock_normal_door
+	})
+
+	_rooms["3_39"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 1, 
+				s_y = 34, 
+				e_x = 6, 
+				e_y = 38,
+				s_xo = 0, 
+				s_yo = -13, 
+				e_xo = 15,
+				e_yo = 15,
+			}),
+			fog_patch:new({
+				s_x = 7,
+				s_y = 36,
+				e_x = 11,
+				e_y = 38,
+				s_xo = 0, 
+				s_yo = -13,
+				e_xo = 15,
+				e_yo = 15,
+			})
+		}),
+		replacement_sprite = 11, 
+		call_unlock = unlock_normal_door
+	})
 end
 
 --[[

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-28 14:25:07",revision=9802]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-04-28 14:29:31",revision=9807]]
 
 function update_camera()
     _c_x = _char.x + (_w_w/2)

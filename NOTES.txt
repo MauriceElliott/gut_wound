@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-22 22:09:00",revision=199]]
+--[[pod_format="raw",created="2025-03-12 23:01:38",modified="2025-04-28 14:31:50",revision=200]]
 
 //Future
 1. Character moans and complains as health decreases
@@ -10,11 +10,11 @@
 	c. energy drinks should reduce.
 2. DONE! - Fix room fow to allow multiple single trips.
 3. DONE! READABLES READABLE!
-
+4. Fix Collision with lots of different tiles
 FATIGUE
 	a. sleep/blackouts are inevitable
 	b. they send you to a random (sudo random, pick from a few) part of the map
-	c. energy drinks, teas, etc should reduce these.
+	c. energy drinks, teas, etc should reduce these. <-- next
 DELIRIUM
 	a. character following you
 	b. whiteouts, i.e. whole screen goes white bar the character

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 19:47:55",revision=2044]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 19:55:06",revision=2050]]
 include './fire.lua'
 
 --[[
@@ -372,6 +372,16 @@ cloth_strips=consumable:new({
 	wound_health = 10,
 	health = 10,
 })
+
+iced_tea=consumable:new({
+	sprite = (gfx_offset.gfx_3+156),
+	name = "Iced Tea",
+	weight = 0.4,
+	thirst = 25,
+	hunger = 5,
+	fatigue = 15,
+})
+
 --------------
 -- Readable --
 --------------

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-27 22:13:43",revision=1927]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 13:13:14",revision=1974]]
 include './fire.lua'
 
 --[[
@@ -58,7 +58,7 @@ function init_rooms()
 				e_yo = 15,
 			})
 		}),
-		replacement_sprite = 11, 
+		replacement_sprite = 9, 
 		call_unlock = unlock_normal_door
 	})
 
@@ -74,6 +74,42 @@ function init_rooms()
 				s_yo = -13, 
 				e_xo = 15,
 				e_yo = 15,
+			})
+		}),
+		replacement_sprite = 11, 
+		call_unlock = unlock_normal_door
+	})
+	
+	_rooms["6_20"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 1,
+				s_y = 20,
+				e_x = 6,
+				e_y = 24,
+				s_xo = 0,
+				s_yo = 2,
+				e_xo = 15,
+				e_yo = 18,
+			})
+		}),
+		replacement_sprite = 11, 
+		call_unlock = unlock_normal_door
+	})
+	
+	_rooms["2_25"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 1,
+				s_y = 20,
+				e_x = 6,
+				e_y = 24,
+				s_xo = 0,
+				s_yo = 2,
+				e_xo = 15,
+				e_yo = 18,
 			})
 		}),
 		replacement_sprite = 11, 

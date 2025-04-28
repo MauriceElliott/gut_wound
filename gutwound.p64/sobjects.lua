@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 22:54:04",revision=2113]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 23:19:28",revision=2157]]
 include './fire.lua'
 
 --[[
@@ -54,8 +54,8 @@ function init_rooms()
 				e_y = 19,
 				s_xo = 0, 
 				s_yo = -14, 
-				e_xo = 15,
-				e_yo = 15,
+				e_xo = 30,
+				e_yo = 17,
 			})
 		}),
 		replacement_sprite = 9, 
@@ -72,6 +72,24 @@ function init_rooms()
 				e_y = 33,
 				s_xo = 0, 
 				s_yo = -13, 
+				e_xo = 15,
+				e_yo = 15,
+			})
+		}),
+		replacement_sprite = 11, 
+		call_unlock = unlock_normal_door
+	})
+	
+	_rooms["3_39"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 1, 
+				s_y = 34, 
+				e_x = 44, 
+				e_y = 39,
+				s_xo = 0, 
+				s_yo = -35, 
 				e_xo = 15,
 				e_yo = 15,
 			})
@@ -143,7 +161,7 @@ function init_rooms()
 		replacement_sprite = 9, 
 		call_unlock = unlock_normal_door
 	})
-	_rooms["6_20"] = room:new(
+	_rooms["40_12"] = room:new(
 	{
 		fog_patches = update_fog_patches({
 			fog_patch:new({
@@ -172,7 +190,7 @@ function init_rooms()
 	})
 
 	-- Main door to rest of building
-	_rooms["40_12"] = room:new(
+	_rooms["6_20"] = room:new(
 	{
 		fog_patches = update_fog_patches({
 			fog_patch:new({

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 13:13:14",revision=1974]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 14:25:07",revision=2017]]
 include './fire.lua'
 
 --[[
@@ -94,11 +94,56 @@ function init_rooms()
 				e_yo = 18,
 			})
 		}),
-		replacement_sprite = 11, 
+		replacement_sprite = 128, 
 		call_unlock = unlock_normal_door
 	})
 	
 	_rooms["2_25"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 1,
+				s_y = 25,
+				e_x = 6,
+				e_y = 28,
+				s_xo = 0,
+				s_yo = 2,
+				e_xo = 15,
+				e_yo = 18,
+			})
+		}),
+		replacement_sprite = 11, 
+		call_unlock = unlock_normal_door
+	})
+
+	_rooms["13_14"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 10, 
+				s_y = 14, 
+				e_x = 25, 
+				e_y = 25,
+				s_xo = 0, 
+				s_yo = 2, 
+				e_xo = 15,
+				e_yo = 15,
+			}),
+			fog_patch:new({
+				s_x = 26,
+				s_y = 18,
+				e_x = 32,
+				e_y = 20,
+				s_xo = 0, 
+				s_yo = 2,
+				e_xo = 15,
+				e_yo = 14,
+			})
+		}),
+		replacement_sprite = 9, 
+		call_unlock = unlock_normal_door
+	})
+		_rooms["6_20"] = room:new(
 	{
 		fog_patches = update_fog_patches({
 			fog_patch:new({
@@ -112,35 +157,7 @@ function init_rooms()
 				e_yo = 18,
 			})
 		}),
-		replacement_sprite = 11, 
-		call_unlock = unlock_normal_door
-	})
-
-	_rooms["3_39"] = room:new(
-	{
-		fog_patches = update_fog_patches({
-			fog_patch:new({
-				s_x = 1, 
-				s_y = 34, 
-				e_x = 6, 
-				e_y = 38,
-				s_xo = 0, 
-				s_yo = -13, 
-				e_xo = 15,
-				e_yo = 15,
-			}),
-			fog_patch:new({
-				s_x = 7,
-				s_y = 36,
-				e_x = 11,
-				e_y = 38,
-				s_xo = 0, 
-				s_yo = -13,
-				e_xo = 15,
-				e_yo = 15,
-			})
-		}),
-		replacement_sprite = 11, 
+		replacement_sprite = 128, 
 		call_unlock = unlock_normal_door
 	})
 end

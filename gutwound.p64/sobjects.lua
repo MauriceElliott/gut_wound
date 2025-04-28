@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 14:29:31",revision=2023]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-28 19:47:55",revision=2044]]
 include './fire.lua'
 
 --[[
@@ -199,6 +199,7 @@ consumable=item:new({
 	thirst = 0,
 	hunger = 0,
 	delirium = 0,
+	fatigue = 0,
 	wound_health = 0,
 	health = 0,
 	pain = 0,
@@ -216,9 +217,16 @@ consumable=item:new({
 		_char.hunger -= (self.hunger + offset)
 		_char.delirium -= (self.delirium + offset)
 		_char.pain -= self.pain
+		_char.fatigue -= self.fatigue
 		_char.wound_health += self.wound_health
 		_char.health += self.health
 		remove_item_from_container(_inv, self)
+		_char.thirst = max(_char.thirst, 0)
+		_char.hunger = max(_char.hunger, 0)
+		_char.pain = max(_char.pain, 0)
+		_char.fatigue = max(_char.fatigue, 0)
+		_char.wound_health = min(_char.wound_health, 100)
+		_char.health = min(_char.health, 100)
 	end,
 	heat = function(self)
 		self.is_hot = true
@@ -239,6 +247,7 @@ fizzy_drink_can=consumable:new({
 	thirst = 15,
 	hunger = 3,
 	delirium = 1,
+	fatigue = 10,
 })
 
 energy_drink=consumable:new({
@@ -247,6 +256,7 @@ energy_drink=consumable:new({
 	weight = 0.5,
 	thirst = 10,
 	delirium = 5,
+	fatigue = 25,
 })
 
 antiseptic=consumable:new({

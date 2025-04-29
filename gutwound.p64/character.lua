@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-28 23:19:28",revision=10546]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-29 12:51:54",revision=10604]]
 
 character=entity:new({
    col_point = { x=0, y=0 },
@@ -20,8 +20,8 @@ character=entity:new({
 })
 
 man=character:new({
-	x=(35*16),--100,
-   y=(13*16-20),--90,
+	x=(7*16),--100,
+   y=(12*16-20),--90,
    max_width = 21,
    max_height = 34,
 	wound_health = 60,
@@ -102,7 +102,7 @@ function move_man()
 end
 
 function animate_character()
-	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-5, _char.y+_char.max_height+1, 16)
+	ovalfill(_char.x+4, _char.y+_char.max_height-3, _char.x+_char.max_width-5, _char.y+_char.max_height+1, 28)
 	if _wub > 1 then
 		spr(gfx_offset.gfx_3+14, _char.x-2, _char.y-2)
 	end

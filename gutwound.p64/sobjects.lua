@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-02 21:10:03",revision=2356]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-02 21:36:16",revision=2385]]
 include './fire.lua'
 
 --[[
@@ -686,28 +686,28 @@ container=entity:new({
 	contents = {},
 })
 
+function init_container_defaults(container)
+	if container.sprite == 137 then
+		container.small_icon = 141
+		container.in_range_sprite = 130
+		container.in_range_sprite_adjustment = {x=0, y=-16}
+		container.contents = get_early_boxes()
+	elseif container.sprite == 140 then
+		container.small_icon = 141,
+		container.in_range_sprite = 133,
+		container.in_range_sprite_adjustment = {x=-2,y=-16},
+		container.in_range = false,
+	end
+end
+
 function init_containers()
 	_containers["1_2"] = container:new({
-		small_icon = 141,
-		in_range_sprite = 130,
-		in_range_sprite_adjustment = {x=0,y=-16},
+		sprite = 137,
 		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 1,
-					item = cardboard:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 1,
-					item = lighter:new({})
-				}
-			)
-		}
 	})
+	_containers["1_2"] = init_container_defaults(_containers["1_2"])
 	_containers["1_4"] = container:new({
+		sprite = 140,
 		small_icon = 141,
 		in_range_sprite = 133,
 		in_range_sprite_adjustment = {x=-2,y=-16},
@@ -872,10 +872,6 @@ end
 
 local _early_clothes = {}
 
-local _mid_clothes = {}
-
-local _late_clothes = {}
-
 add(
   _early_clothes,
   {
@@ -909,23 +905,11 @@ function get_early_clothes()
   return get_random_contents(_early_clothes)
 end
 
-function get_mid_clothes()
-  return get_random_contents(_mid_clothes)
-end
-
-function get_late_clothes()
-  return get_random_contents(_late_clothes)
-end
-
 -------------
 -- Kitchen --
 -------------
 
 local _early_kitchen = {}
-
-local _mid_kitchen = {}
-
-local _late_kitchen = {}
 
 add(
   _early_kitchen,
@@ -940,12 +924,22 @@ add(
 function get_early_kitchen()
   return get_random_contents(_early_kitchen)
 end
+-------------
+-- Boxes --
+-------------
 
-function get_mid_kitchen()
-  return get_random_contents(_mid_kitchen)
+function get_early_boxes()
+  return get_random_contents(_early_boxes)
 end
 
-function get_late_kitchen()
-  return get_random_contents(_late_kitchen)
-end
+local _early_boxes = {}
 
+add(
+  _early_boxes,
+  {
+    container_slot:new({
+      quantity = 1,
+      item = item:new({})
+	  }),
+  }
+)

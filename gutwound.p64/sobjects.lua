@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-04-29 12:51:54",revision=2234]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-02 21:01:53",revision=2352]]
 include './fire.lua'
 
 --[[
@@ -76,7 +76,7 @@ function init_rooms()
 				e_yo = 15,
 			})
 		}),
-		replacement_sprite = 11, 
+		replacement_sprite = 9, 
 		call_unlock = unlock_normal_door
 	})
 	
@@ -94,7 +94,7 @@ function init_rooms()
 				e_yo = 15,
 			})
 		}),
-		replacement_sprite = 11, 
+		replacement_sprite = 128, 
 		call_unlock = unlock_normal_door
 	})
 	
@@ -203,28 +203,102 @@ function init_rooms()
 				s_yo = 8,
 				e_xo = 15,
 				e_yo = 18,
+			}),
+			fog_patch:new({
+				s_x = 26,
+				s_y = 21,
+				e_x = 33,
+				e_y = 31,
+				s_xo = 6,
+				s_yo = 3,
+				e_xo = -1,
+				e_yo = 0,
+			}),
+			fog_patch:new({
+				s_x = 32,
+				s_y = 25,
+				e_x = 50,
+				e_y = 34,
+				s_xo = 6,
+				s_yo = 3,
+				e_xo = -1,
+				e_yo = 0,
+			})
+		}),
+		replacement_sprite = 1, 
+		call_unlock = unlock_locked_door
+	})
+
+--	-- Main door to rest of building
+--	_rooms["6_20"] = room:new(
+--	{
+--		fog_patches = update_fog_patches({
+--			fog_patch:new({
+--				s_x = 1,
+--				s_y = 20,
+--				e_x = 6,
+--				e_y = 24,
+--				s_xo = 0,
+--				s_yo = 2,
+--				e_xo = 15,
+--				e_yo = 18,
+--			})
+--		}),
+--		replacement_sprite = 128, 
+--		call_unlock = unlock_normal_door
+--	})
+	
+	_rooms["37_10"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 30,
+				s_y = 4,
+				e_x = 42,
+				e_y = 9,
+				s_xo = 0,
+				s_yo = 0,
+				e_xo = 15,
+				e_yo = 15,
 			})
 		}),
 		replacement_sprite = 128, 
 		call_unlock = unlock_normal_door
 	})
 
-	-- Main door to rest of building
-	_rooms["6_20"] = room:new(
+	_rooms["38_4"] = room:new(
 	{
 		fog_patches = update_fog_patches({
 			fog_patch:new({
-				s_x = 1,
-				s_y = 20,
-				e_x = 6,
+				s_x = 30,
+				s_y = 0,
+				e_x = 42,
+				e_y = 3,
+				s_xo = 0,
+				s_yo = 4,
+				e_xo = 15,
+				e_yo = 15,
+			})
+		}),
+		replacement_sprite = 128, 
+		call_unlock = unlock_normal_door
+	})
+	
+	_rooms["36_18"] = room:new(
+	{
+		fog_patches = update_fog_patches({
+			fog_patch:new({
+				s_x = 34,
+				s_y = 18,
+				e_x = 38,
 				e_y = 24,
 				s_xo = 0,
 				s_yo = 2,
 				e_xo = 15,
-				e_yo = 18,
+				e_yo = 15,
 			})
 		}),
-		replacement_sprite = 128, 
+		replacement_sprite = 13, 
 		call_unlock = unlock_normal_door
 	})
 end

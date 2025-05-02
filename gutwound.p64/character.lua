@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-04-29 12:51:54",revision=10604]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-05-02 21:01:53",revision=10665]]
 
 character=entity:new({
    col_point = { x=0, y=0 },
@@ -20,7 +20,7 @@ character=entity:new({
 })
 
 man=character:new({
-	x=(7*16),--100,
+	x=(37*16),--100,
    y=(12*16-20),--90,
    max_width = 21,
    max_height = 34,

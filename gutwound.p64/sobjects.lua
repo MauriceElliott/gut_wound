@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-02 21:36:16",revision=2385]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-04 20:49:50",revision=2454]]
 include './fire.lua'
 
 --[[
@@ -690,137 +690,54 @@ function init_container_defaults(container)
 	if container.sprite == 137 then
 		container.small_icon = 141
 		container.in_range_sprite = 130
-		container.in_range_sprite_adjustment = {x=0, y=-16}
+		container.in_range_sprite_adjustment = { x = 0, y = -16 }
 		container.contents = get_early_boxes()
 	elseif container.sprite == 140 then
-		container.small_icon = 141,
-		container.in_range_sprite = 133,
-		container.in_range_sprite_adjustment = {x=-2,y=-16},
-		container.in_range = false,
+		container.small_icon = 141
+		container.in_range_sprite = 133
+		container.in_range_sprite_adjustment = { x = -2, y = -16 }
+		container.in_range = false
+		container.contents = get_start_letterbox()
+	elseif container.sprite == 187 then
+		container.small_icon = 210
+		container.in_range_sprite = 138
+		container.in_range_sprite_adjustment = { x = -1 ,y = -9 }
+		container.contents = get_early_bookshelf()
+	elseif container.sprite == 170 then
+		container.small_icon = 211
+		container.in_range_sprite = 208
+		container.in_range_sprite_adjustment = { x= -1, y = -1 }
+		container.contents = get_early_fridge()
+	elseif container.sprite == 160 then
+		container.small_icon = 184
+		container.in_range_sprite = 176
+		container.in_range_sprite_adjustment = { x = 0, y = -12 }
+		container.contents = get_early_kitchen()
+	elseif container.sprite == 161 then
+		container.small_icon = 219
+		container.in_range_sprite = 176
+		container.in_range_sprite_adjustment = { x = 0, y = -12 }
+		container.contents = get_early_kitchen()
 	end
+	return container
 end
 
 function init_containers()
-	_containers["1_2"] = container:new({
-		sprite = 137,
-		in_range = false,
-	})
+	_containers["1_2"] = container:new({ sprite = 137 })
 	_containers["1_2"] = init_container_defaults(_containers["1_2"])
-	_containers["1_4"] = container:new({
-		sprite = 140,
-		small_icon = 141,
-		in_range_sprite = 133,
-		in_range_sprite_adjustment = {x=-2,y=-16},
-		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 1,
-					item = letter:new()
-				}
-			)
-		}
-	})
-	_containers["20_5"] = container:new({
-		small_icon = 141,
-		in_range_sprite = 138,
-		in_range_sprite_adjustment = {x=-1,y=-9},
-		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 1,
-					item = journal:new({})
-				}
-			)
-		}
-	})
-	_containers["23_5"] = container:new({
-		small_icon = 184,
-		in_range_sprite = 208,
-		in_range_sprite_adjustment = {x=-1,y=-1},
-		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 2,
-					item = water_bottle:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 2,
-					item = rancid_food:new({})
-				}
-			)
-		}
-	})
-	_containers["24_5"] = container:new({
-		small_icon = 184,
-		in_range_sprite = 176,
-		in_range_sprite_adjustment = {x=0,y=7},
-		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 1,
-					item = lunch_meat:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 1,
-					item = canned_sardines:new({})
-				}
-			)
-		}
-	})
-	_containers["25_5"] = container:new({
-		small_icon = 184,
-		in_range_sprite = 176,
-		in_range_sprite_adjustment = {x=0,y=7},
-		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 4,
-					item = glass:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 1,
-					item = teapot:new({})
-				}
-			)
-		}
-	})
-	_containers["26_5"] = container:new({
-		small_icon = 184,
-		in_range_sprite = 176,
-		in_range_sprite_adjustment = {x=0,y=7},
-		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 1,
-					item = bleach:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 3,
-					item = sponge:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 1,
-					item = wash_cloth:new({})
-				}
-			)
-		}
-	})
+	_containers["1_4"] = container:new({ sprite = 140 })
+	_containers["1_4"] = init_container_defaults(_containers["1_4"])
+	_containers["20_5"] = container:new({ sprite = 187 })
+	_containers["20_5"] = init_container_defaults(_containers["20_5"])
+	_containers["23_6"] = container:new({ sprite = 170 })
+	_containers["23_6"] = init_container_defaults(_containers["23_6"])
+	_containers["24_6"] = container:new({ sprite = 160 })
+	_containers["24_6"] = init_container_defaults(_containers["24_6"])
+	_containers["25_6"] = container:new({ sprite = 161 })
+	_containers["25_6"] = init_container_defaults(_containers["25_6"])
+	_containers["26_6"] = container:new({ sprite = 160 })
+	_containers["26_6"] = init_container_defaults(_containers["26_6"])
+
 	_containers["26_2"] = container:new({
 		small_icon = 184,
 		in_range_sprite = 176,
@@ -923,6 +840,18 @@ add(
 
 function get_early_kitchen()
   return get_random_contents(_early_kitchen)
+end
+
+function get_early_fridge()
+	return get_random_contents(_early_kitchen)
+end
+
+function get_early_bookshelf()
+	return get_random_contents(_early_kitchen)
+end
+
+function get_start_letterbox()
+	return get_random_contents(_early_kitchen)
 end
 -------------
 -- Boxes --

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-04 20:49:50",revision=2454]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-04 21:22:58",revision=2526]]
 include './fire.lua'
 
 --[[
@@ -706,18 +706,23 @@ function init_container_defaults(container)
 	elseif container.sprite == 170 then
 		container.small_icon = 211
 		container.in_range_sprite = 208
-		container.in_range_sprite_adjustment = { x= -1, y = -1 }
+		container.in_range_sprite_adjustment = { x= -1, y = -17 }
 		container.contents = get_early_fridge()
 	elseif container.sprite == 160 then
 		container.small_icon = 184
 		container.in_range_sprite = 176
-		container.in_range_sprite_adjustment = { x = 0, y = -12 }
+		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_kitchen()
 	elseif container.sprite == 161 then
 		container.small_icon = 219
 		container.in_range_sprite = 176
-		container.in_range_sprite_adjustment = { x = 0, y = -12 }
+		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_kitchen()
+	elseif container.sprite == 166 then
+		container.small_icon = 220
+		container.in_range_sprite = 216
+		container.in_range_sprite_adjustment = { x = 0 , y = 7 }
+		container.contents = get_early_bathroom()
 	end
 	return container
 end
@@ -737,40 +742,16 @@ function init_containers()
 	_containers["25_6"] = init_container_defaults(_containers["25_6"])
 	_containers["26_6"] = container:new({ sprite = 160 })
 	_containers["26_6"] = init_container_defaults(_containers["26_6"])
+	_containers["26_2"] = container:new({ sprite = 166 })
+	_containers["26_2"] = init_container_defaults(_containers["26_2"])
 
-	_containers["26_2"] = container:new({
-		small_icon = 184,
-		in_range_sprite = 176,
-		in_range_sprite_adjustment = {x=0,y=7},
-		in_range = false,
-		contents = {
-			container_slot:new(
-				{
-					quantity = 1,
-					item = painkillers:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 1,
-					item = wash_cloth:new({})
-				}
-			),
-			container_slot:new(
-				{
-					quantity = 1,
-					item = antiseptic:new({})
-				}
-			)
-		}
-	})
-	_containers["21_1"] = container:new({
-		small_icon = 184,
-		in_range_sprite = 176,
-		in_range_sprite_adjustment = {x=0,y=7},
-		in_range = false,
-		contents = get_early_clothes()
-	})
+--	_containers["21_1"] = container:new({
+--		small_icon = 184,
+--		in_range_sprite = 176,
+--		in_range_sprite_adjustment = {x=0,y=7},
+--		in_range = false,
+--		contents = get_early_clothes()
+--	})
 end
 
 --[[
@@ -787,7 +768,7 @@ end
 -- Clothes ---
 --------------
 
-local _early_clothes = {}
+_early_clothes = {}
 
 add(
   _early_clothes,
@@ -802,21 +783,6 @@ add(
 	})
   }
 )
-
-add(
-  _early_clothes,
-  {
-    container_slot:new({
-      quantity = 1,
-      item = backpack:new({})
-	  }),
-	container_slot:new({
-      quantity = 2,
-      item = rag:new({})
-	})
-  }
-)
-
 
 function get_early_clothes()
   return get_random_contents(_early_clothes)
@@ -851,6 +817,10 @@ function get_early_bookshelf()
 end
 
 function get_start_letterbox()
+	return get_random_contents(_early_kitchen)
+end
+
+function get_early_bathroom()
 	return get_random_contents(_early_kitchen)
 end
 -------------

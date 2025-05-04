@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-05-04 20:49:50",revision=11032]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-05-04 21:22:58",revision=11078]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -89,7 +89,6 @@ function _update()
 end
 
 function debug()
-	_dbm = " "
 	if _dbo != nil then
 		print(table_to_string(_dbo), _c_x-478, _c_y+10, 17)
 		_dbo = nil

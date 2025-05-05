@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 14:11:39",revision=2556]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 14:28:17",revision=2566]]
 include './fire.lua'
 
 --[[
@@ -779,13 +779,13 @@ _early_clothes = {}
 add(
   _early_clothes,
   {
-    container_slot:new({
-      quantity = 1,
-      item = backpack:new({})
+	container_slot:new({
+	  quantity = 1,
+	  item = backpack:new({})
 	  }),
 	container_slot:new({
-      quantity = 2,
-      item = rag:new({})
+	  quantity = 2,
+	  item = rag:new({})
 	})
   }
 )
@@ -803,9 +803,9 @@ local _early_kitchen = {}
 add(
   _early_kitchen,
   {
-    container_slot:new({
-      quantity = 1,
-      item = item:new({})
+	container_slot:new({
+	  quantity = 1,
+	  item = item:new({})
 	  }),
   }
 )
@@ -842,9 +842,9 @@ local _early_boxes = {}
 add(
   _early_boxes,
   {
-    container_slot:new({
-      quantity = 1,
-      item = item:new({})
+	container_slot:new({
+	  quantity = 1,
+	  item = item:new({})
 	  }),
   }
 )

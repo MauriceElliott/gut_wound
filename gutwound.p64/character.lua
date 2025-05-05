@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-05-05 14:11:39",revision=10812]]
+--[[pod_format="raw",created="2024-05-05 22:21:00",modified="2025-05-05 14:28:17",revision=10821]]
 
 character=entity:new({
    col_point = { x=0, y=0 },

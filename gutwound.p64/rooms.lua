@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-05-05 14:11:39",revision=5238]]
+--[[pod_format="raw",created="2024-07-07 21:47:51",modified="2025-05-05 14:28:17",revision=5247]]
 _ts = 16
 
 fog_patch=entity:new({
@@ -64,14 +64,14 @@ function unlock_heavy_door(room, ft)
 		room.call_counter = 0
 	end
    if room.call_counter == 0 then
-       room.call_counter += 1
-       draw_info_text("The door is jammed, try again and put some weight into it.", 5)
+	   room.call_counter += 1
+	   draw_info_text("The door is jammed, try again and put some weight into it.", 5)
    else
-       _char.health -= 10
-       _char.wound_health -= 20
-       mset(ft.tile_co.x, ft.tile_co.y, room.replacement_sprite)
-       mset(ft.tile_co.x, ft.tile_co.y+1, room.replacement_sprite)
-       room.is_discovered=true
+	   _char.health -= 10
+	   _char.wound_health -= 20
+	   mset(ft.tile_co.x, ft.tile_co.y, room.replacement_sprite)
+	   mset(ft.tile_co.x, ft.tile_co.y+1, room.replacement_sprite)
+	   room.is_discovered=true
    end
 end
 

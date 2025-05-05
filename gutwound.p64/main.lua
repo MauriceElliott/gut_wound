@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-05-05 14:11:39",revision=11099]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-05-05 14:28:17",revision=11108]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -14,7 +14,7 @@ _dbm = nil
 _dbo = nil
 
 function _init()
-    -- Update Pallet and font
+	-- Update Pallet and font
 	poke4(0x5000, get(fetch(pwd().."/pal/0.pal")))
 	poke(0x4000, get(fetch"/system/fonts/lil_mono.font"))
 
@@ -65,10 +65,10 @@ function update_coroutines()
 	for c in all(_coroutines) do
 		if costatus(c) then
 			coresume(c)
-    	else
-    		del(_coroutines,c)
-    	end
-    end
+		else
+			del(_coroutines,c)
+		end
+	end
 end
 
 function _draw()

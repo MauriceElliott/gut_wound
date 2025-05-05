@@ -1,7 +1,7 @@
---[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-05-05 14:11:39",revision=10134]]
+--[[pod_format="raw",created="2024-05-03 22:03:54",modified="2025-05-05 14:28:17",revision=10143]]
 
 function update_camera()
-    _c_x = _char.x + (_w_w/2)
+	_c_x = _char.x + (_w_w/2)
 	_c_y = (_char.y + (_w_h/2)) - 270
 	_c_y_b = (_char.y + (_w_h/2))
 	camera(_char.x - (_w_w/2),_char.y - (_w_h/2))
@@ -211,29 +211,29 @@ function draw_info_text(t, d)
 end
 
 function table_to_string(tbl)
-    local function serialize(value)
-        if type(value) == "table" then
-            return table_to_string(value)
-        elseif type(value) == "string" then
-            return "\"" .. value .. "\""
-        else
-            return tostring(value)
-        end
-    end
+	local function serialize(value)
+		if type(value) == "table" then
+			return table_to_string(value)
+		elseif type(value) == "string" then
+			return "\"" .. value .. "\""
+		else
+			return tostring(value)
+		end
+	end
 
-    local result = "{"
-    for k, v in pairs(tbl) do
-        local key = serialize(k)
-        local value = serialize(v)
-        result = result .. key .. "=" .. value .. ", " .. [[ 
+	local result = "{"
+	for k, v in pairs(tbl) do
+		local key = serialize(k)
+		local value = serialize(v)
+		result = result .. key .. "=" .. value .. ", " .. [[ 
 ]]
-    end
-    -- Remove the trailing comma and space if there are elements in the table
-    if result:sub(-2) == ", " then
-        result = result:sub(1, -3)
-    end
-    result = result .. "}"
-    return result
+	end
+	-- Remove the trailing comma and space if there are elements in the table
+	if result:sub(-2) == ", " then
+		result = result:sub(1, -3)
+	end
+	result = result .. "}"
+	return result
 end
 
 

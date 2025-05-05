@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 15:18:45",revision=2651]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 15:20:49",revision=2661]]
 include './fire.lua'
 
 --[[
@@ -731,12 +731,12 @@ function init_container_defaults(container)
 	elseif container.sprite == 144 then
 		container.small_icon = 218
 		container.in_range_sprite = 217
-		container.in_range_sprite_adjustment = { x = 0, y = 7 }
+		container.in_range_sprite_adjustment = { x = 4, y = 0 }
 		container.contents = get_early_bedroom()
 	elseif container.sprite == 145 then
 		container.small_icon = 226
 		container.in_range_sprite = 217
-		container.in_range_sprite_adjustment = { x = 0, y = 7 }
+		container.in_range_sprite_adjustment = { x = 0, y = 0 }
 		container.contents = get_early_bedroom()	
 	end
 	return container

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 18:55:47",revision=2741]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 19:04:47",revision=2768]]
 include './fire.lua'
 
 --[[
@@ -699,26 +699,31 @@ function init_container_defaults(container)
 		container.in_range_sprite = 176
 		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_bedroom()
+	--Kitchen Cupboards with knife and bowl ontop.
 	elseif container.sprite == 160 then
 		container.small_icon = 184
 		container.in_range_sprite = 176
 		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_kitchen()
+	--Kitchen shelfs
 	elseif container.sprite == 161 then
 		container.small_icon = 219
 		container.in_range_sprite = 176
 		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_kitchen()
+	--Bathroom sink/cabinet.
 	elseif container.sprite == 166 then
 		container.small_icon = 220
 		container.in_range_sprite = 216
-		container.in_range_sprite_adjustment = { x = 0 , y = 7 }
+		container.in_range_sprite_adjustment = { x = 0 , y = -3 }
 		container.contents = get_early_bathroom()
+	--Wardrobe left
 	elseif container.sprite == 144 then
 		container.small_icon = 218
 		container.in_range_sprite = 217
 		container.in_range_sprite_adjustment = { x = 4, y = 0 }
 		container.contents = get_early_bedroom()
+	--Wardobe right
 	elseif container.sprite == 145 then
 		container.small_icon = 226
 		container.in_range_sprite = 217

@@ -1,6 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 21:15:34",revision=2927]]
-include './fire.lua'
-
+--[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-05-05 21:56:24",revision=22]]
 --[[
 Randomised loot
 ]]

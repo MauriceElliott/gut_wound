@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 19:04:47",revision=2768]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 19:33:36",revision=2875]]
 include './fire.lua'
 
 --[[
@@ -656,6 +656,20 @@ backpack=equipable:new({
 Containers
 ]]
 
+ctnrspr = {
+	cbox = 137,
+	letterbox = 140,
+	bookshelf = 187,
+	fridge = 170,
+	bdraws = 149,
+	kcupboard1 = 160,
+	kcupboard2 = 168,
+	kcupboard3 = 175,
+	kshelf = 161,
+	bathroomsink = 166,
+	lwardrobe = 144,
+	rwardrobe = 145
+}
 
 container=entity:new({
 	small_icon = 0,
@@ -669,62 +683,65 @@ container=entity:new({
 
 function init_container_defaults(container)
 	--Cardboard boxes
-	if container.sprite == 137 then
+	if container.sprite == ctnrspr.cbox then
 		container.small_icon = 141
 		container.in_range_sprite = 130
 		container.in_range_sprite_adjustment = { x = 0, y = -16 }
 		container.contents = get_early_boxes()
 	--Letter lock boxes
-	elseif container.sprite == 140 then
+	elseif container.sprite == ctnrspr.letterbox then
 		container.small_icon = 141
 		container.in_range_sprite = 133
 		container.in_range_sprite_adjustment = { x = -2, y = -16 }
 		container.in_range = false
 		container.contents = get_start_letterbox()
 	--Bookshelf
-	elseif container.sprite == 187 then
+	elseif container.sprite == ctnrspr.bookshelf then
 		container.small_icon = 210
 		container.in_range_sprite = 138
 		container.in_range_sprite_adjustment = { x = -1 ,y = -9 }
 		container.contents = get_early_bookshelf()
 	--Fridge
-	elseif container.sprite == 170 then
+	elseif container.sprite == ctnrspr.fridge then
 		container.small_icon = 211
 		container.in_range_sprite = 208
 		container.in_range_sprite_adjustment = { x= -1, y = -17 }
 		container.contents = get_early_fridge()
 	--Bedroom Draws
-	elseif container.sprite == 149 then
+	elseif container.sprite == ctnrspr.bdraws then
 		container.small_icon = 184
 		container.in_range_sprite = 176
 		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_bedroom()
-	--Kitchen Cupboards with knife and bowl ontop.
-	elseif container.sprite == 160 then
+	--Kitchen Cupboards
+	elseif container.sprite == ctnrspr.kcupboard1 
+		or container.sprite == ctnrspr.kcupboard2 
+		or container.sprite == ctnrspr.kcupboard3 
+	then
 		container.small_icon = 184
 		container.in_range_sprite = 176
 		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_kitchen()
 	--Kitchen shelfs
-	elseif container.sprite == 161 then
+	elseif container.sprite == ctnrspr.kshelf then
 		container.small_icon = 219
 		container.in_range_sprite = 176
 		container.in_range_sprite_adjustment = { x = 0, y = -9 }
 		container.contents = get_early_kitchen()
 	--Bathroom sink/cabinet.
-	elseif container.sprite == 166 then
+	elseif container.sprite == ctnrspr.bathroomsink then
 		container.small_icon = 220
 		container.in_range_sprite = 216
 		container.in_range_sprite_adjustment = { x = 0 , y = -3 }
 		container.contents = get_early_bathroom()
 	--Wardrobe left
-	elseif container.sprite == 144 then
+	elseif container.sprite == ctnrspr.lwardrobe then
 		container.small_icon = 218
 		container.in_range_sprite = 217
 		container.in_range_sprite_adjustment = { x = 4, y = 0 }
 		container.contents = get_early_bedroom()
 	--Wardobe right
-	elseif container.sprite == 145 then
+	elseif container.sprite == ctnrspr.rwardrobe then
 		container.small_icon = 226
 		container.in_range_sprite = 217
 		container.in_range_sprite_adjustment = { x = 0, y = 0 }
@@ -733,21 +750,44 @@ function init_container_defaults(container)
 	return container
 end
 
+--	cbox = 137
+--	letterbox = 140
+--	bookshelf = 187
+--	fridge = 170
+--	bdraws = 149
+--	kcupboard1 = 160
+--	kcupboard2 = 168
+--	kcupboard3 = 175
+--	kshelf = 161
+--	bathroomsink = 166
+--	lwardrobe = 144
+--	rwardrobe = 145
+
 function init_containers()
-	_containers["1_2"] = init_container_defaults(container:new({ sprite = 137 }))
-	_containers["1_4"] = init_container_defaults(container:new({ sprite = 140 }))
-	_containers["20_5"] = init_container_defaults(container:new({ sprite = 187 }))
-	_containers["23_6"] = init_container_defaults(container:new({ sprite = 170 }))
-	_containers["24_6"] = init_container_defaults(container:new({ sprite = 160 }))
-	_containers["25_6"] = init_container_defaults(container:new({ sprite = 161 }))
-	_containers["26_6"] = init_container_defaults(container:new({ sprite = 160 }))
-	_containers["26_2"] = init_container_defaults(container:new({ sprite = 166 }))
-	_containers["21_1"] = init_container_defaults(container:new({ sprite = 144 }))
-	_containers["22_1"] = init_container_defaults(container:new({ sprite = 145 }))
-	_containers["35_1"] = init_container_defaults(container:new({ sprite = 144 }))
-	_containers["36_1"] = init_container_defaults(container:new({ sprite = 145 }))
-	_containers["34_1"] = init_container_defaults(container:new({ sprite = 187 }))
-	_containers["38_2"] = init_container_defaults(container:new({ sprite = 149 }))
+	_containers["1_2"] = init_container_defaults(container:new({ sprite = ctnrspr.cbox }))
+	_containers["1_4"] = init_container_defaults(container:new({ sprite = ctnrspr.letterbox }))
+	_containers["20_5"] = init_container_defaults(container:new({ sprite = ctnrspr.bookshelf }))
+	_containers["23_6"] = init_container_defaults(container:new({ sprite = ctnrspr.fridge }))
+	_containers["24_6"] = init_container_defaults(container:new({ sprite = ctnrspr.kcupboard1 }))
+	_containers["25_6"] = init_container_defaults(container:new({ sprite = ctnrspr.kshelf }))
+	_containers["26_6"] = init_container_defaults(container:new({ sprite = ctnrspr.kcupboard2 }))
+	_containers["26_2"] = init_container_defaults(container:new({ sprite = ctnrspr.bathroomsink }))
+	_containers["21_1"] = init_container_defaults(container:new({ sprite = ctnrspr.lwardrobe }))
+	_containers["22_1"] = init_container_defaults(container:new({ sprite = ctnrspr.rwardrobe }))
+	_containers["35_1"] = init_container_defaults(container:new({ sprite = ctnrspr.lwardrobe }))
+	_containers["36_1"] = init_container_defaults(container:new({ sprite = ctnrspr.rwardrobe }))
+	_containers["34_1"] = init_container_defaults(container:new({ sprite = ctnrspr.bookshelf }))
+	_containers["38_2"] = init_container_defaults(container:new({ sprite = ctnrspr.bdraws }))
+	_containers["40_2"] = init_container_defaults(container:new({ sprite = ctnrspr.bathroomsink }))
+	_containers["41_2"] = init_container_defaults(container:new({ sprite = ctnrspr.bathroomsink }))
+	_containers["42_6"] = init_container_defaults(container:new({ sprite = ctnrspr.bdraws }))
+	_containers["40_5"] = init_container_defaults(container:new({ sprite = ctnrspr.bookshelf }))
+	_containers["30_5"] = init_container_defaults(container:new({ sprite = ctnrspr.kcupboard3 }))
+	_containers["31_5"] = init_container_defaults(container:new({ sprite = ctnrspr.kcupboard2 }))
+	_containers["32_5"] = init_container_defaults(container:new({ sprite = ctnrspr.kshelf }))
+	_containers["33_5"] = init_container_defaults(container:new({ sprite = ctnrspr.kcupboard1 }))
+	_containers["35_5"] = init_container_defaults(container:new({ sprite = ctnrspr.fridge }))
+	_containers["35_5"] = init_container_defaults(container:new({ sprite = ctnrspr.fridge }))
 end
 
 --[[

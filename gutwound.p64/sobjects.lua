@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 14:28:17",revision=2566]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 15:18:45",revision=2651]]
 include './fire.lua'
 
 --[[
@@ -708,6 +708,11 @@ function init_container_defaults(container)
 		container.in_range_sprite = 208
 		container.in_range_sprite_adjustment = { x= -1, y = -17 }
 		container.contents = get_early_fridge()
+	elseif container.sprite == 149 then
+		container.small_icon = 184
+		container.in_range_sprite = 176
+		container.in_range_sprite_adjustment = { x = 0, y = -9 }
+		container.contents = get_early_bedroom()
 	elseif container.sprite == 160 then
 		container.small_icon = 184
 		container.in_range_sprite = 176
@@ -727,37 +732,31 @@ function init_container_defaults(container)
 		container.small_icon = 218
 		container.in_range_sprite = 217
 		container.in_range_sprite_adjustment = { x = 0, y = 7 }
-		container.contents = get_early_clothes()
+		container.contents = get_early_bedroom()
 	elseif container.sprite == 145 then
 		container.small_icon = 226
 		container.in_range_sprite = 217
 		container.in_range_sprite_adjustment = { x = 0, y = 7 }
-		container.contents = get_early_clothes()	
+		container.contents = get_early_bedroom()	
 	end
 	return container
 end
 
 function init_containers()
-	_containers["1_2"] = container:new({ sprite = 137 })
-	_containers["1_2"] = init_container_defaults(_containers["1_2"])
-	_containers["1_4"] = container:new({ sprite = 140 })
-	_containers["1_4"] = init_container_defaults(_containers["1_4"])
-	_containers["20_5"] = container:new({ sprite = 187 })
-	_containers["20_5"] = init_container_defaults(_containers["20_5"])
-	_containers["23_6"] = container:new({ sprite = 170 })
-	_containers["23_6"] = init_container_defaults(_containers["23_6"])
-	_containers["24_6"] = container:new({ sprite = 160 })
-	_containers["24_6"] = init_container_defaults(_containers["24_6"])
-	_containers["25_6"] = container:new({ sprite = 161 })
-	_containers["25_6"] = init_container_defaults(_containers["25_6"])
-	_containers["26_6"] = container:new({ sprite = 160 })
-	_containers["26_6"] = init_container_defaults(_containers["26_6"])
-	_containers["26_2"] = container:new({ sprite = 166 })
-	_containers["26_2"] = init_container_defaults(_containers["26_2"])
-	_containers["21_1"] = container:new({ sprite = 144 })
-	_containers["21_1"] = init_container_defaults(_containers["21_1"])
-	_containers["22_1"] = container:new({ sprite = 145 })
-	_containers["22_1"] = init_container_defaults(_containers["22_1"])
+	_containers["1_2"] = init_container_defaults(container:new({ sprite = 137 }))
+	_containers["1_4"] = init_container_defaults(container:new({ sprite = 140 }))
+	_containers["20_5"] = init_container_defaults(container:new({ sprite = 187 }))
+	_containers["23_6"] = init_container_defaults(container:new({ sprite = 170 }))
+	_containers["24_6"] = init_container_defaults(container:new({ sprite = 160 }))
+	_containers["25_6"] = init_container_defaults(container:new({ sprite = 161 }))
+	_containers["26_6"] = init_container_defaults(container:new({ sprite = 160 }))
+	_containers["26_2"] = init_container_defaults(container:new({ sprite = 166 }))
+	_containers["21_1"] = init_container_defaults(container:new({ sprite = 144 }))
+	_containers["22_1"] = init_container_defaults(container:new({ sprite = 145 }))
+	_containers["35_1"] = init_container_defaults(container:new({ sprite = 144 }))
+	_containers["36_1"] = init_container_defaults(container:new({ sprite = 145 }))
+	_containers["34_1"] = init_container_defaults(container:new({ sprite = 187 }))
+	_containers["38_2"] = init_container_defaults(container:new({ sprite = 149 }))
 end
 
 --[[
@@ -771,13 +770,13 @@ function get_random_contents(contents)
 end
 
 --------------
--- Clothes ---
+-- Bedroom ---
 --------------
 
-_early_clothes = {}
+local _early_bedroom = {}
 
 add(
-  _early_clothes,
+  _early_bedroom,
   {
 	container_slot:new({
 	  quantity = 1,
@@ -790,8 +789,8 @@ add(
   }
 )
 
-function get_early_clothes()
-  return get_random_contents(_early_clothes)
+function get_early_bedroom()
+  return get_random_contents(_early_bedroom)
 end
 
 -------------
@@ -832,11 +831,6 @@ end
 -------------
 -- Boxes --
 -------------
-
-function get_early_boxes()
-  return get_random_contents(_early_boxes)
-end
-
 local _early_boxes = {}
 
 add(
@@ -844,7 +838,12 @@ add(
   {
 	container_slot:new({
 	  quantity = 1,
-	  item = item:new({})
+	  item = cardboard:new({})
 	  }),
   }
 )
+
+function get_early_boxes()
+  return get_random_contents(_early_boxes)
+end
+

@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 15:20:49",revision=2661]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 18:55:47",revision=2741]]
 include './fire.lua'
 
 --[[
@@ -54,7 +54,7 @@ function init_rooms()
 				e_y = 19,
 				s_xo = 0, 
 				s_yo = -14,
-				e_xo = 15,
+				e_xo = 25,
 				e_yo = 17,
 			})
 		}),
@@ -142,10 +142,10 @@ function init_rooms()
 				s_y = 14, 
 				e_x = 25, 
 				e_y = 25,
-				s_xo = 0, 
+				s_xo = -25, 
 				s_yo = 2, 
-				e_xo = 15,
-				e_yo = 15,
+				e_xo = 40,
+				e_yo = 25,
 			}),
 			fog_patch:new({
 				s_x = 26,
@@ -170,10 +170,10 @@ function init_rooms()
 				s_y = 26, 
 				e_x = 25, 
 				e_y = 31,
-				s_xo = 0, 
+				s_xo = -20, 
 				s_yo = 2, 
 				e_xo = 15,
-				e_yo = 15,
+				e_yo = 25,
 			})
 		}),
 		replacement_sprite = 4, 
@@ -208,7 +208,7 @@ function init_rooms()
 				s_x = 26,
 				s_y = 21,
 				e_x = 33,
-				e_y = 31,
+				e_y = 45,
 				s_xo = 6,
 				s_yo = 3,
 				e_xo = -1,
@@ -228,25 +228,6 @@ function init_rooms()
 		replacement_sprite = 1, 
 		call_unlock = unlock_locked_door
 	})
-
---	-- Main door to rest of building
---	_rooms["6_20"] = room:new(
---	{
---		fog_patches = update_fog_patches({
---			fog_patch:new({
---				s_x = 1,
---				s_y = 20,
---				e_x = 6,
---				e_y = 24,
---				s_xo = 0,
---				s_yo = 2,
---				e_xo = 15,
---				e_yo = 18,
---			})
---		}),
---		replacement_sprite = 128, 
---		call_unlock = unlock_normal_door
---	})
 	
 	_rooms["37_10"] = room:new(
 	{
@@ -256,13 +237,13 @@ function init_rooms()
 				s_y = 4,
 				e_x = 42,
 				e_y = 9,
-				s_xo = 0,
+				s_xo = -10,
 				s_yo = 0,
-				e_xo = 15,
+				e_xo = 25,
 				e_yo = 15,
 			})
 		}),
-		replacement_sprite = 128, 
+		replacement_sprite = 11,
 		call_unlock = unlock_normal_door
 	})
 
@@ -274,9 +255,9 @@ function init_rooms()
 				s_y = 0,
 				e_x = 42,
 				e_y = 3,
-				s_xo = 0,
+				s_xo = -10,
 				s_yo = 4,
-				e_xo = 15,
+				e_xo = 25,
 				e_yo = 15,
 			})
 		}),
@@ -687,27 +668,32 @@ container=entity:new({
 })
 
 function init_container_defaults(container)
+	--Cardboard boxes
 	if container.sprite == 137 then
 		container.small_icon = 141
 		container.in_range_sprite = 130
 		container.in_range_sprite_adjustment = { x = 0, y = -16 }
 		container.contents = get_early_boxes()
+	--Letter lock boxes
 	elseif container.sprite == 140 then
 		container.small_icon = 141
 		container.in_range_sprite = 133
 		container.in_range_sprite_adjustment = { x = -2, y = -16 }
 		container.in_range = false
 		container.contents = get_start_letterbox()
+	--Bookshelf
 	elseif container.sprite == 187 then
 		container.small_icon = 210
 		container.in_range_sprite = 138
 		container.in_range_sprite_adjustment = { x = -1 ,y = -9 }
 		container.contents = get_early_bookshelf()
+	--Fridge
 	elseif container.sprite == 170 then
 		container.small_icon = 211
 		container.in_range_sprite = 208
 		container.in_range_sprite_adjustment = { x= -1, y = -17 }
 		container.contents = get_early_fridge()
+	--Bedroom Draws
 	elseif container.sprite == 149 then
 		container.small_icon = 184
 		container.in_range_sprite = 176

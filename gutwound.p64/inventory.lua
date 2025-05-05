@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-05-04 21:43:15",revision=9958]]
+--[[pod_format="raw",created="2024-05-14 20:53:29",modified="2025-05-05 14:11:39",revision=9977]]
 
 -- text colour
 _itc = 14
@@ -278,11 +278,11 @@ function update_inventory()
     if _inv.open then
         display_inventory_contents(c_i)
         display_inventory_weight(c_i)
-        if table_length(_discovered_containers) > 0 and dc_in_range_any(_discovered_containers) then
+        if #_discovered_containers > 0 and dc_in_range_any(_discovered_containers) then
             display_container_contents(c_i)
-        else
-            _inv.selected_container = 1
         end
+    else
+    	_inv.selected_container = 1
     end
 end
 

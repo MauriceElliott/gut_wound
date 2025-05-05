@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-04 21:43:15",revision=2529]]
+--[[pod_format="raw",created="2025-03-23 23:23:11",modified="2025-05-05 14:11:39",revision=2556]]
 include './fire.lua'
 
 --[[
@@ -723,6 +723,16 @@ function init_container_defaults(container)
 		container.in_range_sprite = 216
 		container.in_range_sprite_adjustment = { x = 0 , y = 7 }
 		container.contents = get_early_bathroom()
+	elseif container.sprite == 144 then
+		container.small_icon = 218
+		container.in_range_sprite = 217
+		container.in_range_sprite_adjustment = { x = 0, y = 7 }
+		container.contents = get_early_clothes()
+	elseif container.sprite == 145 then
+		container.small_icon = 226
+		container.in_range_sprite = 217
+		container.in_range_sprite_adjustment = { x = 0, y = 7 }
+		container.contents = get_early_clothes()	
 	end
 	return container
 end
@@ -744,14 +754,10 @@ function init_containers()
 	_containers["26_6"] = init_container_defaults(_containers["26_6"])
 	_containers["26_2"] = container:new({ sprite = 166 })
 	_containers["26_2"] = init_container_defaults(_containers["26_2"])
-
---	_containers["21_1"] = container:new({
---		small_icon = 184,
---		in_range_sprite = 176,
---		in_range_sprite_adjustment = {x=0,y=7},
---		in_range = false,
---		contents = get_early_clothes()
---	})
+	_containers["21_1"] = container:new({ sprite = 144 })
+	_containers["21_1"] = init_container_defaults(_containers["21_1"])
+	_containers["22_1"] = container:new({ sprite = 145 })
+	_containers["22_1"] = init_container_defaults(_containers["22_1"])
 end
 
 --[[

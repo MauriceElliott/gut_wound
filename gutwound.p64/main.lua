@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-05-06 21:19:27",revision=11365]]
+--[[pod_format="raw",created="2024-05-03 13:26:10",modified="2025-05-06 21:56:04",revision=11413]]
 include './util.lua'
 include './sobjects.lua'
 include './character.lua'
@@ -9,6 +9,11 @@ include './cmenu.lua'
 include './rooms.lua'
 include './scenes.lua'
 include './fire.lua'
+include './sloot.lua'
+include './sitems.lua'
+include './srooms.lua'
+include './sobjects.lua'
+include './scontainers.lua'
 
 _dbm = nil
 _dbo = nil

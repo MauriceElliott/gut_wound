@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-05-06 21:19:27",revision=42]]
+--[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-05-06 21:56:04",revision=103]]
 --[[
 Containers
 ]]
@@ -15,7 +15,9 @@ ctnrspr = {
 	kshelf = 161,
 	bathroomsink = 166,
 	lwardrobe = 144,
-	rwardrobe = 145
+	rwardrobe = 145,
+	storeshelf1 = 213,
+	storeshelf2 = 238
 }
 
 container=entity:new({
@@ -92,7 +94,13 @@ function init_defaults(container)
 		container.small_icon = 226
 		container.in_range_sprite = 217
 		container.in_range_sprite_adjustment = { x = 0, y = 0 }
-		container.contents = get_early_bedroom()	
+		container.contents = get_early_bedroom()
+	elseif container.sprite == ctnrspr.storeshelf1
+		or container.sprite == ctnrspr.storeshelf2
+	then
+		container.small_icon = 228
+		container.in_range_sprite = 224
+		container.in_range_sprite_adjustment = { x = 1, y = -21 }
 	end
 	return container
 end
@@ -151,5 +159,10 @@ function init_containers()
 	_containers["18_27"] = init_defaults(container:new({ sprite = ctnrspr.rwardrobe }))
 	_containers["21_27"] = init_defaults(container:new({ sprite = ctnrspr.bookshelf }))
 	_containers["24_28"] = init_defaults(container:new({ sprite = ctnrspr.bathroomsink }))
-	_containers["25_28"] = init_defaults(container:new({ sprite = ctnrspr.bathroomsink }))
+	_containers["34_20"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf2 }))
+	_containers["34_22"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf2 }))
+	_containers["34_24"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf1 }))
+	_containers["38_20"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf2 }))
+	_containers["38_22"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf2 }))
+	_containers["38_24"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf1 }))
 end

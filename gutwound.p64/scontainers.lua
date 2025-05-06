@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-05-06 21:56:04",revision=103]]
+--[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-05-06 21:56:49",revision=105]]
 --[[
 Containers
 ]]
@@ -101,6 +101,7 @@ function init_defaults(container)
 		container.small_icon = 228
 		container.in_range_sprite = 224
 		container.in_range_sprite_adjustment = { x = 1, y = -21 }
+		container.contents = get_early_bedroom() -- needs to change!
 	end
 	return container
 end

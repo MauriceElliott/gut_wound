@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:12:05",modified="2025-05-09 18:00:24",revision=80]]
+--[[pod_format="raw",created="2025-05-05 21:12:05",modified="2025-05-23 18:00:06",revision=97]]
 include './fire.lua'
 
 --[[
@@ -205,7 +205,8 @@ canned_tofu=consumable:new({
 
 cloth_strips=consumable:new({
 	sprite = (gfx_offset.gfx_3+153),
-	name = "Tofu",
+	name = "Cloth",
+	is_flamable = true,
 	weight = 0.4,
 	wound_health = 10,
 	health = 10,
@@ -347,7 +348,6 @@ journal=useable:new({
 equipable=item:new({
 	item_type = item_type.equipable,
 })
-
 
 backpack=equipable:new({
 	sprite=(gfx_offset.gfx_3+154),

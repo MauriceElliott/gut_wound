@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-05-09 18:00:24",revision=73]]
+--[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-05-23 18:00:06",revision=89]]
 --[[
 Randomised loot
 ]]
@@ -44,7 +44,7 @@ add(
   {
 	container_slot:new({
 	  quantity = 1,
-	  item = item:new({})
+	  item = tofu:new({})
 	  }),
   }
 )

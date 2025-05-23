@@ -18,14 +18,8 @@ local _early_bedroom = {}
 add(
   _early_bedroom,
   {
-	container_slot:new({
-	  quantity = 1,
-	  item = backpack:new({})
-	  }),
-	container_slot:new({
-	  quantity = 2,
-	  item = rag:new({})
-	})
+	container_slot:new({ item = backpack:new({}) }),
+	container_slot:new({ item = rag:new({}), quantity = 2 })
   }
 )
 
@@ -42,12 +36,99 @@ local _early_kitchen = {}
 add(
   _early_kitchen,
   {
-	container_slot:new({
-	  quantity = 1,
-	  item = tofu:new({})
-	  }),
+	container_slot:new({ item = canned_tofu:new({})}),
+	container_slot:new({ item = canned_beans:new({})})
   }
 )
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = jarred_veg:new({})}),
+	container_slot:new({ item = canned_clams:new({})})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = rancid_food:new({})}),
+	container_slot:new({ item = water_bottle:new({})})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = rancid_food:new({})}),
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = water_bottle:new({})})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = energy_drink:new({})}),
+	container_slot:new({ item = fizzy_drink_can:new({}), quantity = 2})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = glass:new({}), quantity = 3}),
+	container_slot:new({ item = teapot:new({})})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = bleach:new({})}),
+	container_slot:new({ item = sponge:new({})}),
+	container_slot:new({ item = cloth_strips:new({}), quantity = 2})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = iced_tea:new({})}),
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = rancid_food:new({})}),
+	container_slot:new({ item = water_bottle:new({})})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = canned_beans:new({})}),
+	container_slot:new({ item = lunch_meat:new({})})
+  }
+)
+
+add(
+  _early_kitchen,
+  {
+	container_slot:new({ item = canned_sardines:new({})}),
+	container_slot:new({ item = canned_minced_prawn:new({})})
+  }
+)
+
+
+
 
 function get_early_kitchen()
   return get_random_contents(_early_kitchen)
@@ -86,4 +167,3 @@ add(
 function get_early_boxes()
   return get_random_contents(_early_boxes)
 end
-

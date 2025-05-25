@@ -51,7 +51,7 @@ function add_to_inventory(cc, item)
 	for i, s in pairs(_inv.contents) do
 		if s.item.sprite == item.sprite and s.item.name == item.name then
 			existing_item_index = i
-			
+
 		end
 		total_weight += (s.item.weight * s.quantity)
 	end
@@ -96,7 +96,7 @@ function display_inventory_contents()
 			end
 			spr(c.item.sprite, _inv.inv_starting_x, current_y, 23)
 			if c.item.is_equipped then
-				spr((gfx_offset.gfx_3+6), _inv.inv_starting_x-1, current_y) 
+				spr((gfx_offset.gfx_3+6), _inv.inv_starting_x-1, current_y)
 			end
 			if c.item.is_hot then
 				spr((gfx_offset.gfx_3+7), _inv.inv_starting_x-1, current_y)
@@ -116,14 +116,14 @@ function display_inventory_contents()
 	end
 end
 
-_min_search_time = 3
+_min_search_time = 1
 
 function display_container_contents()
 	local current_y = flr(_inv.c_i_starting_y + 13)
 	print("Container(s)", _inv.cont_starting_x + 11, current_y - 11, _itc)
 	local cont_icn_x = _inv.cont_starting_x + 2
 	local cont_icn_y = current_y + 44
-	
+
 	for i, cc in pairs(_discovered_containers) do
 		if cc.in_range == true then
 			local cont_icn_b_s_x = cont_icn_x - 1
@@ -131,13 +131,14 @@ function display_container_contents()
 			local cont_icn_b_e_x = cont_icn_x + 8
 			local cont_icn_b_e_y = cont_icn_y + 8
 			if i == _inv.selected_container or _inv.selected_container == 1 then
-				
+
 			   _inv.selected_container = i
 			   rect(cont_icn_b_s_x, cont_icn_b_s_y, cont_icn_b_e_x, cont_icn_b_e_y, _itc)
 			   spr(cc.small_icon, cont_icn_x, cont_icn_y)
 					if cc.search_timer == nil then
 						cc.search_timer = time()
 						cc.update_timer = time()
+						cc.time_to_search = (rnd(4)+1)
 						cc.dots = ".."
 					elseif time_since(cc.search_timer, time(), false) < _min_search_time then
 						if time_since(cc.update_timer, time(), false) >= 0.5 then

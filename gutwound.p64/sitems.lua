@@ -249,9 +249,9 @@ letter = readable:new({
 			 "I love you",
 })
 
-letter2 = readable:new({
+poem = readable:new({
 	sprite = (gfx_offset.gfx_3+144),
-	name = "Letter",
+	name = "Poem",
 	text = "The world continues to turn\n" ..
 	        "There is still light from the sun\n" ..
 			"The winds still blow,\n" ..
@@ -259,6 +259,34 @@ letter2 = readable:new({
 			"The trees begin to fall\n" ..
 			"and no matter how bright the sun may be\n" ..
 			"I still feel no warmth\n"
+})
+
+note = readable:new({
+   	sprite = (gfx_offset.gfx_3+144),
+	name = "Note",
+	text = "The world falls, famine reigns\n" ..
+	       "The turns begin to slow.\n" ..
+			"Yet somewhere out there, she continues\n" ..
+			"How else would the lights be on?\n"
+})
+
+bible = readable:new({
+   	sprite = (gfx_offset.gfx_3+144),
+	name = "Holy Bible",
+	text = "But the day of the Lord will come like a thief.\n" ..
+	       "The heavens will disappear with a roar;\n" ..
+			"the elements will be destroyed by fire,\n" ..
+			"and the earth and everything done in it will be laid bare.\n"
+})
+
+manual = readable:new({
+   	sprite = (gfx_offset.gfx_3+144),
+	name = "Server Manual",
+	text = "Hold the power button down for 10 seconds\n" ..
+	        "When the white light flashes yellow, release the powerbutton\n" ..
+			"If the server does not boot correctly after this\n" ..
+			"Hold the AZ5 Button and the Q key while holding the powerbutton\n" ..
+			"To clear the L5 video cache."
 })
 
 ----------

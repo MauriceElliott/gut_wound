@@ -147,6 +147,28 @@ function get_early_fridge()
 end
 
 local _early_books
+
+add(_early_books, {
+	container_slot:new({ item = note:new({})}),
+})
+
+add(_early_books, {
+	container_slot:new({ item = poem:new({})}),
+})
+
+add(_early_books, {
+	container_slot:new({ item = bible:new({})}),
+})
+
+add(_early_books, {
+	container_slot:new({ item = manual:new({})}),
+})
+
+add(_early_books, {
+	container_slot:new({ item = bible:new({})}),
+	container_slot:new({ item = painkillers:new({})}),
+})
+
 function get_early_bookshelf()
 	return get_random_contents(_early_books)
 end
@@ -160,6 +182,7 @@ local _early_bathroom
 function get_early_bathroom()
 	return get_random_contents(_early_bathroom)
 end
+
 -------------
 -- Boxes --
 -------------

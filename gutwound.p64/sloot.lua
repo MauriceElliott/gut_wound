@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-05-25 20:35:36",revision=121]]
+--[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-05-25 22:02:22",revision=137]]
 include './fire.lua'
 include './sitems.lua'
 
@@ -124,7 +124,7 @@ function get_early_kitchen()
   return get_random_contents(_early_kitchen)
 end
 
-local _early_fridge
+local _early_fridge = {}
 
 add(_early_fridge, {
 	container_slot:new({ item = fizzy_drink_can:new({})}),
@@ -146,7 +146,7 @@ function get_early_fridge()
 	return get_random_contents(_early_fridge)
 end
 
-local _early_books
+local _early_books = {}
 
 add(_early_books, {
 	container_slot:new({ item = note:new({})}),

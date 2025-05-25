@@ -102,13 +102,7 @@ add(
   }
 )
 
-add(
-  _early_kitchen,
-  {
-	container_slot:new({ item = rancid_food:new({})}),
-	container_slot:new({ item = water_bottle:new({})})
-  }
-)
+add(_early_kitchen,{})
 
 add(
   _early_kitchen,
@@ -126,14 +120,28 @@ add(
   }
 )
 
-
-
-
 function get_early_kitchen()
   return get_random_contents(_early_kitchen)
 end
 
 local _early_fridge
+
+add(_early_fridge, {
+	container_slot:new({ item = fizzy_drink_can:new({})}),
+})
+
+add(_early_fridge, {
+	container_slot:new({ item = rancid_food:new({})}),
+})
+
+add(_early_fridge, {})
+
+add(_early_fridge, {
+	container_slot:new({ item = jarred_kimchi:new({})}),
+	container_slot:new({ item = jarred_veg:new({})}),
+	container_slot:new({ item = iced_tea:new({})}),
+})
+
 function get_early_fridge()
 	return get_random_contents(_early_fridge)
 end

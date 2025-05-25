@@ -242,24 +242,23 @@ letter = readable:new({
 	text = "To my darling wife\n" ..
 			 "I hope it is not too late, the final days are uppon us\n" ..
 			 "God willing I will make it back to before too long\n" ..
-			 "Keep yourself safe, stock up as much as possible, and don't trust a soul\n" .. 
-			 "I am leaving this hell hole a week from now when I can guarantee our safety,\n" .. 
-			 "Don't worry about Ari, I promise he will be home safe before you know it\n" .. 
-			 "Look after our daughter,\n" .. 
+			 "Keep yourself safe, stock up as much as possible, and don't trust a soul\n" ..
+			 "I am leaving this hell hole a week from now when I can guarantee our safety,\n" ..
+			 "Don't worry about Ari, I promise he will be home safe before you know it\n" ..
+			 "Look after our daughter,\n" ..
 			 "I love you",
 })
 
-letter = readable:new({
+letter2 = readable:new({
 	sprite = (gfx_offset.gfx_3+144),
 	name = "Letter",
-	text = "To my darling wife\n" ..
-			 "I hope it is not too late, the final days are uppon us\n" ..
-			 "God willing I will make it back to before too long\n" ..
-			 "Keep yourself safe, stock up as much as possible, and don't trust a soul\n" .. 
-			 "I am leaving this hell hole a week from now when I can guarantee our safety,\n" .. 
-			 "Don't worry about Ari, I promise he will be home safe before you know it\n" .. 
-			 "Look after our daughter,\n" .. 
-			 "I love you",
+	text = "The world continues to turn\n" ..
+	        "There is still light from the sun\n" ..
+			"The winds still blow,\n" ..
+			"There is no more food to eat,\n" ..
+			"The trees begin to fall\n" ..
+			"and no matter how bright the sun may be\n" ..
+			"I still feel no warmth\n"
 })
 
 ----------
@@ -379,4 +378,3 @@ backpack=equipable:new({
 		self.is_equipped=false
 	end
 })
-

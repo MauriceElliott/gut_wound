@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:12:05",modified="2025-05-23 18:00:06",revision=97]]
+--[[pod_format="raw",created="2025-05-05 21:12:05",modified="2025-05-25 20:35:36",revision=117]]
 include './fire.lua'
 
 --[[
@@ -234,6 +234,19 @@ readable = item:new({
 	read = function(self)
 		draw_info_text(self.text, self.time_to_read)
 	end,
+})
+
+letter = readable:new({
+	sprite = (gfx_offset.gfx_3+144),
+	name = "Letter",
+	text = "To my darling wife\n" ..
+			 "I hope it is not too late, the final days are uppon us\n" ..
+			 "God willing I will make it back to before too long\n" ..
+			 "Keep yourself safe, stock up as much as possible, and don't trust a soul\n" .. 
+			 "I am leaving this hell hole a week from now when I can guarantee our safety,\n" .. 
+			 "Don't worry about Ari, I promise he will be home safe before you know it\n" .. 
+			 "Look after our daughter,\n" .. 
+			 "I love you",
 })
 
 letter = readable:new({

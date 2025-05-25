@@ -1,7 +1,6 @@
---[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-05-23 18:00:06",revision=89]]
---[[
-Randomised loot
-]]
+--[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-05-25 20:35:36",revision=121]]
+include './fire.lua'
+include './sitems.lua'
 
 function get_random_contents(contents)
   local selected_contents = rnd(contents)
@@ -134,20 +133,24 @@ function get_early_kitchen()
   return get_random_contents(_early_kitchen)
 end
 
+local _early_fridge
 function get_early_fridge()
-	return get_random_contents(_early_kitchen)
+	return get_random_contents(_early_fridge)
 end
 
+local _early_books
 function get_early_bookshelf()
-	return get_random_contents(_early_kitchen)
+	return get_random_contents(_early_books)
 end
 
+local _letter_box
 function get_start_letterbox()
-	return get_random_contents(_early_kitchen)
+	return get_random_contents(_letter_box)
 end
 
+local _early_bathroom
 function get_early_bathroom()
-	return get_random_contents(_early_kitchen)
+	return get_random_contents(_early_bathroom)
 end
 -------------
 -- Boxes --

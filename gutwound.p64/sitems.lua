@@ -42,6 +42,7 @@ consumable=item:new({
 	health = 0,
 	pain = 0,
 	can_heat = false,
+	requires_can_opener = false,
 	hot_offset = 0,
 	cold_offset = 0,
 	consume = function(self)
@@ -126,6 +127,7 @@ canned_clams=consumable:new({
 	hot_offset = 5,
 	cold_offset = -5,
 	weight = 0.4,
+	requires_can_opener = true,
 })
 
 canned_mushrooms=consumable:new({
@@ -136,6 +138,7 @@ canned_mushrooms=consumable:new({
 	can_heat = true,
 	hot_offset = 5,
 	cold_offset = -5,
+	requires_can_opener = true,
 })
 
 jarred_kimchi=consumable:new({
@@ -156,6 +159,7 @@ canned_minced_prawn=consumable:new({
 	hunger = 10,
 	hot_offset = 10,
 	cold_offset = -5,
+	requires_can_opener = true,
 })
 
 jarred_veg=consumable:new({
@@ -190,6 +194,7 @@ canned_beans=consumable:new({
 	can_heat = true,
 	hunger = 12,
 	cold_offset = -4,
+	requires_can_opener = true,
 })
 
 canned_tofu=consumable:new({
@@ -201,6 +206,7 @@ canned_tofu=consumable:new({
 	cold_offset = -4,
 	hunger = 10,
 	delirium = -4,
+	requires_can_opener = true,
 })
 
 cloth_strips=consumable:new({
@@ -333,6 +339,30 @@ binbag=junk:new({
 	name="Binbag",
 })
 
+[[--
+Below need new sprites!!!!!!
+--]]
+
+toothbrush=junk:new({
+    sprite=(gfx_offset.gfx_3+150),
+    name="Tooth Brush",
+})
+
+razor=junk:new({
+    sprite=(gfx_offset.gfx_3+150),
+    name="Razor",
+})
+
+hairspray=junk:new({
+    sprite=(gfx_offset.gfx_3+150),
+    name="Hairspray",
+})
+
+soap=junk:new({
+    sprite=(gfx_offset.gfx_3+150),
+    name="Soap",
+})
+
 -------------
 -- useable --
 -------------
@@ -342,13 +372,13 @@ usable_subtype = {
 }
 
 local rip_cloth=function(self)
-	add(_inv.contents,
-		container_slot:new({
-			quantity = 2,
-			item = cloth_strips:new({})
-		})
-	)
-	del(_inv,self)
+    add(_inv.contents,
+        container_slot:new({
+            quantity = 2,
+            item = cloth_strips:new({})
+        })
+    )
+    del(_inv,self)
 end
 
 useable=item:new({
@@ -376,10 +406,9 @@ lighter=useable:new({
 	use = light_fire
 })
 
-journal=useable:new({
-	sprite=(gfx_offset.gfx_3+145),
-	name="Journal",
-	use=use_journal,
+can_opener=useable:new({
+    sprite=(gfx_offset.gfx_3+145),
+    name="Can-Opener",
 })
 
 ---------------

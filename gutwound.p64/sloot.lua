@@ -43,7 +43,7 @@ add(
 add(
   _early_kitchen,
   {
-	container_slot:new({ item = jarred_veg:new({})}),
+	container_slot:new({ item = canned_mushrooms:new({})}),
 	container_slot:new({ item = canned_clams:new({})})
   }
 )
@@ -107,7 +107,7 @@ add(_early_kitchen,{})
 add(
   _early_kitchen,
   {
-	container_slot:new({ item = canned_beans:new({})}),
+	container_slot:new({ item = canned_tofu:new({})}),
 	container_slot:new({ item = lunch_meat:new({})})
   }
 )
@@ -173,12 +173,19 @@ function get_early_bookshelf()
 	return get_random_contents(_early_books)
 end
 
-local _letter_box
+local _letter_box = {
+    {
+        container_slot:new({ item = letter:new({})}),
+        container_slot:new({ item = energy_drink:new({})}),
+    }
+}
 function get_start_letterbox()
 	return get_random_contents(_letter_box)
 end
 
-local _early_bathroom
+local _early_bathroom = {}
+
+
 function get_early_bathroom()
 	return get_random_contents(_early_bathroom)
 end

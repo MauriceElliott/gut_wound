@@ -185,7 +185,6 @@ end
 
 local _early_bathroom = {}
 
-
 function get_early_bathroom()
 	return get_random_contents(_early_bathroom)
 end

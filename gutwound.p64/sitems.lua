@@ -369,6 +369,7 @@ soap=junk:new({
 usable_subtype = {
 	rippable = 1,
 	firestarter = 2,
+	opener = 3,
 }
 
 local rip_cloth=function(self)
@@ -407,6 +408,7 @@ lighter=useable:new({
 })
 
 can_opener=useable:new({
+    subtype = usable_subtype.opener,
     sprite=(gfx_offset.gfx_3+145),
     name="Can-Opener",
 })

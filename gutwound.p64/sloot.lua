@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-06-01 22:00:35",revision=145]]
+--[[pod_format="raw",created="2025-05-05 21:15:40",modified="2025-06-01 22:10:34",revision=163]]
 include './fire.lua'
 include './sitems.lua'
 
@@ -242,4 +242,23 @@ add(
 
 function get_early_boxes()
   return get_random_contents(_early_boxes)
+end
+
+-------------
+-- Water Room --
+-------------
+local _water_room = {}
+
+add(
+  _water_room,
+  {
+	container_slot:new({
+	  quantity = 1,
+	  item = water_bottle:new({})
+	  }),
+  }
+)
+
+function get_water_room()
+  return get_random_contents(_water_room)
 end

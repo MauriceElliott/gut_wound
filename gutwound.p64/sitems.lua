@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:12:05",modified="2025-06-01 22:00:35",revision=137]]
+--[[pod_format="raw",created="2025-05-05 21:12:05",modified="2025-06-01 22:10:34",revision=157]]
 include './fire.lua'
 
 --[[
@@ -339,10 +339,6 @@ binbag=junk:new({
 	name="Binbag",
 })
 
-[[--
-Below need new sprites!!!!!!
---]]
-
 toothbrush=junk:new({
     sprite=(gfx_offset.gfx_3+150),
     name="Tooth Brush",
@@ -388,7 +384,7 @@ useable=item:new({
 
 thread=item:new({
 	subtype=usable_subtype.combo,
-	sprite="needs_filling",
+	sprite=(gfx_offset.gfx_3+152),
 	name="Thread",
 })
 

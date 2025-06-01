@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-06-01 22:00:35",revision=179]]
+--[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-06-01 22:10:34",revision=205]]
 --[[
 Containers
 ]]
@@ -22,7 +22,8 @@ ctnrspr = {
 	storeshelf2 = 238,
 	cbox2 = 206,
 	cbox3 = 214,
-	scupboards = 196
+	scupboards = 196,
+	desk = 194,
 }
 
 container=entity:new({
@@ -115,6 +116,10 @@ function init_defaults(container)
 		container.in_range_sprite = 225
 		container.in_range_sprite_adjustment = { x = 1, y = 1 }
 		container.contents = get_pre_water_room()
+	elseif container.sprite == ctnrspr.desk then
+		container.small_icon = 219
+		container.in_range_sprite = 227
+		container.in_range_sprite_adjustment = { x = 1, y = 1 }
 	end
 	return container
 end

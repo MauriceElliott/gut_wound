@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-05-25 22:02:22",revision=153]]
+--[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-06-01 21:50:37",revision=163]]
 --[[
 Containers
 ]]
@@ -120,6 +120,8 @@ end
 --	bathroomsink = 166
 --	lwardrobe = 144
 --	rwardrobe = 145
+-- cbox2
+-- scupboards =
 
 function init_containers()
 	_containers["1_2"] = init_defaults(container:new({ sprite = ctnrspr.cbox }))

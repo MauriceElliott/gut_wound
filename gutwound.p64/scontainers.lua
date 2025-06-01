@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-06-01 21:50:37",revision=163]]
+--[[pod_format="raw",created="2025-05-05 21:13:06",modified="2025-06-01 22:00:35",revision=179]]
 --[[
 Containers
 ]]
@@ -19,7 +19,10 @@ ctnrspr = {
 	lwardrobe = 144,
 	rwardrobe = 145,
 	storeshelf1 = 213,
-	storeshelf2 = 238
+	storeshelf2 = 238,
+	cbox2 = 206,
+	cbox3 = 214,
+	scupboards = 196
 }
 
 container=entity:new({
@@ -103,7 +106,15 @@ function init_defaults(container)
 		container.small_icon = 228
 		container.in_range_sprite = 224
 		container.in_range_sprite_adjustment = { x = 1, y = -21 }
-		container.contents = get_early_bedroom() -- needs to change!
+		container.contents = get_water_room()
+	elseif container.sprite == ctnrspr.cbox2
+		or container.sprite == ctnrspr.cbox3
+		or container.sprite == ctnrspr.scupboards
+	then
+		container.small_icon = 219
+		container.in_range_sprite = 225
+		container.in_range_sprite_adjustment = { x = 1, y = 1 }
+		container.contents = get_pre_water_room()
 	end
 	return container
 end
@@ -120,8 +131,9 @@ end
 --	bathroomsink = 166
 --	lwardrobe = 144
 --	rwardrobe = 145
--- cbox2
--- scupboards =
+-- cbox2 = 206
+--	cbox3 = 214
+--	scupboards = 196
 
 function init_containers()
 	_containers["1_2"] = init_defaults(container:new({ sprite = ctnrspr.cbox }))

@@ -292,7 +292,7 @@ manual = readable:new({
 	        "When the white light flashes yellow, release the powerbutton\n" ..
 			"If the server does not boot correctly after this\n" ..
 			"Hold the AZ5 Button and the Q key while holding the powerbutton\n" ..
-			"To clear the L5 video cache."
+			"To clear the L5 vcache."
 })
 
 ----------
@@ -384,6 +384,12 @@ end
 
 useable=item:new({
 	item_type=item_type.useable,
+})
+
+thread=item:new({
+	subtype=usable_subtype.combo,
+	sprite="needs_filling",
+	name="Thread",
 })
 
 wash_cloth=useable:new({

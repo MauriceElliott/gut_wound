@@ -168,4 +168,6 @@ function init_containers()
 	_containers["38_20"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf2 }))
 	_containers["38_22"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf2 }))
 	_containers["38_24"] = init_defaults(container:new({ sprite = ctnrspr.storeshelf1 }))
+
+	--Missed Server Room, and shop boxes/sides
 end

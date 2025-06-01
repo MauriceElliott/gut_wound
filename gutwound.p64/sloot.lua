@@ -134,7 +134,9 @@ add(_early_fridge, {
 	container_slot:new({ item = rancid_food:new({})}),
 })
 
-add(_early_fridge, {})
+add(_early_fridge, {
+    --EMPTY
+})
 
 add(_early_fridge, {
 	container_slot:new({ item = jarred_kimchi:new({})}),
@@ -177,13 +179,47 @@ local _letter_box = {
     {
         container_slot:new({ item = letter:new({})}),
         container_slot:new({ item = energy_drink:new({})}),
+    },
+    {
+        container_slot:new({ item = letter:new({})}),
+        container_slot:new({ item = iced_tea:new({})}),
     }
 }
+
 function get_start_letterbox()
 	return get_random_contents(_letter_box)
 end
 
-local _early_bathroom = {}
+-- total of 8
+local _early_bathroom = {
+    {
+        container_slot:new({ item = razor:new({})}),
+        container_slot:new({ item = hairspray:new({})}),
+    },
+    {
+        container_slot:new({ item = soap:new({})}),
+    },
+    {
+        container_slot:new({ item = toothbrush:new({})}),
+        container_slot:new({ item = suture_needle:new({})}),
+    },
+    {
+        container_slot:new({ item = painkillers:new({})}),
+    },
+    {
+        container_slot:new({ item = antiseptic:new({})}),
+        container_slot:new({ item = soap:new({})}),
+    },
+    {
+        container_slot:new({ item = toothbrush:new({})}),  
+    },
+    {
+        --EMPTY
+    },
+    {
+        --EMPTY
+    } 
+}
 
 function get_early_bathroom()
 	return get_random_contents(_early_bathroom)

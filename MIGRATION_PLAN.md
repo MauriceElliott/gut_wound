@@ -22,10 +22,10 @@ Phase 0: Tooling & Workflow Setup
 **Goal:** Establish a Helix-based CLI development pipeline for Playdate.
 
 ### 0.1 Environment Setup
-- [ ] Install Playdate SDK → `/home/maurice/PlaydateSDK`
-- [ ] Set `PLAYDATE_SDK_PATH` environment variable
-- [ ] Verify `pdc` (Playdate Compiler) works
-- [ ] Test Playdate Simulator
+- [x] Install Playdate SDK → `/home/maurice/PlaydateSDK`
+- [x] Set `PLAYDATE_SDK_PATH` environment variable
+- [x] Verify `pdc` (Playdate Compiler) works
+- [x] Test Playdate Simulator
 
 ### 0.2 Build System
 - [ ] Create `build.sh` script for compilation

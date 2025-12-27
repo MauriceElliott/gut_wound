@@ -28,12 +28,12 @@ Phase 0: Tooling & Workflow Setup
 - [x] Test Playdate Simulator
 
 ### 0.2 Build System
-- [ ] Create `build.sh` script for compilation
+- [x] Create `build.sh` script for compilation
   - Invoke `pdc` to compile Lua → `.pdx`
   - Handle incremental builds
   - Error reporting with line numbers
-- [ ] Create `run.sh` to build + launch simulator
-- [ ] Create `watch.sh` for hot-reload during development
+- [x] Create `run.sh` to build + launch simulator
+- [x] Create `watch.sh` for hot-reload during development
 
 ### 0.3 Helix Integration
 - [ ] Configure Helix language server for Lua (if available)

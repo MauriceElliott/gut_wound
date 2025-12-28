@@ -51,12 +51,6 @@ Phase 0: Tooling & Workflow Setup
 - [ ] Tilemap conversion script (Tiled → Lua tables)
 - [ ] Audio conversion (if needed)
 
-### 0.5 Swift/C Integration (for later performance work)
-- [ ] Research Playdate C API documentation
-- [ ] Set up Swift build toolchain
-- [ ] Create template for Swift → C ABI → Lua bridge
-- [ ] Test minimal "Hello from Swift" example
-
 **Deliverables:**
 - Working CLI build/run pipeline
 - Helix configured for efficient Playdate Lua development

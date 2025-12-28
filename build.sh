@@ -2,9 +2,15 @@
 
 export PLAYDATE_SDK_PATH="/home/maurice/PlaydateSDK"
 export NAME="GUTWOUND"
+export OUT_DIR="./build/$NAME"
+
+
 if [ -e ./build ]; then
   rm -d -r ./build
 fi
+
 mkdir build
 
-pdc -I ./source/main.lua ./build/$NAME
+pdc ./source/main.lua $OUT_DIR
+
+PlaydateSimulator $OUT_DIR/$NAME.pdx/

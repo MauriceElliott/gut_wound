@@ -1,0 +1,72 @@
+picotron cartridge // www.picotron.net
+version 2
+
+:: gfx/
+:: map/
+:: sfx/
+:: main.lua
+--[[pod_format="raw",created="2026-01-04 22:18:49",modified="2026-01-04 23:48:23",revision=13]]
+function _init()
+	_char_x = 0
+	_char_y = 0
+end
+
+function _update()
+	if btn() == 4 then
+		_char_x += -2
+	end
+	if btn() == 8 then
+		_char_x += 2
+	end
+	if btn() == 1 then
+		_char_y += -2
+	end
+	if btn() == 2 then
+		_char_y += 2
+	end
+end
+
+function draw_character()
+	spr(1, _char_y, _char_x)
+end
+
+function _draw()
+	cls(0)
+	map()
+	draw_character()
+end
+:: .info.pod
+--[[pod,created="2025-11-01 01:07:02",modified="2026-01-04 23:50:29",runtime=22,workspaces={{location="main.lua#17",workspace_index=1},{location="gfx/0.gfx",workspace_index=2},{location="map/0.map",workspace_index=3},{location="sfx/0.sfx",workspace_index=4}}]]
+:: gfx/.info.pod
+--[[pod,created="2025-11-01 01:07:02",modified="2026-01-04 23:50:29"]]
+:: gfx/0.gfx
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI1LTAxLTE3IDEwOjM1OjQ4Iixtb2RpZmllZD0iMjAyNi0w
+MS0wNCAyMzo0Nzo1NCIscmV2aXNpb249MTVdXWx6NACgAgAA7zkAAPASe1swXT17Ym1wPXB4dQBD
+ICAgBPD-vwcQB-ANF-AOF-ANCwDzAf_-LGZsYWdzPTAscGFuX3gIAMp5PTAsem9vbT01fSxDAPAa
+wE8g8AqOUB7QrhBOsP4DsE4XDgcOB36wTmdewE4HLhdu0E43Hicu0F4GAPEawC4ALocewC4QLhdO
+Fx7wAU5nLvABPgduBy7wAA63PsAuJ44XLrAuN34GAC9uJwYAAvQB1y6wXicuJ06wLhA_ID4ALggA
+evABPiA_8AUFALAGHkAe8AReIF7wAQUAHxneABwvAAcCAP---_4PLwQc8ANXQPcJEEcQtzBXAIcA
+hxA3EDcIAMcAVwAnAKcAZwB3ABcIAPEAB3BnACcAhyBXAAcQRwAnKgDwGRcAJwBHEEcQlxAXAAcQ
+Z1B3ADcwxwB3AAcAZwC3AIcAdwCnAPcEAJcFAPABZ0D3AwBHECcABxD3AQA3AEQAsPcAACcAVwA3
+AIcwSwAAYQARZ4cAEWcYADFnECd9ALFXAFcABwA3AHcQV50A8wk3EEcgVwBHADcAV0AnEDcAJxBH
+APcAcGdsABEFeAD-A5cAdwCXAAcAlxA3ELcAxzD3FB4BHMB3IIcg9wAghyCHAFcGACAQRwYALyA3
+BgAKIEcQBgA0VwCHPQAGBQAPRwBbD_0AHEIXEFcQBAAfRwoAAC9XAAoAAC8QRwoACjYXABcMAC8Q
+BwwABC8XAHoACw_EALEPiwEZWRAQBAcAAgA4EAcAAgA-FwAHHgC8D7YEDBw5IAFg9wHQFwC3VQAl
+kAcGAJ_3ABfQFwAHsBccAAAGIgAv9wFsABwv8PAxAP----------------------------------
+----------------------------f1BtPTl9fQ==
+:: map/.info.pod
+--[[pod,created="2025-11-01 01:07:02",modified="2026-01-04 23:50:29"]]
+:: map/0.map
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI1LTAxLTE3IDEwOjM1OjQ4Iixtb2RpZmllZD0iMjAyNi0w
+MS0wNCAyMzo0NToxMyIscmV2aXNpb249OF1dbHo0AHcAAACyAAAA_gt7e2JtcD1weHUATIAMDAAL
+AgAGBAAAAgADAwkAHQcSAAEbACACAhsAUQcCAAYFEgAaBgkAHQcSAAEbAPEHLGhpZGRlbj1mYWxz
+ZSxwYW5feD0xNwkA8gB5PS04Nyx0aWxlX2g9MzIKABB3CgCAem9vbT0xfX0=
+:: sfx/.info.pod
+--[[pod,created="2025-11-01 01:07:02",modified="2026-01-04 23:50:29"]]
+:: sfx/0.sfx
+b64$LS1bW3BvZCxjcmVhdGVkPSIyMDI1LTA3LTMxIDA4OjMwOjI4Iixtb2RpZmllZD0iMjAyNS0w
+Ny0zMSAwODozMDoyOCIscmV2aXNpb249MF1dbHo0AKAAAAALCgAA-zBweHUAAygAAAQABA9AEAIO
+AAGgASACoA4ADxAADfDKAQIDQA8PkAQFBgdADJAICQoLQAyQDwwPDQ8ODEAM8P8BAOv-J6oBEAYP
+MBABIAEgAfAAAhACDhABIA8hIAEwD0Dwww8oD--wxg-4Cg--D4AP9w8NAfAJARAGDjAA------_9
+H-8BAKzPyA9AAA8QQP--sPD-AQD-6lD-----KQ==
+:: [eoc]

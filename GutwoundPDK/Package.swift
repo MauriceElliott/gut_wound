@@ -13,7 +13,7 @@ let package = Package(
     platforms: [.macOS(.v14)],
     products: [.library(name: "Gutwound", type: xcode ? nil : .dynamic, targets: ["Gutwound"])],
     dependencies: [
-        .package(url: "https://github.com/finnvoor/PlaydateKit.git", branch: "main"),
+        .package(url: "https://github.com/MauriceElliott/PlaydateKit.git", branch: "main"),
     ],
     targets: [
         .target(

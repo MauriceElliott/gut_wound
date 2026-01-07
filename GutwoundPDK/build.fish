@@ -1,5 +1,9 @@
 #!/usr/bin/env fish
 
+# Set ARM toolchain paths for Linux
+set -x ARM_NONE_EABI_GCC_PATH /usr/lib/gcc/arm-none-eabi/15
+set -x ARM_NONE_EABI_SYSROOT_PATH /usr/arm-none-eabi
+
 function cleanup
     pkill -f PlaydateSimulator 2>/dev/null
 end

@@ -1,7 +1,15 @@
-# PlaydateKitTemplate
+# Gutwound
 
-This is a template package for [PlaydateKit](https://github.com/finnvoor/PlaydateKit).
+Gutwound is a survival game, that asks the question, how would you fair surviving in a twister turning towerblock in the apocalypse, while bleeding out from a Gutwound, and trying to get to the top to ascend before you die.
 
-## How to Use
+This was once a Picotron game, but after reviewing the existing codebase I have decided to do a rewrite and migrate over to Playdate.
 
-For detailed instructions and documentation on how to get started creating a game using PlaydateKit, see [here](https://finnvoor.github.io/PlaydateKit/documentation/playdatekit/).
+### Pre-requisites
+
+- PlaydateSDK
+- Swift 6.2+
+
+### Build
+
+`./build.fish`
+

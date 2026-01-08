@@ -23,5 +23,6 @@ if test -L $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
 end
 ln -s (pwd)/.build/plugins/PDCPlugin/outputs/$PRODUCT_NAME.pdx $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
 
+cd .build
 # Launch the simulator (note: may need webkit2gtk-4.1 library installed on Linux)
 $PLAYDATE_SDK_PATH/bin/PlaydateSimulator $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx

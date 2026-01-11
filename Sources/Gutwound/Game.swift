@@ -38,6 +38,6 @@ class Logo: Sprite.Sprite {
     // MARK: Internal
 
     override func update() {
-        moveBy(dx: 0, dy: sinf(System.elapsedTime * 4))
+        moveBy(dx: 0, dy: sinf(System.elapsedTime * 1))
     }
 }

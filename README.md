@@ -4,10 +4,13 @@ Gutwound is a survival game, that asks the question, how would you fair survivin
 
 This was once a Picotron game, but after reviewing the existing codebase I have decided to do a rewrite and migrate over to Playdate.
 
+I apologise to anyone hoping to get this working on a macOS, it will not work, or at least has not worked for me, due, linux just seems to work better for swift embedded development, who knew. 
+
 ### Pre-requisites
 
 - PlaydateSDK
 - Swift 6.2+
+- Linux
 
 ### Build
 

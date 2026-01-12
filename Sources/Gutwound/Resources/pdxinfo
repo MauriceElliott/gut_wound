@@ -1,5 +1,4 @@
-name=PlaydateKit Template
-author=Finn Voorhees
-description=An example Playdate game built using PlaydateKit
-bundleID=com.finnvoorhees.PlaydateKitTemplate
-imagePath=
+name=Gutwound
+author=MauriceElliott
+description=A harsh and unforgiving world.
+bundleID=com.codedawa.Gutwound

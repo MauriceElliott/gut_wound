@@ -27,11 +27,13 @@ final class Game: PlaydateGame {
 // MARK: - Logo
 
 class Room: Sprite.Sprite {
-    // MARK: Lifecycle
-
+    let collisionMap: Graphics.Bitmap
+    let flagsMap: Graphics.Bitmap
     override init() {
         super.init()
-        image = try! Graphics.Bitmap(path: "test_room.png")
+        image = try! Graphics.Bitmap(path: "test_room_visuals.png")
+        collisionMap = try! Graphics.Bitmap(path: "test_room_collission_map.png")
+        flagsMap = try! Graphics.Bitmap(path: "test_room_flags_map.png")
         bounds = .init(x: 0, y: 0, width: 400, height: 240)
     }
 

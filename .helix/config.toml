@@ -1,4 +1,1 @@
-editor.lsp.enable = false
-
-[keys.normal] 
-C-space = "signature_help"
+editor.lsp.enable = true

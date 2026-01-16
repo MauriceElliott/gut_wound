@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set PLAYDATE_SDK_PATH "/root/PlaydateSDK/PlaydateSDK-3.0.2/"
+set PLAYDATE_SDK_PATH ~/Developer/PlaydateSDK
 # Set product name
 set PRODUCT_NAME Gutwound
 
@@ -17,7 +17,10 @@ if not set -q PLAYDATE_SDK_PATH
     exit 1
 end
 
-# Build the package using pdc (Playdate Compiler)
+if not test -d ./.builds
+    mkdir .builds
+end
+
 echo "Building $PRODUCT_NAME.pdx..."
 $PLAYDATE_SDK_PATH/bin/pdc source .builds/$PRODUCT_NAME.pdx
 
@@ -28,13 +31,9 @@ end
 
 echo "Build successful!"
 
-# Create a symbolic link to the compiled pdx in the Playdate Simulator Games dir
-# This allows browsing the pdx as a sideloaded game, helpful for checking icons
 if test -L $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
     rm -rf $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
 end
 ln -s (pwd)/.builds/$PRODUCT_NAME.pdx $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
 
-# Launch the simulator (note: may need webkit2gtk-4.1 library installed on Linux)
-echo "Launching Playdate Simulator..."
-$PLAYDATE_SDK_PATH/bin/PlaydateSimulator .builds/$PRODUCT_NAME.pdx
+$PLAYDATE_SDK_PATH/bin/Playdate\ Simulator.app/Contents/MacOS/Playdate\ Simulator .builds/$PRODUCT_NAME.pdx

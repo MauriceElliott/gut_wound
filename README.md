@@ -39,3 +39,57 @@ This was once a Picotron game, but after reviewing the existing codebase I have 
 
 `./build.fish`
 
+## File Structure
+
+```
+source/
+├── main.lua                    # Entry point, game loop
+├── game/
+│   ├── game_state.lua         # Game state manager (menu, playing, inventory, etc.)
+│   ├── stats.lua              # Player stats (health, wound, hunger, thirst, etc.)
+│   └── conditions.lua         # Status effects (bleeding, cold, radiation, delirium)
+├── character/
+│   ├── player.lua             # Player sprite, movement, actions
+│   └── animations.lua         # Player animation states
+├── world/
+│   ├── floor.lua              # Floor generation and management
+│   ├── room.lua               # Room data structures
+│   ├── generators/
+│   │   ├── floor1_gen.lua    # Standard apocalyptic floor
+│   │   ├── floor2_gen.lua    # Cold floor (missing walls)
+│   │   ├── floor3_gen.lua    # Radiation floor (labs)
+│   │   └── floor4_gen.lua    # Sanity floor (apparitions)
+│   └── corridor.lua           # Central corridor system
+├── items/
+│   ├── item.lua              # Base item class
+│   ├── inventory.lua         # Inventory management
+│   ├── types/
+│   │   ├── consumables.lua   # Food, water, medicine
+│   │   ├── medical.lua       # Bandages, disinfectant, sutures
+│   │   ├── clothing.lua      # Warm clothes, radiation suits
+│   │   └── containers.lua    # Searchable containers
+│   └── loot_tables.lua       # Item spawn probabilities
+├── ui/
+│   ├── hud.lua               # Health bars, stats display
+│   ├── inventory_screen.lua  # Inventory UI (crank-activated)
+│   ├── wound_care.lua        # Wound treatment UI (crank-based)
+│   └── menu.lua              # Pause/main menu
+├── systems/
+│   ├── time.lua              # Game time, day/night cycles
+│   ├── survival.lua          # Hunger, thirst, sleep systems
+│   ├── damage.lua            # Damage calculations
+│   └── effects/
+│       ├── cold.lua          # Cold exposure effects
+│       ├── radiation.lua     # Radiation damage
+│       └── sanity.lua        # Delirium, apparitions, vision
+├── util/
+│   ├── math.lua              # Math helpers
+│   ├── tables.lua            # Table utilities
+│   └── random.lua            # Random generation utilities
+└── assets/
+    ├── sprites/              # Player, item sprites
+    ├── rooms/                # Pre-made room images
+    ├── tiles/                # Tileset assets
+    └── effects/              # Visual effects (blood, apparitions)
+```
+

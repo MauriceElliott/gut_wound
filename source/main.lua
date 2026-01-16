@@ -3,11 +3,17 @@
 
 import "CoreLibs/graphics"
 import "CoreLibs/ui"
+import "CoreLibs/sprites"
 
 local pd <const> = playdate
 local gfx <const> = pd.graphics
+local roomImage = gfx.image.new("Assets/test_room")
+print(roomImage)
+local roomSprite = gfx.sprite.new(roomImage)
+
+roomSprite:add()
+roomSprite:moveTo(200, 120)
 
 function pd.update()
-    gfx.clear()
-    gfx.drawTextAligned("Gutwound", 200, 120, kTextAlignment.center)
+    gfx.sprite.update()
 end

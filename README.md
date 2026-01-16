@@ -1,142 +1,33 @@
 # Gutwound
 
-A survival game for Playdate, converted from Picotron.
+A survival game for Playdate.
 
-## Prerequisites
+Gutwound is a survival game, that asks the question, how would you fair surviving in a twister turning towerblock in the apocalypse, while bleeding out from a Gutwound, and trying to get to the top to ascend before you die. The tower and items you find are loosely based on Kowloon Walled City before it was demolished during the early 90s.
 
-### Playdate SDK
-1. Download and install the [Playdate SDK](https://play.date/dev/)
-2. Set the `PLAYDATE_SDK_PATH` environment variable:
+The gameplay will go like this, you will start on a randomly generated but distinct floor. You will be bleeding out from a wound you sustained before the start of the game, the wound is in your gut, meaning you have time to live, and even longer if you get treatment. At the top of the tower is ascention, if you can arrive there before dying, you have a chance as ascending to the afterlife. To get to the top, you will search rooms, containing various household containers, find healing, food, water, clothes, protective items, medicine.
 
-**Linux/macOS (bash/zsh):**
-```bash
-export PLAYDATE_SDK_PATH=$HOME/PlaydateSDK
-```
+The game will take place over 4 levels, the first is a normal level, nothing super special happening there apart from a standard post apocalyptic apartment block.
+The second level has lots of missing walls, exposing the floor to the elements outside. This floor is extremely cold, if the player has not found warm clothes or does not quickly find them or a place to warm up they will not survive the floor.
+The third has high radiation, it is made up of labs where research must have been conducted, the experiments are long gone but the radioactive isotopes live on, you must find radiation protection to survive the floor.
+The fourth floor you will confront your own sanity, the dark sections of the map outside of the rooms will show grotesque aparitions. Pools of blood will start to collect on the floor, and then your vision will start to diminish. You cannot sleep in this state so the final floor is the decider, if you've done enough you should make it through.
 
-**Linux/macOS (fish):**
-```fish
-set -Ux PLAYDATE_SDK_PATH $HOME/PlaydateSDK
-```
+Undocking the crank will open the inventory, it is also the method for resewing your wound, as well as dissenfecting and bandaging.
 
-**Windows:**
-```
-set PLAYDATE_SDK_PATH=C:\Path\To\PlaydateSDK
-```
+You will need to eat, drink, sleep, and protect yourself. You will gain hunger, tiredness, thirst, delirium, pain, as well as your general health and your wound health taking individual damage. i.e. sprinting will increase damage to your wound.
 
-Add this to your shell configuration file (`.bashrc`, `.zshrc`, `config.fish`, etc.) to make it permanent.
+Through the first and second level, a central corridor runs through, giving you the ability to skip ahead once you feel you have enough equipment to brave the upper floors.
 
-### Lua Language Server (Optional but Recommended)
+Whenever you move you lose health, so rushing to the upperfloors is not advices.
 
-For enhanced code completion, type checking, and inline documentation in your editor:
+The levels will be generated partially randomly from a set of pre configured room layouts. The rooms will be hand pixelled, i.e. we will not be working from a randomised tileset, but we will be using a tileset to generate.
 
-1. **Install lua-language-server:**
-   - **macOS:** `brew install lua-language-server`
-   - **Linux:** Download from [GitHub releases](https://github.com/LuaLS/lua-language-server/releases) or use your package manager
-   - **Windows:** Download from [GitHub releases](https://github.com/LuaLS/lua-language-server/releases)
+Actual tile sizes or sprite sizes are yet to be defined but we will experiment with half pixel ration/12x12 as well as 48x48 at normal pixel ratio. This is to give enough room for the detail required.
 
-2. **LuaCATS annotations for Playdate API:**
-   This repository includes `.playdate-luacats` which provides type definitions and documentation for the Playdate SDK. The `.luarc.json` file is already configured to use it.
+Art style and movement will be loosely based on racheteer.
 
-## Editor Setup
-
-### Helix
-
-Helix uses the Language Server Protocol (LSP) for code intelligence. The project includes a `.helix/languages.toml` configuration file.
-
-1. **Ensure lua-language-server is in your PATH:**
-   ```bash
-   which lua-language-server  # Should return a path
-   ```
-
-2. **The project `.helix/languages.toml` is already configured** to use lua-language-server for Lua files.
-
-3. **Open the project in Helix:**
-   ```bash
-   hx source/main.lua
-   ```
-
-4. **You should see:**
-   - Autocompletion for Playdate API functions
-   - Inline documentation on hover (use `Space + k`)
-   - Type checking and diagnostics
-   - Support for Playdate-specific operators (`+=`, `-=`, etc.)
-
-**Note:** If you prefer global Helix configuration instead of project-specific, add the contents of `.helix/languages.toml` to your `~/.config/helix/languages.toml`.
-
-### Other Editors
-
-The `.luarc.json` file works with any LSP-compatible editor:
-- **VSCode:** Install the "Lua" extension by sumneko
-- **Neovim:** Use `nvim-lspconfig` with `lua_ls`
-- **Sublime Text:** Install LSP-lua package
-- **Any LSP client:** Point it to lua-language-server
-
-## Building and Running
-
-### Build and Run
-```bash
-./build.fish
-```
-
-This will:
-1. Compile your Lua source files into a `.pdx` bundle
-2. Create a symbolic link in the Playdate SDK's Games directory
-3. Launch the Playdate Simulator with your game
-
-### Build Only
-```bash
-$PLAYDATE_SDK_PATH/bin/pdc source .builds/Gutwound.pdx
-```
-
-### Run Only (after building)
-```bash
-$PLAYDATE_SDK_PATH/bin/PlaydateSimulator .builds/Gutwound.pdx
-```
-
-## Project Structure
-
-```
-Gutwound/
-├── source/              # Lua source files
-│   ├── main.lua        # Entry point (must have playdate.update())
-│   └── pdxinfo         # Game metadata
-├── .builds/            # Compiled .pdx bundles (gitignored)
-├── .playdate-luacats/  # LuaCATS type definitions for Playdate SDK
-├── .luarc.json         # lua-language-server configuration
-├── .helix/             # Helix editor configuration
-└── build.fish          # Build script
-```
-
-## Development Tips
-
-### Playdate API Basics
-- The Playdate uses Lua 5.4
-- Import libraries with `import "CoreLibs/graphics"`
-- Every game must have a `playdate.update()` function
-- Playdate adds assignment operators: `+=`, `-=`, `*=`, `/=`, etc.
-- Use `local pd <const> = playdate` for better performance
-
-### Testing on Device
-1. Build your game: `./build.fish`
-2. Upload `.builds/Gutwound.pdx` to your Playdate device via USB
-3. Use the Playdate's Data Disk mode or web interface
-
-### Resources
-- [Playdate SDK Documentation](https://sdk.play.date/)
-- [Inside Playdate (SDK book)](https://sdk.play.date/Inside%20Playdate.html)
-- [Playdate Developer Forums](https://devforum.play.date/)
-- [Lua Language Server Annotations](https://luals.github.io/wiki/annotations/)
-
-## License
-
-See LICENSE file for details.
-
-
-Gutwound is a survival game, that asks the question, how would you fair surviving in a twister turning towerblock in the apocalypse, while bleeding out from a Gutwound, and trying to get to the top to ascend before you die.
+For sound I would like to use a synthesizer, possibly an analogue synth, we will see about getting one. I also really love the idea of just include ambient type music, similar to the sad soft cold playlists nobody produces.
 
 This was once a Picotron game, but after reviewing the existing codebase I have decided to do a rewrite and migrate over to Playdate.
-
-I apologise to anyone hoping to get this working on a macOS, it will not work, or at least has not worked for me, due, linux just seems to work better for swift embedded development, who knew. 
 
 ### Pre-requisites
 

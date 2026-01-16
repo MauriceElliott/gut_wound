@@ -41,4 +41,6 @@ if test -L $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
 end
 ln -s (pwd)/.builds/$PRODUCT_NAME.pdx $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
 
-$PLAYDATE_SDK_PATH/bin/Playdate\ Simulator.app/Contents/MacOS/Playdate\ Simulator .builds/$PRODUCT_NAME.pdx
+cd .builds
+
+$PLAYDATE_SDK_PATH/bin/Playdate\ Simulator.app/Contents/MacOS/Playdate\ Simulator ./$PRODUCT_NAME.pdx

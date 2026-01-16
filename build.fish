@@ -4,6 +4,11 @@ set PLAYDATE_SDK_PATH ~/Developer/PlaydateSDK
 # Set product name
 set PRODUCT_NAME Gutwound
 
+if not test -d .playdate-luacats
+    mkdir .playdate-luacats
+    git clone https://github.com/notpeter/playdate-luacats.git ./.playdate-luacats/
+end
+
 function cleanup
     pkill -f PlaydateSimulator 2>/dev/null
 end

@@ -7,7 +7,7 @@ import "CoreLibs/sprites"
 
 local pd <const> = playdate
 local gfx <const> = pd.graphics
-local roomImage = gfx.image.new("Assets/test_room")
+local roomImage = gfx.image.new("assets/test_room")
 print(roomImage)
 local roomSprite = gfx.sprite.new(roomImage)
 

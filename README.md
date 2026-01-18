@@ -21,7 +21,7 @@ Whenever you move you lose health, so rushing to the upperfloors is not advices.
 
 The levels will be generated partially randomly from a set of pre configured room layouts. The rooms will be hand pixelled, i.e. we will not be working from a randomised tileset, but we will be using a tileset to generate.
 
-Actual tile sizes or sprite sizes are yet to be defined but we will experiment with half pixel ration/12x12 as well as 48x48 at normal pixel ratio. This is to give enough room for the detail required.
+Actual tile sizes or sprite sizes are yet to be defined but we will experiment with half pixel ration/12x12 as well as 48x48 at normal pixel ratio. This is to give enough room for the detail required. After some light testing changing the scaling isn't quite it. I think 48x48 is worth a try, and if not we will be sticking with 32x32. I really like the level of detail normal scaling provides, and considering the environment is essentially a main character we should make use of it.
 
 Art style and movement will be loosely based on racheteer.
 

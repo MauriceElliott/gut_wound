@@ -7,17 +7,17 @@ Gutwound is a survival game, that asks the question, how would you fair survivin
 The gameplay will go like this, you will start on a randomly generated but distinct floor. You will be bleeding out from a wound you sustained before the start of the game, the wound is in your gut, meaning you have time to live, and even longer if you get treatment. At the top of the tower is ascention, if you can arrive there before dying, you have a chance as ascending to the afterlife. To get to the top, you will search rooms, containing various household containers, find healing, food, water, clothes, protective items, medicine.
 
 The game will take place over 4 levels, the first is a normal level, nothing super special happening there apart from a standard post apocalyptic apartment block.
-The second level has lots of missing walls, exposing the floor to the elements outside. This floor is extremely cold, if the player has not found warm clothes or does not quickly find them or a place to warm up they will not survive the floor.
-The third has high radiation, it is made up of labs where research must have been conducted, the experiments are long gone but the radioactive isotopes live on, you must find radiation protection to survive the floor.
-The fourth floor you will confront your own sanity, the dark sections of the map outside of the rooms will show grotesque aparitions. Pools of blood will start to collect on the floor, and then your vision will start to diminish. You cannot sleep in this state so the final floor is the decider, if you've done enough you should make it through.
+The second level has lots of missing walls, exposing the floor to the elements outside. This floor is extremely cold, if the player has not found warm clothes or does not quickly find them or a place to warm up they will not survive the floor. Warm clothing will always spawn somewhere on the floor, but never in the same location.
+The third has high radiation, it is made up of labs where research must have been conducted, the experiments are long gone but the radioactive isotopes live on, you must find radiation protection to survive the floor. Radiation protection will always spawn somewhere on the floor, but never in the same location.
+The fourth floor you will confront your own sanity, the dark sections of the map outside of the rooms will show grotesque aparitions. Pools of blood will start to collect on the floor, and then your vision will start to diminish. This floor is the shortest and features a sharp deceleration on all stat reductions - while it feels like the scariest floor, you are least likely to die here. The biggest danger is the player losing their sense of direction and motion.
 
 Undocking the crank will open the inventory, it is also the method for resewing your wound, as well as dissenfecting and bandaging.
 
-You will need to eat, drink, sleep, and protect yourself. You will gain hunger, tiredness, thirst, delirium, pain, as well as your general health and your wound health taking individual damage. i.e. sprinting will increase damage to your wound.
+You will need to eat, drink, sleep, and protect yourself. You will gain hunger, tiredness, thirst, delirium, pain, as well as your general health and your wound health taking individual damage. i.e. sprinting will increase damage to your wound. Multiple timers work to push you closer to death without being immediately lethal - the game is challenging but not hugely punishing.
 
 Through the first and second level, a central corridor runs through, giving you the ability to skip ahead once you feel you have enough equipment to brave the upper floors.
 
-Whenever you move you lose health, so rushing to the upperfloors is not advices.
+Whenever you move you lose a small amount of health. This minor drain encourages thorough exploration and looting rather than rushing through. There will be more than enough healing items to offset this loss with proper scavenging.
 
 The levels will be generated partially randomly from a set of pre configured room layouts. The rooms will be hand pixelled, i.e. we will not be working from a randomised tileset, but we will be using a tileset to generate.
 
@@ -45,51 +45,31 @@ This was once a Picotron game, but after reviewing the existing codebase I have 
 source/
 ├── main.lua                    # Entry point, game loop
 ├── game/
-│   ├── game_state.lua         # Game state manager (menu, playing, inventory, etc.)
-│   ├── stats.lua              # Player stats (health, wound, hunger, thirst, etc.)
-│   └── conditions.lua         # Status effects (bleeding, cold, radiation, delirium)
-├── character/
-│   ├── player.lua             # Player sprite, movement, actions
-│   └── animations.lua         # Player animation states
+│   ├── state.lua              # Game state manager (menu, playing, inventory, etc.)
+│   └── stats.lua              # Player stats (health, wound, hunger, thirst, etc.)
+├── player.lua                  # Player sprite, movement, actions, animations
 ├── world/
 │   ├── floor.lua              # Floor generation and management
-│   ├── room.lua               # Room data structures
-│   ├── generators/
-│   │   ├── floor1_gen.lua    # Standard apocalyptic floor
-│   │   ├── floor2_gen.lua    # Cold floor (missing walls)
-│   │   ├── floor3_gen.lua    # Radiation floor (labs)
-│   │   └── floor4_gen.lua    # Sanity floor (apparitions)
+│   ├── generator.lua          # Floor generation with floor-specific configs
 │   └── corridor.lua           # Central corridor system
 ├── items/
-│   ├── item.lua              # Base item class
-│   ├── inventory.lua         # Inventory management
-│   ├── types/
-│   │   ├── consumables.lua   # Food, water, medicine
-│   │   ├── medical.lua       # Bandages, disinfectant, sutures
-│   │   ├── clothing.lua      # Warm clothes, radiation suits
-│   │   └── containers.lua    # Searchable containers
-│   └── loot_tables.lua       # Item spawn probabilities
+│   ├── item.lua               # Base item class
+│   ├── inventory.lua          # Inventory management
+│   └── loot.lua               # Item types and spawn probabilities
 ├── ui/
-│   ├── hud.lua               # Health bars, stats display
-│   ├── inventory_screen.lua  # Inventory UI (crank-activated)
-│   ├── wound_care.lua        # Wound treatment UI (crank-based)
-│   └── menu.lua              # Pause/main menu
+│   ├── hud.lua                # Health bars, stats display
+│   ├── inventory_ui.lua       # Inventory UI (crank-activated)
+│   ├── wound_ui.lua           # Wound treatment UI (crank-based)
+│   └── menu.lua               # Pause/main menu
 ├── systems/
-│   ├── time.lua              # Game time, day/night cycles
-│   ├── survival.lua          # Hunger, thirst, sleep systems
-│   ├── damage.lua            # Damage calculations
-│   └── effects/
-│       ├── cold.lua          # Cold exposure effects
-│       ├── radiation.lua     # Radiation damage
-│       └── sanity.lua        # Delirium, apparitions, vision
-├── util/
-│   ├── math.lua              # Math helpers
-│   ├── tables.lua            # Table utilities
-│   └── random.lua            # Random generation utilities
-└── assets/
-    ├── sprites/              # Player, item sprites
-    ├── rooms/                # Pre-made room images
-    ├── tiles/                # Tileset assets
-    └── effects/              # Visual effects (blood, apparitions)
+│   ├── survival.lua           # Time, hunger, thirst, sleep systems
+│   ├── damage.lua             # Damage calculations
+│   └── environmental.lua      # Cold, radiation, sanity effects
+└── images/                     # Playdate convention
+    ├── player/                # Player sprites
+    ├── items/                 # Item sprites
+    ├── rooms/                 # Pre-made room images
+    ├── tiles/                 # Tileset assets
+    └── effects/               # Visual effects (blood, apparitions)
 ```
 

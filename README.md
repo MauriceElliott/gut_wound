@@ -2,42 +2,66 @@
 
 A survival game for Playdate.
 
-Gutwound is a survival game, that asks the question, how would you fair surviving in a twister turning towerblock in the apocalypse, while bleeding out from a Gutwound, and trying to get to the top to ascend before you die. The tower and items you find are loosely based on Kowloon Walled City before it was demolished during the early 90s.
+Gutwound is a survival game, that asks the question, how would you fair surviving in a towerblock during the apocalypse, while bleeding out from a Gutwound, and trying to get to the top to ascend to the afterlife before you are consumed.
 
-The gameplay will go like this, you will start on a randomly generated but distinct floor. You will be bleeding out from a wound you sustained before the start of the game, the wound is in your gut, meaning you have time to live, and even longer if you get treatment. At the top of the tower is ascention, if you can arrive there before dying, you have a chance as ascending to the afterlife. To get to the top, you will search rooms, containing various household containers, find healing, food, water, clothes, protective items, medicine.
+The gameplay will go like this, you will start on a randomly generated but distinct floor. You will be bleeding out from a wound you sustained before the start of the game, the wound is in your gut, meaning you have time to live, and even longer if you get treatment. At the top of the tower is ascention, if you can arrive there before dying, you have a chance as ascending to the afterlife. To get to the top, you will search the tower, find healing, food, water, clothes, protective items and medicine, as well as an assortment of other odds and ends.
 
-The game will take place over 4 levels, the first is a normal level, nothing super special happening there apart from a standard post apocalyptic apartment block.
-The second level has lots of missing walls, exposing the floor to the elements outside. This floor is extremely cold, if the player has not found warm clothes or does not quickly find them or a place to warm up they will not survive the floor. Warm clothing will always spawn somewhere on the floor, but never in the same location.
-The third has high radiation, it is made up of labs where research must have been conducted, the experiments are long gone but the radioactive isotopes live on, you must find radiation protection to survive the floor. Radiation protection will always spawn somewhere on the floor, but never in the same location.
-The fourth floor you will confront your own sanity, the dark sections of the map outside of the rooms will show grotesque aparitions. Pools of blood will start to collect on the floor, and then your vision will start to diminish. This floor is the shortest and features a sharp deceleration on all stat reductions - while it feels like the scariest floor, you are least likely to die here. The biggest danger is the player losing their sense of direction and motion.
+## Kowloon
+#### General
+Each floor will have its own selection of item containers, you will search through to find the items you need to survive, different floors will have their own distinct pools to pull from but they will generally share where appropriate. i.e. You will find painkillers, food, water, medical supplies etc on every floor. Each floor transition will be acompanied with some flavour text. I'll be the only major world building/story in the game.
 
-Undocking the crank will open the inventory, it is also the method for resewing your wound, as well as dissenfecting and bandaging.
+#### Casper
+The game will take place over 4 levels, the first is a normal level, nothing super special happening there apart from a standard post apocalyptic apartment block, there will be some locked doors, and items to help open them, but this is mostly the set up floor which will decide on how the rest of your run is going to go. You will usually know by the end of this floor if you'll have an easy time on the next and by extension the one after. On this floor a main corridor will run through, allowing you to pick and choose how many rooms you choose to explore.
 
-You will need to eat, drink, sleep, and protect yourself. You will gain hunger, tiredness, thirst, delirium, pain, as well as your general health and your wound health taking individual damage. i.e. sprinting will increase damage to your wound. Multiple timers work to push you closer to death without being immediately lethal - the game is challenging but not hugely punishing.
+#### Melchior
+The second level has lots of missing walls, exposing the floor to the elements outside. This floor is extremely cold, if the player has not found warm clothes or does not quickly find them or a place to warm up they will not survive the floor. Warm clothing will always spawn somewhere on the floor, but never in the same location. There will also be fire pits in some rooms where you can use some of your items to create a fire and warm up. This floor will also have a central corridor, as an easy way to breaze through if you are confident you have the resources to survive Balthasar and Adam.
 
-Through the first and second level, a central corridor runs through, giving you the ability to skip ahead once you feel you have enough equipment to brave the upper floors.
+#### Balthasar
+The third has high radiation, it is made up of labs where research must have been conducted, the experiments are long gone but the radioactive isotopes live on, you must find radiation protection to survive the floor, you should have found some of it on the second floor. Radiation protection will always spawn somewhere on the floor as well in case you have not found it yet.
+
+#### Adam
+The fourth floor you will confront your own sanity, the dark sections of the map outside of the rooms will show grotesque aparitions. Pools of blood will start to collect on the floor, and then your vision will start to diminish. This floor is the shortest and features a sharp deceleration on all stat reductions - while it feels like the scariest floor, you are least likely to die here. The biggest danger is the player losing their sense of direction and motion. The real challenge is to make it to the end of the 3rd floor with enough life force to make it across this dreadful place.
+
+## Gameplay elements
+#### Crank
+The crank will act as the healing screen, while inventory management will need to go on within the confines of the main game, the actual healing and use of items will be from this screen. You will also use the crank for different actions, i.e. to pour dissenfectant, to bandage, to sew.
+
+#### Survival
+##### Core stats
+-**Main health**
+Your main health is generally affected by everything, any other single stat can drain it, but it usually takes a culmination of neglect and bad luck to depleat your main health reserves.
+-**Wound Health**
+The health of your wound, walking affects it, sprinting also, over time and in cold and radiactive air it will take increased damage. Covering it, treating it and taking your time will reduce the multiplier drastically, but it will always be a few drastic moves away from death.
+- **Delirium**
+Delirium is like Main Health, it will increased based on the values of other stats, the more depleted you are the faster delirium will grow. There will be a few places on the map to reduce this like nicely decorated rooms, music players, nice food if you can find it.
+- **Temperature**
+If you run, you will get hot, if you wear too many thick clothes while by a fire you will get hot, if you are not wearing enough thick clothes you will get cold. Heat increases exhaustion and will cause higher thirst. Coldness will slow your movement and slowly kill you via your main health pool.
+- **Exhaustion**
+Exhaustion is tiredness, you will need to sleep to resolve this debuff. While tired you will walk slower and your vision will become blury. You will start passing out and each time you wake a certain level of damage will have been done to your survival stats.
+- **Pain**
+Pain is a mainline stat, you will need to find painkillers to manage it, as well as other medical items to reduce the inflamation and treat the wound. Alcohol as well. If your pain gets to high and stays that way it will negatively affect your Delirium.
+- **Hunger**
+Having high hunger will increase your exhaustion, it is also one of your main sources of healing as well as sitting by the fire, and can also improve you delirium and other related levels.
+- **Thirst**
+This is self explanitory, easiest one to manage, just something extra to keep an eye on. Hopefully you're able to find enough to drink as having high thirst will slowly deplete your main health.
 
 Whenever you move you lose a small amount of health. This minor drain encourages thorough exploration and looting rather than rushing through. There will be more than enough healing items to offset this loss with proper scavenging.
 
-The levels will be generated partially randomly from a set of pre configured room layouts. The rooms will be hand pixelled, i.e. we will not be working from a randomised tileset, but we will be using a tileset to generate.
+## Roguelike elemenets
+#### Map RNG
+The floors will have a specific "Biome" which I think is the easiest way to decribe how they'll be split up. Each major room will be hand created, where as each set of room configurations will be randomized based on the type of the central room. The corridor for Casper and Melchior will be randomized as well to create that feeling of uneaze and cobbled together nature of kowloon.
 
-Actual tile sizes or sprite sizes are yet to be defined but we will experiment with half pixel ration/12x12 as well as 48x48 at normal pixel ratio. This is to give enough room for the detail required. After some light testing changing the scaling isn't quite it. I think 48x48 is worth a try, and if not we will be sticking with 32x32. I really like the level of detail normal scaling provides, and considering the environment is essentially a main character we should make use of it.
-
+The tilesize I am currently set on is 48x48, but that is yet to be fully defined due to the last test of 12x12 using reduced scale.
 Art style and movement will be loosely based on racheteer.
 
 For sound I would like to use a synthesizer, possibly an analogue synth, we will see about getting one. I also really love the idea of just include ambient type music, similar to the sad soft cold playlists nobody produces.
 
-This was once a Picotron game, but after reviewing the existing codebase I have decided to do a rewrite and migrate over to Playdate.
-
-### Pre-requisites
-
-- PlaydateSDK
-- Swift 6.2+
-- Linux
-
 ### Build
 
-`./build.fish`
+PLAYDATE_SDK_PATH needs to be set to the root of the playdateSDK
+PDSIM needs to directly reference the simulator.
+the playdateSDK bin should also be on the path.
+`./build.fish` to build and launch with the Playdate simulator.
 
 ## File Structure
 
@@ -47,25 +71,29 @@ source/
 ├── game/
 │   ├── state.lua              # Game state manager (menu, playing, inventory, etc.)
 │   └── stats.lua              # Player stats (health, wound, hunger, thirst, etc.)
-├── player.lua                  # Player sprite, movement, actions, animations
+├── player.lua                 # Player sprite, movement, actions, animations
 ├── world/
 │   ├── floor.lua              # Floor generation and management
 │   ├── generator.lua          # Floor generation with floor-specific configs
-│   └── corridor.lua           # Central corridor system
+│   ├── corridor.lua           # Central corridor system
+│   └── tiles/
+│       ├── firepit.lua        # Logic for the actual floor tile and how it acts once lit.
+│       ├── bed.lua            # Animation for bed, interactions.
+│       └── door.lua           # Door animation, key/lock pairing in loot containers.
 ├── items/
 │   ├── item.lua               # Base item class
 │   ├── inventory.lua          # Inventory management
 │   └── loot.lua               # Item types and spawn probabilities
 ├── ui/
 │   ├── hud.lua                # Health bars, stats display
-│   ├── inventory_ui.lua       # Inventory UI (crank-activated)
-│   ├── wound_ui.lua           # Wound treatment UI (crank-based)
+│   ├── inventoryUI.lua        # Inventory UI (crank-activated)
+│   ├── woundUI.lua            # Wound treatment UI (crank-based)
 │   └── menu.lua               # Pause/main menu
 ├── systems/
 │   ├── survival.lua           # Time, hunger, thirst, sleep systems
 │   ├── damage.lua             # Damage calculations
 │   └── environmental.lua      # Cold, radiation, sanity effects
-└── images/                     # Playdate convention
+└── images/                    # Playdate convention
     ├── player/                # Player sprites
     ├── items/                 # Item sprites
     ├── rooms/                 # Pre-made room images

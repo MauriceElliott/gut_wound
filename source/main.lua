@@ -12,9 +12,8 @@ print(roomImage)
 local roomSprite = gfx.sprite.new(roomImage)
 
 roomSprite:add()
-roomSprite:moveTo(100, 100)
+roomSprite:moveTo(200, 120)
 
-pd.display.setScale(2)
 function pd.update()
     gfx.sprite.update()
 end

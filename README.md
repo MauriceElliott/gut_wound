@@ -28,9 +28,9 @@ The crank will act as the healing screen, while inventory management will need t
 
 #### Survival
 ##### Core stats
--**Main health**
+- **Main health**
 Your main health is generally affected by everything, any other single stat can drain it, but it usually takes a culmination of neglect and bad luck to depleat your main health reserves.
--**Wound Health**
+- **Wound Health**
 The health of your wound, walking affects it, sprinting also, over time and in cold and radiactive air it will take increased damage. Covering it, treating it and taking your time will reduce the multiplier drastically, but it will always be a few drastic moves away from death.
 - **Delirium**
 Delirium is like Main Health, it will increased based on the values of other stats, the more depleted you are the faster delirium will grow. There will be a few places on the map to reduce this like nicely decorated rooms, music players, nice food if you can find it.

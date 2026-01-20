@@ -23,16 +23,4 @@ manSprite:moveTo(manX, manY)
 
 function pd.update()
     gfx.sprite.update()
-
-    if pd.buttonIsPressed(pd.kButtonUp) then
-        manY -= 1
-    elseif pd.buttonIsPressed(pd.kButtonDown) then
-        manY += 1
-    elseif pd.buttonIsPressed(pd.kButtonLeft) then
-        manX -= 1
-    elseif pd.buttonIsPressed(pd.kButtonRight) then
-        manX += 1
-    end
-
-    manSprite:moveTo(manX, manY)
 end

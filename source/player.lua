@@ -13,25 +13,31 @@ function Player:init(x, y)
 
     Player.super.init(self)
 
-    local playerImage = gfx.image.new("images/man")
-    self:setImage(playerImage)
-
+    self:setImage(gfx.image.new("images/man"))
     self:moveTo(x, y)
-
     self:add()
+
+    self.moveSpeedMod = 1
 end
 
 function Player:update()
+    self:move()
+end
+
+function Player:move()
     local xMove, yMove = 0, 0
     if pd.buttonIsPressed(pd.kButtonUp) then
-        yMove = -1.5
+        yMove = -1
     elseif pd.buttonIsPressed(pd.kButtonDown) then
-        yMove = 1.5
+        yMove = 1
     elseif pd.buttonIsPressed(pd.kButtonLeft) then
-        xMove = -1.5
+        xMove = -1
     elseif pd.buttonIsPressed(pd.kButtonRight) then
-        xMove = 1.5
+        xMove = 1
     end
 
-    self:moveBy(xMove, yMove)
+    self:moveBy(
+        (xMove * self.moveSpeedMod),
+        (yMove * self.moveSpeedMod)
+    )
 end

@@ -17,11 +17,22 @@ function Player:init(x, y)
     self:moveTo(x, y)
     self:add()
 
+    -- Stats
+    self.health = 100
+    self.wound = 100
+    self.thirst = 0
+    self.hunger = 0
+    self.pain = 0
+    self.exhaustion = 0
+    self.temperature = 15
+    self.delirium = 0
+
     self.moveSpeedMod = 1
 end
 
 function Player:update()
     self:move()
+    self:updateVitals()
 end
 
 function Player:move()
@@ -40,4 +51,16 @@ function Player:move()
         (xMove * self.moveSpeedMod),
         (yMove * self.moveSpeedMod)
     )
+end
+
+function Player:updateVitals()
+end
+
+function Player:updateHealth()
+end
+
+function Player:updateWound()
+end
+
+function Player:updateThirst()
 end

@@ -4,22 +4,16 @@
 import "CoreLibs/graphics"
 import "CoreLibs/ui"
 import "CoreLibs/sprites"
+import "./player.lua"
 
 local pd <const> = playdate
 local gfx <const> = pd.graphics
-local roomImage = gfx.image.new("assets/test_room")
-local manImage = gfx.image.new("assets/man")
-
+local roomImage = gfx.image.new("images/test_room")
 local roomSprite = gfx.sprite.new(roomImage)
-local manSprite = gfx.sprite.new(manImage)
-local manX = 200
-local manY = 120
+local man = Player(200, 120)
 
 roomSprite:add()
 roomSprite:moveTo(200, 120)
-
-manSprite:add()
-manSprite:moveTo(manX, manY)
 
 function pd.update()
     gfx.sprite.update()

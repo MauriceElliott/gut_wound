@@ -8,30 +8,30 @@ local gfx <const> = pd.graphics
 class('Player').extends(playdate.graphics.sprite)
 
 function Player:init(x, y)
-    Player.super.init(self)  -- Call the sprite parent class initializer
+    assert(x ~= nil, "player x position is nil, failing out.")
+    assert(y ~= nil, "player y position is nil, failing out.")
 
-    -- Set up your player sprite image
+    Player.super.init(self)
+
     local playerImage = gfx.image.new("images/man")
     self:setImage(playerImage)
 
-    -- Position the sprite
     self:moveTo(x, y)
 
-    -- Add to sprite system
     self:add()
 end
 
--- Add custom methods for your player
 function Player:update()
-        if pd.buttonIsPressed(pd.kButtonUp) then
-        manY -= 1.5
+    local xMove, yMove = 0, 0
+    if pd.buttonIsPressed(pd.kButtonUp) then
+        yMove = -1.5
     elseif pd.buttonIsPressed(pd.kButtonDown) then
-        manY += 1.5
+        yMove = 1.5
     elseif pd.buttonIsPressed(pd.kButtonLeft) then
-        manX -= 1.5
+        xMove = -1.5
     elseif pd.buttonIsPressed(pd.kButtonRight) then
-        manX += 1.5
+        xMove = 1.5
     end
 
-    self:moveTo(manX, manY)    -- Player-specific update logic
+    self:moveBy(xMove, yMove)
 end

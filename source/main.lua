@@ -4,7 +4,7 @@
 import "CoreLibs/graphics"
 import "CoreLibs/ui"
 import "CoreLibs/sprites"
-import "./player.lua"
+import "player"
 
 local pd <const> = playdate
 local gfx <const> = pd.graphics

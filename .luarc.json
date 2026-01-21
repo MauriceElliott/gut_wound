@@ -5,7 +5,8 @@
     "duplicate-set-field": "Hint"
   },
   "diagnostics.disable": [
-    "need-check-nil"
+    "need-check-nil",
+    "undefined-global"
   ],
   "format.defaultConfig": {
     "indent_style": "space",

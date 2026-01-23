@@ -58,46 +58,23 @@ For sound I would like to use a synthesizer, possibly an analogue synth, we will
 
 ### Build
 
-PLAYDATE_SDK_PATH needs to be set to the root of the playdateSDK
-PDSIM needs to directly reference the simulator.
-the playdateSDK bin should also be on the path.
-`./build.fish` to build and launch with the Playdate simulator.
+#### Prerequisites
+- PLAYDATE_SDK_PATH needs to be set to the root of the playdateSDK
+- PDSIM needs to directly reference the simulator
+- The playdateSDK bin should be on the path
+- [xmake](https://xmake.io) installed for C builds
 
-## File Structure
+#### C Version (In Development)
 
+```bash
+xmake config -m debug
+xmake build
+
+xmake config -m release
+xmake build
+
+# Generate compile_commands.json for LSP/clangd
+xmake project -k compile_commands
+
+$PDSIM Gutwound.pdx
 ```
-source/
-├── main.lua                    # Entry point, game loop
-├── game/
-│   ├── state.lua              # Game state manager (menu, playing, inventory, etc.)
-│   └── stats.lua              # Player stats (health, wound, hunger, thirst, etc.)
-├── player.lua                 # Player sprite, movement, actions, animations
-├── world/
-│   ├── floor.lua              # Floor generation and management
-│   ├── generator.lua          # Floor generation with floor-specific configs
-│   ├── corridor.lua           # Central corridor system
-│   └── tiles/
-│       ├── firepit.lua        # Logic for the actual floor tile and how it acts once lit.
-│       ├── bed.lua            # Animation for bed, interactions.
-│       └── door.lua           # Door animation, key/lock pairing in loot containers.
-├── items/
-│   ├── item.lua               # Base item class
-│   ├── inventory.lua          # Inventory management
-│   └── loot.lua               # Item types and spawn probabilities
-├── ui/
-│   ├── hud.lua                # Health bars, stats display
-│   ├── inventoryUI.lua        # Inventory UI (crank-activated)
-│   ├── woundUI.lua            # Wound treatment UI (crank-based)
-│   └── menu.lua               # Pause/main menu
-├── systems/
-│   ├── survival.lua           # Time, hunger, thirst, sleep systems
-│   ├── damage.lua             # Damage calculations
-│   └── environmental.lua      # Cold, radiation, sanity effects
-└── images/                    # Playdate convention
-    ├── player/                # Player sprites
-    ├── items/                 # Item sprites
-    ├── rooms/                 # Pre-made room images
-    ├── tiles/                 # Tileset assets
-    └── effects/               # Visual effects (blood, apparitions)
-```
-

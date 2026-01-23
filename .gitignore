@@ -10,3 +10,5 @@ Package.resolved
 .builds/
 gutwound.p64/*
 .playdate-luacats/
+.cache/
+.xmake/

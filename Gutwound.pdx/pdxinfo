@@ -1,9 +1,0 @@
-name=Gutwound
-author=Maurice
-description=A survival game for Playdate (C version)
-bundleID=com.maurice.gutwound
-version=0.1.0
-buildNumber=1
-imagePath=images/
-pdxversion=30002
-buildtime=822522659

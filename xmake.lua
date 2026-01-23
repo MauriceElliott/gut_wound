@@ -40,16 +40,14 @@ target("Gutwound")
     -- After build, package with pdc
     after_build(function (target)
         local pdc = path.join(playdate_sdk, "bin/pdc")
-        local source_dir = path.directory(target:targetfile())
-        local pdx_output = "./.builds/Gutwound.pdx"
+        local pdx_output = ".builds/Gutwound.pdx"
 
-        -- Create Source directory structure expected by pdc
-        os.mkdir("Source")
-        os.cp(target:targetfile(), "Source/pdex.so")
-        os.trycp("src/pdxinfo", "Source/pdxinfo")
+        -- Copy built binary to Source/ directory (follows Playdate SDK convention)
+        -- Source/ should contain pdxinfo and receives the compiled binary
+        os.cp(target:targetfile(), "src/pdex.so")
 
-        -- Run pdc to create .pdx bundle
-        os.execv(pdc, {"Source", pdx_output})
+        -- Run pdc to package Source/ directory into .pdx bundle
+        os.execv(pdc, {"src", pdx_output})
 
         cprint("${bright green}✓${clear} Built %s", pdx_output)
     end)

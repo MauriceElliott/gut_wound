@@ -12,3 +12,5 @@ gutwound.p64/*
 .playdate-luacats/
 .cache/
 .xmake/
+build/
+compile_commands.json

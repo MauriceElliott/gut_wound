@@ -3,11 +3,6 @@
 # Set product name
 set PRODUCT_NAME Gutwound
 
-if not test -d .playdate-luacats
-    mkdir .playdate-luacats
-    git clone https://github.com/notpeter/playdate-luacats.git ./.playdate-luacats/
-end
-
 # Check if PLAYDATE_SDK_PATH is set
 if not set -q PLAYDATE_SDK_PATH
     echo "Error: PLAYDATE_SDK_PATH environment variable is not set"
@@ -19,8 +14,12 @@ if not test -d ./.builds
     mkdir .builds
 end
 
+if not test -L ./compile_commands.json
+    xmake project -k compile_commands
+end
+
 echo "Building $PRODUCT_NAME.pdx..."
-pdc source .builds/$PRODUCT_NAME.pdx
+xmake build
 
 if test $status -ne 0
     echo "Build failed!"

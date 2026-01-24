@@ -1,6 +1,0 @@
-[
-{
-  "directory": "/home/maurice/repos/Gutwound",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-O0", "-I/home/maurice/PlaydateSDK/C_API", "-DDEBUG", "-Wall", "-Wextra", "-Wno-unused-parameter", "-DTARGET_EXTENSION=1", "-o", "build/.objs/Gutwound/linux/x86_64/debug/src/main.c.o", "src/main.c"],
-  "file": "src/main.c"
-}]

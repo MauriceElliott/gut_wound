@@ -10,10 +10,10 @@ enum Scene {
 final class Game: PlaydateGame {
     let gameScene: Scene = .startMenu
     init() {
-        // room.addToDisplayList()
+        room.addToDisplayList()
     }
 
-    // let room = Room()
+    let room = Room()
 
     func update() -> Bool {
         Sprite.updateAndDrawDisplayListSprites()
@@ -25,18 +25,14 @@ final class Game: PlaydateGame {
     }
 }
 
-// class Room: Sprite.Sprite {
-//     let collisionMap: Graphics.Bitmap
-//     let flagsMap: Graphics.Bitmap
-//     override init() {
-//         // super.init()
-//         // image = try! Graphics.Bitmap(path: "test_room.png")
-//         // collisionMap = try! Graphics.Bitmap(path: "test_room_collission_map.png")
-//         // flagsMap = try! Graphics.Bitmap(path: "test_room_flags_map.png")
-//         // bounds = .init(x: 0, y: 0, width: 400, height: 240)
-//     }
+class Room: Sprite.Sprite {
+    override init() {
+        super.init()
+        image = try! Graphics.Bitmap(path: "Images/test_room.png")
+        bounds = .init(x: 0, y: 0, width: 400, height: 240)
+    }
 
-//     override func update() {
+    override func update() {
 
-//     }
-// }
+    }
+}

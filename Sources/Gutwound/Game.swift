@@ -6,6 +6,7 @@ enum Scene {
     case startMenu
 }
 
+@PlaydateMain
 final class Game: PlaydateGame {
     let gameScene: Scene = .startMenu
     init() {

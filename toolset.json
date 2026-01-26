@@ -1,0 +1,19 @@
+{
+    "schemaVersion": "1.0",
+    "cCompiler": {
+        "extraCLIOptions": [
+            "-DTARGET_SIMULATOR=1",
+            "-I/usr/include",
+            "-D__HAVE_FLOAT128=0",
+            "-D__HAVE_DISTINCT_FLOAT128=0"
+        ]
+    },
+    "linker": {
+        "extraCLIOptions": [
+            "--gc-sections",
+            "--allow-multiple-definition",
+            "-lc", "-lm",
+            "--export-dynamic-symbol", "eventHandlerShim"
+        ]
+    }
+}

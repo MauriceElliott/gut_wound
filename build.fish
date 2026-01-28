@@ -5,9 +5,13 @@ if test (hostname) = eighthCircle
     set -x ARM_NONE_EABI_GCC_PATH /usr/lib/gcc/arm-none-eabi/15
     set -x ARM_NONE_EABI_SYSROOT_PATH /usr/arm-none-eabi
 end
+
+if test (hostname) = ninthCircle
+    source ~/.config/fish/_9thCircle.fish
+end
+
 set PRODUCT_NAME Gutwound
 set GAME_PATH $PLAYDATE_SDK_PATH/Disk/Games/$PRODUCT_NAME.pdx
-
 # Use the development snapshot toolchain for Embedded Swift armv7em target support
 set -x TOOLCHAINS swift
 

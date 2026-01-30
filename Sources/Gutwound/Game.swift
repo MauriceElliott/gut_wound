@@ -3,7 +3,9 @@ import PlaydateKit
 @PlaydateMain
 final class Game: PlaydateGame {
     let casper = Casper()
+    let player: Player
     init() {
+        player = Player("Images/man", x: 200, y: 120)
     }
     func update() -> Bool {
         Sprite.updateAndDrawDisplayListSprites()

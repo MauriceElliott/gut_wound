@@ -7,6 +7,7 @@ if test (hostname) = eighthcircle
 end
 
 if test (hostname) = ninthCircle
+    set -x TOOLCHAINS swift
     source ~/.config/fish/_9thCircle.fish
 end
 

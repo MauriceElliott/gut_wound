@@ -56,25 +56,9 @@ Art style and movement will be loosely based on racheteer.
 
 For sound I would like to use a synthesizer, possibly an analogue synth, we will see about getting one. I also really love the idea of just include ambient type music, similar to the sad soft cold playlists nobody produces.
 
-### Build
+## Code Structure
+For the code, I want to make sure that I can properly structure the game so that extension is straight forward, without having to do too much in terms of rewrites, however rewrites are inevitable, so the other way we need to manage this is making the rewrites easier.
 
-#### Prerequisites
-- PLAYDATE_SDK_PATH needs to be set to the root of the playdateSDK
-- PDSIM needs to directly reference the simulator
-- The playdateSDK bin should be on the path
-- [xmake](https://xmake.io) installed for C builds
+For this we will use the core principal of data vs manipulator, i.e. I will use classes and structs for data and objects, with functions that are separated into libraries depending on the objects they are responsible for manipulating.
 
-#### C Version (In Development)
-
-```bash
-xmake config -m debug
-xmake build
-
-xmake config -m release
-xmake build
-
-# Generate compile_commands.json for LSP/clangd
-xmake project -k compile_commands
-
-$PDSIM Gutwound.pdx
-```
+Then we will also use a scene based state structure where we will have a central scene manager that has responsibility for floor/level vs menu/healing menu/game progress etc. This will give us enough structure for the size of game we are aiming for and will help to manage state.
